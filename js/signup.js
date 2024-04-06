@@ -28,8 +28,7 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      $data = this.responseText;
-      document.getElementById("error").innerHTML = data.data.message;
+      document.getElementById("error").innerHTML = error.responseText;
     },
   });
 });
