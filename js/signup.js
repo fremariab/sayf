@@ -26,8 +26,7 @@ $("#submit").click(function (event) {
       if (data.status == 201) {
         window.location.href = "../login/login.php";
       } else {
-        console.log(data.message);
-        // document.getElementById("error").innerHTML += data.data.message;
+        document.getElementById("error").innerHTML += data.data.message;
       }
     },
     error: (error) => {
