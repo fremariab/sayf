@@ -91,7 +91,7 @@ body {
   text-decoration: underline;
 }
 
-.form input.button {
+.form button.button {
   color: #fff;
   background: #54177c;
   font-size: 1.2rem;
@@ -102,7 +102,7 @@ body {
   transition: 0.4s;
 }
 
-.form input.button:hover {
+.form button.button:hover {
   background: #54177c;
 }
 
