@@ -144,3 +144,8 @@ select {
   background-color: #54177c;
   color: #ffffff;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+}

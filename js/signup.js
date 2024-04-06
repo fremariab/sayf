@@ -23,8 +23,11 @@ $("#submit").click(function (event) {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
-      //   var response = this.responseText;
-      //   window.location.href = "../view/userdash.php";
+      if (status == 201) {
+        window.location.href = "../login/login.php";
+      } else {
+        document.getElementById("error").innerHTML += data.data.message;
+      }
     },
     error: (error) => {
       console.log(data.error);
