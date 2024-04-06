@@ -1,13 +1,13 @@
 /**login.js */
 $("#submit").click(function (event) {
   event.preventDefault();
-  var name = document.myform.name.value;
-  var password = document.myform.password.value;
+  var name = $("#username").val();
+  var password = $("#password").val();
 
   if (name == null || name == "") {
     alert("Username can't be blank");
     return false;
-  } else if (password.length < 6) {
+  } else if (password.length < 8) {
     alert("Password must be at least 6 characters long.");
     return false;
   }
