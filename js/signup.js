@@ -22,7 +22,7 @@ $("#submit").click(function (event) {
     }),
     dataType: "json",
     success: (data, status) => {
-      console.log(status);
+      console.log(data);
       if (status == 201) {
         window.location.href = "../login/login.php";
       } else {
