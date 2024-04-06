@@ -14,7 +14,7 @@ $("#submit").click(function (event) {
     method: "post",
     data: JSON.stringify({
       username: $("#uname").val(),
-      gender: $("#gender").val(),
+      gender: $("input[name='gender']:checked").val(),
       phone_number: $("#phone_number").val(),
       register_email: $("#register_email").val(),
       register_password: $("#register_password").val(),

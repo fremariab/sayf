@@ -25,12 +25,12 @@
                     <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$"
                         placeholder="Username">
                     <div class="radio-container">
-                        <label style="color:gray;">Gender </label>
+                        <label style="color:gray;" for="gender">Gender </label>
                     </div>
                     <div class="radio">
-                        <input type="radio" name="gender" id="gender" checked="checked" value="1" />
+                        <input type="radio" name="gender" id="gender-male" checked="checked" value="1" />
                         <label for="gender-male">Male</label>
-                        <input type="radio" name="gender" id="gender" value="2" />
+                        <input type="radio" name="gender" id="gender-female" value="2" />
                         <label for="gender-female">Female</label>
                     </div>
 
