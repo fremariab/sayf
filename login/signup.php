@@ -22,7 +22,8 @@
                 <header>Signup</header>
                 <form method="post">
                     <div id="error" class="error"></div>
-
+                    <input type="email" name="register_email" id="register_email"
+                        pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
                     <div class="radio-container">
                         <label style="color:gray;" for="gender">Gender </label>
                     </div>
@@ -36,8 +37,7 @@
                     <input type="text" name="phone_number" id="phone_number"
                         pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Phone Number">
 
-                    <input type="email" name="register_email" id="register_email"
-                        pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
+
 
                     <input type="password" name="register_password" id="register_password"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
