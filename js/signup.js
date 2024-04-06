@@ -25,12 +25,10 @@ $("#submit").click(function (event) {
       console.log(data.status);
       if (data.status == 201) {
         window.location.href = "../login/login.php";
-      } else {
-        document.getElementById("error").innerHTML = data.message;
       }
     },
     error: (error) => {
-      console.log(error);
+      document.getElementById("error").innerHTML = data.message;
     },
   });
 });
