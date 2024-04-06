@@ -3,14 +3,29 @@ $("#submit").click(function (event) {
   event.preventDefault();
 
   const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-  let username = "";
-
   const usernameLength = 8;
+  const generatedUsernames = []; // Array to store generated usernames
 
-  for (let i = 0; i < usernameLength; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    username += characters[randomIndex];
+  function generateUsername() {
+    let username = "";
+    for (let i = 0; i < usernameLength; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      username += characters[randomIndex];
+    }
+    return username;
+  }
+
+  function isUnique(username) {
+    return !generatedUsernames.includes(username);
+  }
+
+  function generateUniqueUsername() {
+    let username = generateUsername();
+    while (!isUnique(username)) {
+      username = generateUsername();
+    }
+    generatedUsernames.push(username);
+    return username;
   }
 
   var password = $("#register_password").val();
@@ -24,7 +39,7 @@ $("#submit").click(function (event) {
     url: "../actions/signup_action.php",
     method: "post",
     data: JSON.stringify({
-      username: username,
+      username: generateUniqueUsername(),
       gender: $("input[name='gender']:checked").val(),
       phone_number: $("#phone_number").val(),
       register_email: $("#register_email").val(),

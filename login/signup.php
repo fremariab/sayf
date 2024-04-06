@@ -22,8 +22,7 @@
                 <header>Signup</header>
                 <form method="post">
                     <div id="error" class="error"></div>
-                    <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$"
-                        placeholder="Username">
+
                     <div class="radio-container">
                         <label style="color:gray;" for="gender">Gender </label>
                     </div>
