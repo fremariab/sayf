@@ -28,9 +28,9 @@
                         <label style="color:gray;">Gender </label>
                     </div>
                     <div class="radio">
-                        <input type="radio" name="gender" id="gender-male" checked="checked" value="1" />
+                        <input type="radio" name="gender" id="gender" checked="checked" value="1" />
                         <label for="gender-male">Male</label>
-                        <input type="radio" name="gender" id="gender-female" value="2" />
+                        <input type="radio" name="gender" id="gender" value="2" />
                         <label for="gender-female">Female</label>
                     </div>
 
