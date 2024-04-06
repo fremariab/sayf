@@ -9,7 +9,7 @@ function error422($message)
         'message' => $message,
     ];
     header("HTTP/1.0 422 Unprocessable Entity");
-    echo json_encode($data);
+    return json_encode($data);
 }
 
 function signupUser($user_data)
