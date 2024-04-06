@@ -22,11 +22,13 @@ $("#submit").click(function (event) {
     }),
     dataType: "json",
     success: (data, status) => {
-      console.log(data, status);
+      console.log(status);
       if (status == 201) {
         window.location.href = "../login/login.php";
       } else {
-        document.getElementById("error").innerHTML += data.data.message;
+        console.log(message);
+
+        // document.getElementById("error").innerHTML += data.data.message;
       }
     },
     error: (error) => {
