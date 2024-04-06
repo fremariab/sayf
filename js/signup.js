@@ -27,8 +27,9 @@ $("#submit").click(function (event) {
         window.location.href = "../login/login.php";
       }
     },
-    error: (error, data) => {
-      document.getElementById("error").innerHTML = data.message;
+    error: (error) => {
+      $data = this.responseText;
+      document.getElementById("error").innerHTML = data.data.message;
     },
   });
 });

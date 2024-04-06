@@ -122,3 +122,9 @@ button {
 .signup label:hover {
   text-decoration: underline;
 }
+
+.error {
+  color: red;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
