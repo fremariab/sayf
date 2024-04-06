@@ -46,8 +46,7 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                         placeholder="Confirm Password">
 
-                    <button type="submit" class="button" name="submit_button" onclick="return validateForm()"
-                        id="submit_button">Sign Up</button>
+                    <button type="submit" class="button" name="submit_button" id="submit_button">Sign Up</button>
 
                 </form>
                 <div class="signup">
@@ -58,7 +57,6 @@
             </div>
         </div>
     </div>
-
     <script src="../js/signup.js"></script>
 
 </body>
