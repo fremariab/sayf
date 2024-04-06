@@ -1,6 +1,13 @@
-/**login.js */
+/**signup.js */
 $("#submit").click(function (event) {
   event.preventDefault();
+
+  var password = $("#register_password").val();
+  var confirmPassword = $("#register_password1").val();
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
 
   $.ajax({
     url: "../actions/signup_action.php",

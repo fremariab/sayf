@@ -58,17 +58,7 @@
             </div>
         </div>
     </div>
-    <script>
-        function validateForm() {
-            var password = document.getElementById("register_password").value;
-            var confirmPassword = document.getElementById("register_password1").value;
-            if (password != confirmPassword) {
-                alert("Passwords do not match.");
-                return false;
-            }
-            return true;
-        }
-    </script>
+
     <script src="../js/signup.js"></script>
 
 </body>
