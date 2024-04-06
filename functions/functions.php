@@ -36,7 +36,7 @@ function loginUser($user_data)
     } else if (empty(trim($password))) {
         return error422("Enter your password");
     } else {
-        $sql = "SELECT * FROM user where username='$username'";
+        $sql = "SELECT * FROM User where username='$username'";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -69,9 +69,9 @@ function loginUser($user_data)
         } else {
             $data = [
                 'status' => 500,
-                'message' => 'Internal Serval Error',
+                'message' => 'Internal Serval Errorr',
             ];
-            header("HTTP/1.0 500 Internal Serval Error");
+            header("HTTP/1.0 500 Internal Serval Errorr");
             return json_encode($data);
         }
 
