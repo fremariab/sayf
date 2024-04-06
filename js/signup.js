@@ -28,7 +28,7 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      document.getElementById("error").innerHTML = error.responseText;
+      document.getElementById("error").innerHTML = error.responseText.message;
     },
   });
 });
