@@ -12,11 +12,13 @@ $("#submit").click(function (event) {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
-      //   var response = this.responseText;
-      //   window.location.href = "../view/userdash.php";
+      if (data.status == 200) {
+        window.location.href = "../view/userdash.php";
+      }
     },
     error: (error) => {
-      console.log(data.error);
+      var responseData = JSON.parse(error.responseText);
+      document.getElementById("error").innerHTML = responseData.message;
     },
   });
 });
