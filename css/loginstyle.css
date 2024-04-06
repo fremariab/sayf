@@ -102,10 +102,6 @@ body {
   transition: 0.4s;
 }
 
-.form button .button:hover {
-  background: #54177c;
-}
-
 .signup {
   font-size: 17px;
   text-align: center;

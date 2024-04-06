@@ -84,10 +84,6 @@ body {
   transition: 0.4s;
 }
 
-.form button .button:hover {
-  background: #54177c;
-}
-
 select {
   height: 60px;
   width: 100%;

@@ -18,7 +18,7 @@
     </div>
     <div class="parent">
         <div class="container">
-            <div class="registration form">
+            <div class="form">
                 <header>Signup</header>
                 <form method="post">
                     <div id="error" class="error"></div>

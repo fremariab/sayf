@@ -26,11 +26,11 @@ $("#submit").click(function (event) {
       if (data.status == 201) {
         window.location.href = "../login/login.php";
       } else {
-        document.getElementById("error").innerHTML += data.data.message;
+        document.getElementById("error").innerHTML = data.message;
       }
     },
     error: (error) => {
-      console.log(data.error);
+      console.log(error);
     },
   });
 });

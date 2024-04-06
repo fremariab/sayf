@@ -19,13 +19,12 @@
         </div>
         <div class="container" style="float: right;">
             <input type="checkbox" id="check">
-            <div class="login form">
+            <div class="form">
                 <header>Login</header>
                 <form method="post">
                     <input type="text" placeholder="Enter your username" name="username" id="username">
                     <input type="password" placeholder="Enter your password" name="passwrd" id="password">
-                    <button type="submit" class="button" id="submit" name="submit_button"
-                        onclick="return validateform()">Login</button>
+                    <button type="submit" class="button" id="submit" name="submit_button">Login</button>
                 </form>
                 <div class="signup">
                     <span class="signup">Don't have an account?
