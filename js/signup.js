@@ -6,7 +6,7 @@ $("#submit").click(function (event) {
     url: "../actions/signup_action.php",
     method: "post",
     data: JSON.stringify({
-      username: $("#username").val(),
+      username: $("#uname").val(),
       gender: $("#gender").val(),
       phone_number: $("#phone_number").val(),
       register_email: $("#register_email").val(),
