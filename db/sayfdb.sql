@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
  
  CREATE TABLE `Role` (
   `rid` INT(11) NOT NULL,
-  `rname` VARCHAR(50) NOT NULL,
+  `rname` VARCHAR(50) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE `User`
+ALTER TABLE `Role`
 ADD PRIMARY KEY (`rid`);
 
-ALTER TABLE `User`
+ALTER TABLE `Role`
 MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
 
 
@@ -42,20 +42,18 @@ CREATE TABLE `User` (
   `gender` INT(11) NOT NULL,
   `tel` VARCHAR(20) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
-  `passwd` VARCHAR(255) NOT NULL,
+  `passwd` VARCHAR(255) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `User`
-ADD PRIMARY KEY (`pid`),
+ADD PRIMARY KEY (`uid`),
 ADD KEY `rid` (`rid`);
 
 ALTER TABLE `User`
-MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
-
+MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `User`
-ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `Role` (`rid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `Role` (`rid`) ON DELETE CASCADE ON UPDATE CASCADE;
 -- --------------------------------------------------------
 
 CREATE TABLE `Car` (
@@ -63,7 +61,7 @@ CREATE TABLE `Car` (
   `make` VARCHAR(50) NOT NULL,
   `model` VARCHAR(50) NULL,
   `color` VARCHAR(20) NOT NULL,
-  `plate_number` VARCHAR(15) NOT NULL,
+  `plate_number` VARCHAR(15) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `Car`
@@ -80,7 +78,7 @@ CREATE TABLE `Driver` (
   `fname` VARCHAR(50) NOT NULL,
   `lname` VARCHAR(50) NULL,
   `tel` VARCHAR(20) NOT NULL,
-  `carid` INT NOT NULL,
+  `carid` INT NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `Driver`
@@ -91,8 +89,7 @@ ALTER TABLE `Driver`
 MODIFY `did` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `Driver`
-ADD CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`carid`) REFERENCES `Car` (`carid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `driver_ibfk_1` FOREIGN KEY (`carid`) REFERENCES `Car` (`carid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -100,7 +97,7 @@ CREATE TABLE `RideHailingCompany` (
   `comid` INT(11) NOT NULL,
   `company_name` VARCHAR(100) NOT NULL,
   `location` VARCHAR(100) NOT NULL,
-  `contact_number` VARCHAR(20) NOT NULL,
+  `contact_number` VARCHAR(20) NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `RideHailingCompany`
@@ -113,7 +110,7 @@ MODIFY `comid` int(11) NOT NULL AUTO_INCREMENT;
 CREATE TABLE `DriverServiceAssignment` (
   `assid` INT(11) NOT NULL,
   `did` INT(11) NOT NULL,
-  `comid` INT(11) NOT NULL,
+  `comid` INT(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -127,8 +124,7 @@ MODIFY `assid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `DriverServiceAssignment`
 ADD CONSTRAINT `driverserviceassignment_ibfk_1` FOREIGN KEY (`did`) REFERENCES `Driver` (`did`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `driverserviceassignment_ibfk_2` FOREIGN KEY (`comid`) REFERENCES `RideHailingCompany` (`comid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `driverserviceassignment_ibfk_2` FOREIGN KEY (`comid`) REFERENCES `RideHailingCompany` (`comid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -150,8 +146,7 @@ MODIFY `revid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `DriverReviews`
 ADD CONSTRAINT `driverreviews_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `User` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `driverreviews_ibfk_2` FOREIGN KEY (`assid`) REFERENCES `DriverServiceAssignment` (`assid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `driverreviews_ibfk_2` FOREIGN KEY (`assid`) REFERENCES `DriverServiceAssignment` (`assid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -160,7 +155,7 @@ CREATE TABLE `IncidentReport` (
   `uid` INT(11) NOT NULL,
   `assid` INT(11) NOT NULL,
   `report_description` TEXT,
-  `incident_date` date NOT NULL,
+  `incident_date` date NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `IncidentReport`
@@ -173,14 +168,13 @@ MODIFY `repid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `IncidentReport`
 ADD CONSTRAINT `incidentreport_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `User` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `incidentreport_ibfk_2` FOREIGN KEY (`assid`) REFERENCES `DriverServiceAssignment` (`assid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `incidentreport_ibfk_2` FOREIGN KEY (`assid`) REFERENCES `DriverServiceAssignment` (`assid`) ON DELETE CASCADE ON UPDATE CASCADE;
 -- --------------------------------------------------------
 
 CREATE TABLE `Engagement` (
   `engid` INT NOT NULL,
   `engagement_type` VARCHAR(20) NOT NULL,
-  `engagement_description` TEXT,
+  `engagement_description` TEXT
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -213,8 +207,7 @@ ALTER TABLE `Post`
 MODIFY `posid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `Post`
-ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `User` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
-COMMIT;
+ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `User` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 -- --------------------------------------------------------
 
 
@@ -235,7 +228,7 @@ MODIFY `uengid` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `UserEngagement`
 ADD CONSTRAINT `userengagement_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `User` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `userengagement_ibfk_2` FOREIGN KEY (`posid`) REFERENCES `Post` (`posid`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `userengagement_ibfk_2` FOREIGN KEY (`posid`) REFERENCES `Post` (`posid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 -- -------------------------------------------------------
 
