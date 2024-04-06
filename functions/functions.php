@@ -45,6 +45,7 @@ function loginUser($user_data)
                 if (password_verify($password, $row['passwd'])) {
                     $_SESSION['user_id'] = $row['uid'];
                     $_SESSION['user_role'] = $row['rid'];
+                    $_SESSION['username'] = $row['username'];
                     $data = [
                         'status' => 200,
                         'message' => 'User Loggged in Successfully',
@@ -61,7 +62,7 @@ function loginUser($user_data)
                 }
             } else {
                 $data = [
-                    'error' => 'Email is not registered.',
+                    'error' => 'Username is not registered.',
                     'url' => '../login/login_view.php'
                 ];
                 return json_encode($data);
