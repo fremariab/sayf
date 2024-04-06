@@ -1,3 +1,4 @@
+<!-- signup.php  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,28 +18,17 @@
         <div class="container">
             <div class="registration form">
                 <header>Signup</header>
-                <form action="../actions/signup_action.php" method="post">
-                    <?php
-                    if (isset($_GET['userror'])) { ?>
-                        <p class="error" style="color:red">
-                            <?php echo $_GET['error'] ?>
-                        </p>
-                    <?php } ?>
-                    <input type="text" name="fname" id="fname" pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)?$"
-                        placeholder="First Name">
+                <form method="post">
 
-                    <input type="text" name="lname" id="lname" pattern="^[a-zA-Z]+(?:-[a-zA-Z]+)?$"
-                        placeholder="Last Name">
                     <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$"
                         placeholder="Username">
                     <div class="radio-container">
                         <label style="color:gray;">Gender </label>
                     </div>
                     <div class="radio">
-
-                        <input type="radio" name="gender" id="gender-male" checked="checked" />
+                        <input type="radio" name="gender" id="gender-male" checked="checked" value="1" />
                         <label for="gender-male">Male</label>
-                        <input type="radio" name="gender" id="gender-female" />
+                        <input type="radio" name="gender" id="gender-female" value="2" />
                         <label for="gender-female">Female</label>
                     </div>
 
@@ -56,7 +46,8 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                         placeholder="Confirm Password">
 
-                    <input type="submit" class="button" name="submit_button" value="Sign Up" id="submit_button">
+                    <button type="submit" class="button" name="submit_button" onclick="return validateForm()"
+                        id="submit_button">Sign Up</button>
 
                 </form>
                 <div class="signup">
@@ -67,6 +58,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("register_password").value;
+            var confirmPassword = document.getElementById("register_password1").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script src="../js/signup.js"></script>
 
 </body>
 
