@@ -1,0 +1,16 @@
+ride hailing review website  with the following functionalities:
+
+admin---
+*add ride hailing service
+
+superadmin-----
+*add driver
+* if driver ratings below 2 flag as in the red or be cautious
+* if driver  ratings below 2  and has had 3 incidents reported against him it should email him saying he is no longer with the company and update driver contract status to terminated
+
+user---
+* rate driver
+* report an incident
+* give driver review
+* search for driver either by uploading picture of page when ride is booked or manually
+* if gender is female, then they should have access to a forum
