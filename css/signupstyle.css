@@ -82,6 +82,10 @@ button {
   margin-top: 0.5rem;
   cursor: pointer;
   transition: 0.4s;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
 }
 
 select {
