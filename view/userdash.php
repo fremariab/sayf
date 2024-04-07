@@ -19,7 +19,6 @@
                 <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
                 <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
                 <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
-
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"
@@ -28,9 +27,13 @@
 
         </div>
         <div class="main_content">
-            <div class="header">User Dashboard</div>
+            <div class="header">
+                <div class="headtext">User Dashboard</div>
+            </div>
             <div class="info">
+                <div class="dashb" id="dashb">
 
+                </div>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>User Profile</title>
+    <title>Driver Detail</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
@@ -30,7 +30,7 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">User Profile</div>
+                <div class="headtext">Driver Detail</div>
             </div>
             <div class="info">
                 <div class="userprof">

@@ -530,3 +530,33 @@ button {
 .stars i.active {
   color: #ff9c1a;
 }
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin-right: 50px;
+}
+
+th {
+  background-color: #54177c;
+  color: white;
+  border: 1px solid #000;
+}
+
+td {
+  border: 1px solid #000;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  align-items: left;
+  border: 1px solid #000;
+}
+
+tbody td {
+  text-align: left;
+}
