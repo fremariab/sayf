@@ -11,7 +11,83 @@ function error422($message)
     header("HTTP/1.0 422 Unprocessable Entity");
     return json_encode($data);
 }
+function addRideHailingCompany($input_data)
+{
+    global $conn;
 
+    function validate($data)
+    {
+        global $conn;
+
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = mysqli_escape_string($conn, $data);
+        return $data;
+    }
+
+
+    $compname = validate($input_data->compname);
+    $comploc = validate($input_data->comploc);
+    $contactNum = validate($input_data->contactNum);
+    $compemail = validate($input_data->compemail);
+
+    if (empty($compname)) {
+        return error422("Enter the name");
+
+    } else if (empty($compemail)) {
+        return error422("Enter the email");
+    } else if (empty($comploc)) {
+        return error422("Enter the location");
+    } else if (empty($contactNum)) {
+        return error422("Enter the contact number");
+    } else {
+        $sql = "SELECT * FROM RideHailingCompany where company_name='$compname'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+
+            $count_companies = mysqli_num_rows($result);
+            if ($count_companies == 0) {
+
+                $sql = "INSERT INTO RideHailingCompany(company_name,location,contact_number,email) VALUES('$compname','$comploc', '$contactNum','$compemail')";
+                $result2 = mysqli_query($conn, $sql);
+
+                $sql = "SELECT * FROM RideHailingCompany";
+                $result3 = mysqli_query($conn, $sql);
+
+
+                $final_result = mysqli_fetch_all($result3, MYSQLI_ASSOC);
+
+                if ($result2) {
+                    $data = [
+                        'status' => 201,
+                        'message' => 'Ride-Hailing Company Created Successfully',
+                        'data' => $final_result
+                    ];
+                    header("HTTP/1.0 201 Ride-Hailing Company Created Successfully");
+                    return json_encode($data);
+                }
+
+            } else {
+                $data = [
+                    'status' => 424,
+                    'message' => 'This user already exists',
+                ];
+                header("HTTP/1.0 424 This user already exists");
+                return json_encode($data);
+            }
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Errorr',
+            ];
+            header("HTTP/1.0 500 Internal Serval Errorr");
+            return json_encode($data);
+        }
+
+    }
+
+}
 function signupUser($user_data)
 {
     global $conn;
@@ -76,9 +152,9 @@ function signupUser($user_data)
                 } else {
                     $data = [
                         'status' => 424,
-                        'message' => 'Incorrect password',
+                        'message' => 'Passwords do not match',
                     ];
-                    header("HTTP/1.0 424 Incorrect password");
+                    header("HTTP/1.0 424 Passwords do not match");
                     return json_encode($data);
                 }
             } else {

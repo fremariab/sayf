@@ -30,7 +30,7 @@
                 <div class="headtext">All Ride-Hailing Companies</div>
             </div>
             <div class="info">
-                <table>
+                <table >
                     <thead>
                         <tr>
                             <th>Ride-Hailing Company Name</th>
@@ -39,13 +39,8 @@
                             <th>Email</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="rhcname" id="rhcname"></td>
-                            <td class="contactnum" id="contactnum"></td>
-                            <td class="email" id="email"></td>
-                            <td class="location" id="location"></td>
-                        </tr>
+                    <tbody id="display_rhc_data">
+                       
                         <!-- <tr>
                             <td colspan=4>
                                 <center> No results found.

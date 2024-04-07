@@ -42,14 +42,13 @@
                     </div>
                     <div class="right-side">
                         <form class="form" id="form">
-                            <input type="text" id="compName" name="compname" class="input-field"
+                            <input type="text" id="compname" name="compname" class="input-field"
                                 placeholder="Ride-Hailing Company Name" required>
 
-                            <input type="text" id="compName" name="compname" class="input-field"
+                            <input type="text" id="comploc" name="comploc" class="input-field"
                                 placeholder="Ride-Hailing Company Location" required>
-
-                            <input type="text" id="contactNum" name="contactNum" class="input-field"
-                                placeholder="Contact Number" required>
+                            <input type="text" name="contactNum" id="contactNum"
+                                pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Contact Number">
 
                             <input type="email" name="compemail" id="compemail"
                                 pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
@@ -64,7 +63,7 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-
+    <script src="../js/addrhc.js"></script>
 </body>
 
 </html>
