@@ -1,4 +1,4 @@
-/**login.js */
+/**addrhc.js */
 $("#submit").click(function (event) {
   event.preventDefault();
   var compname = $("#compname").val();
