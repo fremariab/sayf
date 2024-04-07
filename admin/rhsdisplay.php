@@ -6,6 +6,8 @@
     <title>All Ride-Hailing Companies</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -30,7 +32,7 @@
                 <div class="headtext">All Ride-Hailing Companies</div>
             </div>
             <div class="info">
-                <table >
+                <table>
                     <thead>
                         <tr>
                             <th>Ride-Hailing Company Name</th>
@@ -40,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody id="display_rhc_data">
-                       
+
                         <!-- <tr>
                             <td colspan=4>
                                 <center> No results found.
