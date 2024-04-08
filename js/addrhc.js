@@ -47,7 +47,7 @@ $("#submit").click(function (event) {
           result += "</tr>";
         });
         document.getElementById("display_rhc_data").innerHTML += result;
-        window.location.href = "../admin/rhsdisplay.php";
+        window.location.href = "../admin/rhcdisplay.php";
       }
     },
     error: (error) => {
