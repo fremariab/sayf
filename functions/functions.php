@@ -16,7 +16,7 @@ function viewRideHailingCompanies()
 {
     global $conn;
 
-    $sql = "SELECT * FROM People";
+    $sql = "SELECT * FROM RideHailingCompany";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -25,10 +25,10 @@ function viewRideHailingCompanies()
 
             $data = [
                 'status' => 200,
-                'message' => 'User List Found',
+                'message' => 'RHC List Found',
                 'data' => $final_result
             ];
-            header("HTTP/1.0 200 User List Found");
+            header("HTTP/1.0 200 RHC List Found");
             return json_encode($data);
         } else {
             $data = [
