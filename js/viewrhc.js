@@ -1,5 +1,5 @@
 /**viewrhc.js */
-document.addEventListener("DOMContentLoaded", (event) => {
+object.addEventListener("load", (event) => {
   $.ajax({
     url: "../actions/viewrhc_action.php",
     method: "get",
