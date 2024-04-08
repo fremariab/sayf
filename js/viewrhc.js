@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<td class='location'>" + element.location + "</td>";
           result += "</tr>";
         });
-        window.location.href =
-          "../admin/rhcdisplay.php?data=" + encodeURIComponent(result);
+        document.getElementById("table_data").innerHTML += result;
       }
     },
     error: (error) => {
