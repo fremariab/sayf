@@ -46,8 +46,8 @@ $("#submit").click(function (event) {
           result += "<td class='location'>" + element.location + "</td>";
           result += "</tr>";
         });
-        document.getElementById("display_rhc_data").innerHTML += result;
-        window.location.href = "../admin/rhcdisplay.php";
+        window.location.href =
+          "../admin/rhcdisplay.php?data=" + encodeURIComponent(result);
       }
     },
     error: (error) => {
