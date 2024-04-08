@@ -57,11 +57,11 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const data = decodeURIComponent(urlParams.get('data'));
+    <script src="../js/viewrhc.js">
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const data = decodeURIComponent(urlParams.get('data'));
 
-        document.getElementById("display_rhc_data").innerHTML = data;
+        // document.getElementById("display_rhc_data").innerHTML = data;
     </script>
 </body>
 
