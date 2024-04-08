@@ -53,7 +53,7 @@
                                 pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Contact Number">
 
                             <input type="email" name="compemail" id="compemail"
-                                pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
+                                pattern="^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
 
                             <button type="submit" id="submit">Submit</button>
                         </form>
