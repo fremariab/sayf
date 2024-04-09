@@ -103,10 +103,10 @@
                 type: 'GET',
                 dataType: 'json',
                 success: function(response) {
-                    $.each(response, function(index, companyName) {
+                    $.each(response, function(index, comid) {
                         $('#rideHailingCompany').append($('<option>', {
                             value: comid,
-                            text: companyName
+                            text: comid
                         }));
                     });
                 },
