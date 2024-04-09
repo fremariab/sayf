@@ -2,12 +2,6 @@
 $("#submit").click(function (event) {
   event.preventDefault();
 
-  var confirmPassword = $("#register_password1").val();
-  if (password !== confirmPassword) {
-    alert("Passwords do not match.");
-    return;
-  }
-
   $.ajax({
     url: "../actions/signup_action.php",
     method: "post",
