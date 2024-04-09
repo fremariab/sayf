@@ -20,7 +20,7 @@ function reviewDriver($input_data)
     $dlname = validate($input_data->dlname);
     $contactNum = validate($input_data->contactNum);
     $gender = validate($input_data->gender);
-    $rating = validate($input_data->starrating);
+    $rating = validate($input_data->rating);
     $rhcomp = validate($input_data->rhcomp);
     $carMake = validate($input_data->carMake);
     $carModel = validate($input_data->carModel);
