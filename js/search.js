@@ -22,6 +22,11 @@ $("#submit").click(function (event) {
 
         let result = "";
 
+        var resultsCount = searchResults.length;
+        var resultsPerRow = 2;
+        if (index % resultsPerRow === 0) {
+          resultContainer.append('<div class="row">'); 
+        }
         response.data.forEach((element) => {
           result += '<div class="searchresult">';
           result += '<div class="rating">';
@@ -49,6 +54,9 @@ $("#submit").click(function (event) {
           result += "</div>";
           result += "</div>";
           resultContainer.append(result);
+          if ((index + 1) % resultsPerRow === 0 || index === resultsCount - 1) {
+            resultContainer.append('</div>');  
+          }
         });
       }
     },

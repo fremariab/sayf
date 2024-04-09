@@ -372,17 +372,17 @@ button {
 .main_content .info .results {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
-.main_content .info .results .searchresult {
-  background-color: rgba(167, 165, 165, 0.156);
-  height: 170px;
-  width: 43%;
-  padding: 20px;
+.main_content .info .results {
   display: flex;
-  margin-right: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .main_content .info .results .searchresult .rating {
