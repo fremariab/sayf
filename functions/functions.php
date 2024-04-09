@@ -12,6 +12,95 @@ function error422($message)
     return json_encode($data);
 }
 
+function reviewDriver($input_data)
+{
+    global $conn;
+    $dfname = validate($input_data->dfname);
+    $dlname = validate($input_data->dlname);
+    $contactNum = validate($input_data->contactNum);
+    $gender = validate($input_data->gender);
+    $rating = validate($input_data->starRating);
+    $rhcomp = validate($input_data->rhcomp);
+    $carMake = validate($input_data->carMake);
+    $carModel = validate($input_data->carModel);
+    $carColor = validate($input_data->carColor);
+    $plateNumber = validate($input_data->plateNumber);
+    $reviewDescription = validate($input_data->reviewDescription);
+
+    if (empty($dfname)) {
+        return error422("Driver First Name can't be blank");
+    } else if (empty($dlname)) {
+        return error422("Driver Last Name can't be blank");
+    } else if (empty($contactNum)) {
+        return error422("Phone Number can't be blank");
+    } else if (empty($gender)) {
+        return error422("Gender can't be blank");
+    } else if (empty($rhcomp)) {
+        return error422("Ride-Hailing Company Name can't be blank");
+    } else if (empty($carMake)) {
+        return error422("Car Make can't be blank");
+    } else if (empty($carModel)) {
+        return error422("Car Model can't be blank");
+    } else if (empty($carColor)) {
+        return error422("Car Color can't be blank");
+    } else if (empty($plateNumber)) {
+        return error422("Car Plate Number can't be blank");
+    } else if (empty($reviewDescription)) {
+        return error422("Review Description can't be blank");
+    } else {
+        $sql = "SELECT * FROM Car where plate_number='$plateNumber'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $count_cars = mysqli_num_rows($result);
+            if ($count_cars == 0) {
+                $sql = "INSERT INTO Car(make,model,color,plate_number) VALUES('$carMake','$carModel', '$carColor','$plateNumber')";
+                $result2 = mysqli_query($conn, $sql);
+                if ($result2) {
+                    $sql = "SELECT * FROM Car where plate_number='$plateNumber'";
+                    $result3 = mysqli_query($conn, $sql);
+                    $car = mysqli_fetch_assoc($result3);
+                    $car_id = $car['car_id'];
+
+
+                    if ($result3) {
+                        $sql = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum";
+                        $result4 = mysqli_query($conn, $sql);
+
+                        $count_drivers = mysqli_num_rows($result4);
+                        if ($count_drivers == 0) {
+
+                            $sql = "INSERT INTO Driver(gender,fname,lname,tel,carid,comid) VALUES('$gender','$dfname','$dlname', '$contactNum','$car_id','$rhcomp')";
+                            $result4 = mysqli_query($conn, $sql);
+                            $driver = mysqli_fetch_assoc($result3);
+                            $did = $driver['did'];
+                            if ($result4) {
+                                $sql = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
+                                $result5 = mysqli_query($conn, $sql);
+
+                                if ($result5) {
+                                    $data = [
+                                        'status' => 201,
+                                        'message' => 'Driver and Car Data Inserted Successfully',
+                                    ];
+                                    header("HTTP/1.0 201 Driver and Car Data Inserted Successfully");
+                                    echo json_encode($data);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Server Error',
+            ];
+            header("HTTP/1.0 500 Internal Server Error");
+            echo json_encode($data);
+        }
+    }
+}
 function viewRideHailingCompanies()
 {
     global $conn;
@@ -47,20 +136,19 @@ function viewRideHailingCompanies()
         return json_encode($data);
     }
 }
-function addRideHailingCompany($input_data)
+
+function validate($data)
 {
     global $conn;
 
-    function validate($data)
-    {
-        global $conn;
-
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = mysqli_escape_string($conn, $data);
-        return $data;
-    }
-
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = mysqli_escape_string($conn, $data);
+    return $data;
+}
+function addRideHailingCompany($input_data)
+{
+    global $conn;
 
     $compname = validate($input_data->compname);
     $comploc = validate($input_data->comploc);
@@ -69,7 +157,6 @@ function addRideHailingCompany($input_data)
 
     if (empty($compname)) {
         return error422("Enter the name");
-
     } else if (empty($compemail)) {
         return error422("Enter the email");
     } else if (empty($comploc)) {
@@ -103,7 +190,6 @@ function addRideHailingCompany($input_data)
                     header("HTTP/1.0 201 Ride-Hailing Company Created Successfully");
                     return json_encode($data);
                 }
-
             } else {
                 $data = [
                     'status' => 424,
@@ -120,23 +206,13 @@ function addRideHailingCompany($input_data)
             header("HTTP/1.0 500 Internal Serval Errorr");
             return json_encode($data);
         }
-
     }
-
 }
 function signupUser($user_data)
 {
     global $conn;
 
-    function validate($data)
-    {
-        global $conn;
 
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = mysqli_escape_string($conn, $data);
-        return $data;
-    }
 
 
     $username = validate($user_data->username);
@@ -148,22 +224,16 @@ function signupUser($user_data)
 
     if (empty($username)) {
         return error422("Enter your username");
-
     } else if (empty($phone_number)) {
         return error422("Enter your phone number");
-
     } else if (empty($register_email)) {
         return error422("Enter your email");
-
     } else if (empty($register_password)) {
         return error422("Enter your password");
-
     } else if (empty($register_password1)) {
         return error422("Enter your confirmed password");
-
     } else if (empty($gender)) {
         return error422("Select a gender");
-
     } else {
         $sql = "SELECT * FROM User where email='$register_email'";
         $result = mysqli_query($conn, $sql);
@@ -209,24 +279,14 @@ function signupUser($user_data)
             header("HTTP/1.0 500 Internal Serval Errorr");
             return json_encode($data);
         }
-
     }
-
 }
 
 function loginUser($user_data)
 {
     global $conn;
 
-    function validate($data)
-    {
-        global $conn;
 
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = mysqli_escape_string($conn, $data);
-        return $data;
-    }
 
 
     $username = validate($user_data->username);
@@ -234,7 +294,6 @@ function loginUser($user_data)
 
     if (empty($username)) {
         return error422("Enter your username");
-
     } else if (empty($password)) {
         return error422("Enter your password");
     } else {
@@ -277,7 +336,5 @@ function loginUser($user_data)
             header("HTTP/1.0 500 Internal Serval Errorr");
             return json_encode($data);
         }
-
     }
-
 }

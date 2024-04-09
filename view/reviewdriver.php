@@ -23,8 +23,7 @@
                 <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"
-                            style="margin-top: 135px;"></i> Logout</a></li>
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
 
             </ul>
 
@@ -48,30 +47,26 @@
                         <p>Your feedback is invaluable in ensuring a safe and enjoyable experience for all passengers.
                         </p>
                         <form class="form" id="form" action="../action/reviewdriver_action.php">
-                            <input type="text" id="firstName" name="fname" class="input-field"
-                                placeholder="Driver First Name" required>
+                            <input type="text" id="firstName" name="fname" class="input-field" placeholder="Driver First Name" required>
 
-                            <input type="text" id="lastName" name="lname" class="input-field"
-                                placeholder="Driver Last Name">
+                            <input type="text" id="lastName" name="lname" class="input-field" placeholder="Driver Last Name">
                             <div class="radio">
                                 <input type="radio" name="gender" id="gender-male" checked="checked" value="1" />
                                 <label for="gender-male">Male</label>
                                 <input type="radio" name="gender" id="gender-female" value="2" />
                                 <label for="gender-female">Female</label>
                             </div>
-                            <input type="text" name="phone_number" id="phone_number"
-                                pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Phone Number">
-
+                            <input type="text" name="phone_number" id="phone_number" pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Phone Number">
+                            <select id="rideHailingCompany" name="ride_hailing_company" required>
+                                <option value="" selected disabled>Select Ride-Hailing Company</option>
+                            </select>
                             <input type="text" id="carMake" name="make" class="input-field" placeholder="Make" required>
 
                             <input type="text" id="carModel" name="model" class="input-field" placeholder="Model">
 
-                            <input type="text" id="carColor" name="color" class="input-field" placeholder="Color"
-                                required>
+                            <input type="text" id="carColor" name="color" class="input-field" placeholder="Color" required>
 
-                            <input type="text" id="plateNumber" name="plate_number" class="input-field"
-                                pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$"
-                                placeholder="Car Plate Number" required>
+                            <input type="text" id="plateNumber" name="plate_number" class="input-field" pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$" placeholder="Car Plate Number" required>
                             <div class="ratingsstar">
                                 <div class="rating-box">
                                     <header>How was your experience?</header>
@@ -100,8 +95,29 @@
         </div>
     </div>
     <script src="../js/rating.js"></script>
-    <!-- <script src="../js/reviewdriver.js"></script> -->
-
+    <script>
+        $(document).ready(function() {
+            // AJAX request to fetch ride-hailing company names
+            $.ajax({
+                url: '../actions/viewrhc_action.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    $.each(response, function(index, companyName) {
+                        $('#rideHailingCompany').append($('<option>', {
+                            value: comid,
+                            text: companyName
+                        }));
+                    });
+                },
+                error: function(error) {
+                    // Handle error
+                    console.error('Error fetching ride-hailing companies:', error);
+                }
+            });
+        });
+    </script>
+    <script src="../js/reviewdriver.js"></script>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
 </body>
 
