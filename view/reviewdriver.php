@@ -102,15 +102,7 @@
                 url: '../actions/viewrhc_action.php',
                 type: 'GET',
                 dataType: 'json',
-                success: function(response) {
-                    $.each(response, function(index, comid) {
-                        $('#rideHailingCompany').append($('<option>', {
-                            value: comid,
-                            text: comid
-                        }));
-                    })
-
-
+                success: function(data) {
                     response = data;
 
                     let result = "";
