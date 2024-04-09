@@ -52,7 +52,7 @@ function reviewDriver($input_data)
         if (empty($rating)) {
             $rating = 0;
         }
-        $sql = "SELECT * FROM Car where plate_number='$plateNumber'";
+        $sql = "SELECT * FROM Car where where make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -61,7 +61,7 @@ function reviewDriver($input_data)
                 $sql = "INSERT INTO Car(make,model,color,plate_number) VALUES('$carMake','$carModel', '$carColor','$plateNumber')";
                 $result2 = mysqli_query($conn, $sql);
                 if ($result2) {
-                    $sql = "SELECT * FROM Car where make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
+                    $sql = "SELECT * FROM Car";
                     $result3 = mysqli_query($conn, $sql);
                     $car = mysqli_fetch_assoc($result3);
                     $car_id = $car['carid'];
@@ -76,9 +76,16 @@ function reviewDriver($input_data)
 
                             $sql2 = "INSERT INTO Driver(gender,fname,lname,tel,carid,comid) VALUES('$gender','$dfname','$dlname', '$contactNum','$car_id','$rhcomp')";
                             $result5 = mysqli_query($conn, $sql2);
-                            $driver = mysqli_fetch_assoc($result5);
-                            $did = $driver['did'];
+
+
+
                             if ($result5) {
+
+                                $sql = "SELECT * FROM Driver";
+                                $resultt = mysqli_query($conn, $sql);
+                                $driver = mysqli_fetch_assoc($resultt);
+                                $did = $driver['did'];
+
                                 $sql3 = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
                                 $result6 = mysqli_query($conn, $sql3);
                                 $user_id = $_SESSION['user_id'];
