@@ -6,6 +6,8 @@
     <title>Review Driver</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -45,7 +47,7 @@
                     <div class="right-side">
                         <p>Your feedback is invaluable in ensuring a safe and enjoyable experience for all passengers.
                         </p>
-                        <form class="form" id="form">
+                        <form class="form" id="form" action="../action/reviewdriver_action.php">
                             <input type="text" id="firstName" name="fname" class="input-field"
                                 placeholder="Driver First Name" required>
 
@@ -67,8 +69,9 @@
                             <input type="text" id="carColor" name="color" class="input-field" placeholder="Color"
                                 required>
 
-                            <input type="text" id="plateNumber" name="plate_number" class="input-field" pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$
-" placeholder="Car Plate Number" required>
+                            <input type="text" id="plateNumber" name="plate_number" class="input-field"
+                                pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$"
+                                placeholder="Car Plate Number" required>
                             <div class="ratingsstar">
                                 <div class="rating-box">
                                     <header>How was your experience?</header>
@@ -97,6 +100,7 @@
         </div>
     </div>
     <script src="../js/rating.js"></script>
+    <!-- <script src="../js/reviewdriver.js"></script> -->
 
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
 </body>
