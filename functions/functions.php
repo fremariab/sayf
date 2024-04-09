@@ -352,7 +352,7 @@ function loginUser($user_data)
                     $data = [
                         'status' => 200,
                         'message' => 'User Loggged in Successfully',
-                        'user_id' => $_SESSION['user_role']
+                        'user_id' => $_SESSION['user_id']
                     ];
                     header("HTTP/1.0 200 User Created Successfully");
                     return json_encode($data);
