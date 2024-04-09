@@ -68,7 +68,7 @@ function reviewDriver($input_data)
 
 
                     if ($result3) {
-                        $sql = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum";
+                        $sql = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum'";
                         $result4 = mysqli_query($conn, $sql);
 
                         $count_drivers = mysqli_num_rows($result4);
