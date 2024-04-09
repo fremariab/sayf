@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gender: gender,
         rating: starrating,
         selectedCompany: selectedCompany,
-        rhcomp: rhcmop,
+        rhcomp: rhcomp,
         carMake: carMake,
         carModel: carModel,
         carColor: carColor,
