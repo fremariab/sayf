@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       },
       error: (error) => {
+        console.log(error);
         var responseData = JSON.parse(error.responseText);
         document.getElementById("error").innerHTML = responseData.message;
       },

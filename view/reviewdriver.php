@@ -46,7 +46,9 @@
                     <div class="right-side">
                         <p>Your feedback is invaluable in ensuring a safe and enjoyable experience for all passengers.
                         </p>
-                        <form class="form" id="form" action="../action/reviewdriver_action.php">
+                        <form class="form" id="form">
+                            <div id="error" class="error"></div>
+
                             <input type="text" id="firstName" name="fname" class="input-field" placeholder="Driver First Name" required>
 
                             <input type="text" id="lastName" name="lname" class="input-field" placeholder="Driver Last Name">
