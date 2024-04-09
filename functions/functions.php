@@ -2,7 +2,6 @@
 /*functions.php */
 
 require '../settings/connection.php';
-session_start();
 function error422($message)
 {
     $data = [

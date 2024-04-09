@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*reviewdriver_action.php */
 
 error_reporting(E_ALL);
