@@ -107,8 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
           //   result += "<td class='location'>" + element.location + "</td>";
           //   result += "</tr>";
           // });
-          window.location.href =
-            "../view/driverdetail.php?data=" + encodeURIComponent(result);
+          window.location.href = "../view/driverdetail.php?data=";
         }
       },
       error: (error) => {
