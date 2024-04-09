@@ -68,22 +68,22 @@ function reviewDriver($input_data)
 
 
                     if ($result3) {
-                        $sql = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum'";
-                        $result4 = mysqli_query($conn, $sql);
+                        $sql1 = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum'";
+                        $result4 = mysqli_query($conn, $sql1);
 
                         $count_drivers = mysqli_num_rows($result4);
                         if ($count_drivers == 0) {
 
-                            $sql = "INSERT INTO Driver(gender,fname,lname,tel,carid,comid) VALUES('$gender','$dfname','$dlname', '$contactNum','$car_id','$rhcomp')";
-                            $result4 = mysqli_query($conn, $sql);
+                            $sql2 = "INSERT INTO Driver(gender,fname,lname,tel,carid,comid) VALUES('$gender','$dfname','$dlname', '$contactNum','$car_id','$rhcomp')";
+                            $result4 = mysqli_query($conn, $sql2);
                             $driver = mysqli_fetch_assoc($result4);
                             $did = $driver['did'];
                             if ($result4) {
-                                $sql = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
-                                $result5 = mysqli_query($conn, $sql);
+                                $sql3 = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
+                                $result5 = mysqli_query($conn, $sql3);
                                 $user_id = $_SESSION['user_id'];
-                                $sql = "INSERT INTO DriverReviews(uid,did,rating,review_text) VALUES('$user_id','$did','$rating','$reviewDescription')";
-                                $result6 = mysqli_query($conn, $sql);
+                                $sql4 = "INSERT INTO DriverReviews(uid,did,rating,review_text) VALUES('$user_id','$did','$rating','$reviewDescription')";
+                                $result6 = mysqli_query($conn, $sql4);
 
                                 if ($result5 && $result6) {
                                     $data = [
