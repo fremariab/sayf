@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       error: (error) => {
         console.log(error);
-        var responseData = JSON.parse(error.responseText);
+        var responseData = JSON.stringify(error.responseText);
         document.getElementById("error").innerHTML = responseData.message;
       },
     });
