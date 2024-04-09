@@ -20,7 +20,7 @@ $("#submit").click(function (event) {
 
         let result = "";
 
-        response.forEach((element) => {
+        response.data.forEach((element) => {
           result += '<div class="searchresult">';
           result += '<div class="rating">';
           result += '<div class="heading"><p>RATING</p></div>';
