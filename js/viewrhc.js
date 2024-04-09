@@ -1,5 +1,5 @@
 /**viewrhc.js */
-window.addEventListener("load", (event) => {
+$("#getcompanies").click(function () {
   $.ajax({
     url: "../actions/viewrhc_action.php",
     method: "get",
