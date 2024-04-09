@@ -108,8 +108,8 @@
                     let result = "";
 
                     response.data.forEach((element) => {
-                        result += "<option value='" + element.comid + "'>";
-                        result += element.company_name + "</option>";
+                        result += "<option value='" + element. + "'>";
+                        result += element.comid + "</option>";
                     });
                     document.getElementById("rideHailingCompany").innerHTML += result;;
                 },
