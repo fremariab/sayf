@@ -1,5 +1,6 @@
 <?php
 /*functions.php */
+session_start();
 
 require '../settings/connection.php';
 function error422($message)
