@@ -111,7 +111,7 @@
                         result += "<option>";
                         result += element.comid + "</option>";
                     });
-                    document.getElementById("#rideHailingCompany").innerHTML += result;;
+                    document.getElementById("rideHailingCompany").innerHTML += result;;
                 },
                 error: function(error) {
                     // Handle error
