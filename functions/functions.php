@@ -13,6 +13,76 @@ function error422($message)
     return json_encode($data);
 }
 
+function searchDrivers($input_data)
+{
+    global $conn;
+    $keyword = validate($input_data->keyword);
+
+    if (empty($keyword)) {
+        return error422("Search field can't be blank");
+    } else {
+        $sql = "
+        SELECT 
+            Driver.did,
+            Driver.fname AS driver_fname,
+            Driver.lname AS driver_lname,
+            Driver.tel AS driver_tel,
+            Car.make AS car_make,
+            Car.model AS car_model,
+            Car.color AS car_color,
+            Car.plate_number,
+            RideHailingCompany.company_name,
+            AVG(DriverReviews.rating) AS average_rating,
+            COUNT(DriverReviews.rating) AS rating_count
+        FROM 
+            Driver
+        LEFT JOIN 
+            Car ON Driver.carid = Car.carid
+        LEFT JOIN 
+            RideHailingCompany ON Driver.comid = RideHailingCompany.comid
+        LEFT JOIN 
+            DriverReviews ON Driver.did = DriverReviews.did
+        WHERE 
+            Driver.fname LIKE '%$keyword%' OR
+            Driver.lname LIKE '%$keyword%' OR
+            Car.plate_number LIKE '%$keyword%' OR
+            CONCAT(Driver.fname, ' ', Driver.lname) LIKE '%$keyword%' OR
+            CONCAT(Driver.lname, ' ', Driver.fname) LIKE '%$keyword%'
+        GROUP BY 
+            Driver.did
+        ";
+
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $final_result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+                $data = [
+                    'status' => 200,
+                    'message' => 'Driver List Found',
+                    'data' => $final_result
+                ];
+                header("HTTP/1.0 200 Driver List Found");
+                return json_encode($data);
+            } else {
+                $data = [
+                    'status' => 404,
+                    'message' => 'No Drivers Found',
+                ];
+                header("HTTP/1.0 404 No Drivers Found");
+                return json_encode($data);
+            }
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Error',
+            ];
+            header("HTTP/1.0 500 Internal Serval Error");
+            return json_encode($data);
+        }
+    }
+}
 function reviewDriver($input_data)
 {
     global $conn;
