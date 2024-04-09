@@ -60,7 +60,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-
+    <script src="../js/search.js"></script>
 </body>
 
 </html>
