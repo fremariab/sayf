@@ -52,7 +52,7 @@ function reviewDriver($input_data)
         if (empty($rating)) {
             $rating = 0;
         }
-        $sql = "SELECT * FROM Car where where make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
+        $sql = "SELECT * FROM Car where  make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
