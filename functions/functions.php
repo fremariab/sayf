@@ -75,17 +75,17 @@ function reviewDriver($input_data)
                         if ($count_drivers == 0) {
 
                             $sql2 = "INSERT INTO Driver(gender,fname,lname,tel,carid,comid) VALUES('$gender','$dfname','$dlname', '$contactNum','$car_id','$rhcomp')";
-                            $result4 = mysqli_query($conn, $sql2);
-                            $driver = mysqli_fetch_assoc($result4);
+                            $result5 = mysqli_query($conn, $sql2);
+                            $driver = mysqli_fetch_assoc($result5);
                             $did = $driver['did'];
-                            if ($result4) {
+                            if ($result5) {
                                 $sql3 = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
-                                $result5 = mysqli_query($conn, $sql3);
+                                $result6 = mysqli_query($conn, $sql3);
                                 $user_id = $_SESSION['user_id'];
                                 $sql4 = "INSERT INTO DriverReviews(uid,did,rating,review_text) VALUES('$user_id','$did','$rating','$reviewDescription')";
-                                $result6 = mysqli_query($conn, $sql4);
+                                $result7 = mysqli_query($conn, $sql4);
 
-                                if ($result5 && $result6) {
+                                if ($result6 && $result7) {
                                     $data = [
                                         'status' => 201,
                                         'message' => 'Driver and Car Data Inserted Successfully',
