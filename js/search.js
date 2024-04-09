@@ -17,6 +17,8 @@ $("#submit").click(function (event) {
       console.log(data, status);
       if (data.status == 200) {
         response = data;
+        var resultContainer = $("#results");
+        resultContainer.empty();
 
         let result = "";
 
@@ -46,9 +48,8 @@ $("#submit").click(function (event) {
             '<div class="dcomps"><p>' + element.company_name + "</p></div>";
           result += "</div>";
           result += "</div>";
+          resultContainer.append(result);
         });
-        window.location.href =
-          "../view/searchresults.php?data=" + encodeURIComponent(result);
       }
     },
     error: (error) => {
