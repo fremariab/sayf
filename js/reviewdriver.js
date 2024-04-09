@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     $.ajax({
-      url: "../actions/addrhc_action.php",
+      url: "../actions/reviewdriver_action.php",
       method: "post",
       data: JSON.stringify({
         dfname: dfname,
