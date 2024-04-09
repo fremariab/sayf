@@ -37,6 +37,8 @@ function reviewDriver($input_data)
         return error422("Gender can't be blank");
     } else if (empty($rhcomp)) {
         return error422("Ride-Hailing Company Name can't be blank");
+    } else if (empty($rating)) {
+        return error422("Rating can't be blank");
     } else if (empty($carMake)) {
         return error422("Car Make can't be blank");
     } else if (empty($carModel)) {
@@ -86,10 +88,38 @@ function reviewDriver($input_data)
                                     header("HTTP/1.0 201 Driver and Car Data Inserted Successfully");
                                     echo json_encode($data);
                                 }
+                            } else {
+                                $data = [
+                                    'status' => 500,
+                                    'message' => 'Internal Server Error',
+                                ];
+                                header("HTTP/1.0 500 Internal Server Error");
+                                echo json_encode($data);
                             }
+                        } else {
+                            $data = [
+                                'status' => 422,
+                                'message' => 'Driver already exists',
+                            ];
+                            header("HTTP/1.0 422 Driver already exists");
+                            echo json_encode($data);
                         }
                     }
+                } else {
+                    $data = [
+                        'status' => 500,
+                        'message' => 'Internal Server Error',
+                    ];
+                    header("HTTP/1.0 500 Internal Server Error");
+                    echo json_encode($data);
                 }
+            } else {
+                $data = [
+                    'status' => 422,
+                    'message' => 'Car already exists',
+                ];
+                header("HTTP/1.0 422 Car already exists");
+                echo json_encode($data);
             }
         } else {
             $data = [
