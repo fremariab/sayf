@@ -6,7 +6,7 @@ window.addEventListener("load", (event) => {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
-      if (data.status == 201) {
+      if (data.status == 200) {
         response = data;
 
         let result = "";
@@ -20,13 +20,12 @@ window.addEventListener("load", (event) => {
           result += "<td class='location'>" + element.location + "</td>";
           result += "</tr>";
         });
-        window.location.href =
-          "../admin/rhcdisplay.php?data=" + encodeURIComponent(result);
+        document.getElementById("display_rhc_data").innerHTML += result;
       }
     },
     error: (error) => {
       var responseData = JSON.parse(error.responseText);
       document.getElementById("error").innerHTML = responseData.message;
-    },
+    }
   });
 });
