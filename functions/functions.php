@@ -2,6 +2,7 @@
 /*functions.php */
 
 require '../settings/connection.php';
+session_start();
 function error422($message)
 {
     $data = [
@@ -80,8 +81,11 @@ function reviewDriver($input_data)
                             if ($result4) {
                                 $sql = "INSERT INTO DriverServiceAssignment(did,comid) VALUES('$did','$rhcomp')";
                                 $result5 = mysqli_query($conn, $sql);
+                                $user_id = $_SESSION['user_id'];
+                                $sql = "INSERT INTO DriverReviews(uid,did,rating,review_text) VALUES('$user_id','$did','$rating','$reviewDescription')";
+                                $result6 = mysqli_query($conn, $sql);
 
-                                if ($result5) {
+                                if ($result5 && $result6) {
                                     $data = [
                                         'status' => 201,
                                         'message' => 'Driver and Car Data Inserted Successfully',
