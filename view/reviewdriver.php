@@ -108,7 +108,7 @@
                     let result = "";
 
                     response.data.forEach((element) => {
-                        result += "<option value='" + element. + "'>";
+                        result += "<option value='" + element.company_name + "'>";
                         result += element.comid + "</option>";
                     });
                     document.getElementById("rideHailingCompany").innerHTML += result;;
