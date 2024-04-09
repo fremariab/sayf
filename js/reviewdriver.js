@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var dlname = $("#lastName").val();
     var contactNum = $("#phone_number").val();
     var starrating = selectedStar;
-    var selectedCompany = $(this).val();
+    var selectedCompany = selectedCompany;
     var gender = $("input[name='gender']:checked").val();
     var carMake = $("#carMake").val();
     var carModel = $("#carModel").val();
