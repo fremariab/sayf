@@ -1,6 +1,5 @@
 <?php
-session_start();
-/*reviewdriver_action.php */
+ /*reviewdriver_action.php */
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
