@@ -108,7 +108,18 @@
                             value: comid,
                             text: comid
                         }));
+                    })
+
+
+                    response = data;
+
+                    let result = "";
+
+                    response.data.forEach((element) => {
+                        result += "<option>";
+                        result += element.comid + "</option>";
                     });
+                    document.getElementById("#rideHailingCompany").innerHTML += result;;
                 },
                 error: function(error) {
                     // Handle error
