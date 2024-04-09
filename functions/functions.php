@@ -50,7 +50,7 @@ function reviewDriver($input_data)
         return error422("Review Description can't be blank");
     } else {
         if (empty($rating)) {
-            $rating = 0;
+            $rating = 1;
         }
         $sql = "SELECT * FROM Car where  make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
         $result = mysqli_query($conn, $sql);
