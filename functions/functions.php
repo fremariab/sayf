@@ -64,7 +64,7 @@ function reviewDriver($input_data)
                     $sql = "SELECT * FROM Car where make='$carMake' and model='$carModel' and color='$carColor' and plate_number='$plateNumber'";
                     $result3 = mysqli_query($conn, $sql);
                     $car = mysqli_fetch_assoc($result3);
-                    $car_id = $car['car_id'];
+                    $car_id = $car['carid'];
 
 
                     if ($result3) {
