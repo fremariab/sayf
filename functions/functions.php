@@ -37,8 +37,6 @@ function reviewDriver($input_data)
         return error422("Gender can't be blank");
     } else if (empty($rhcomp)) {
         return error422("Ride-Hailing Company Name can't be blank");
-    } else if (empty($rating)) {
-        $rating = 0;
     } else if (empty($carMake)) {
         return error422("Car Make can't be blank");
     } else if (empty($carModel)) {
@@ -50,6 +48,9 @@ function reviewDriver($input_data)
     } else if (empty($reviewDescription)) {
         return error422("Review Description can't be blank");
     } else {
+        if (empty($rating)) {
+            $rating = 0;
+        }
         $sql = "SELECT * FROM Car where plate_number='$plateNumber'";
         $result = mysqli_query($conn, $sql);
 
