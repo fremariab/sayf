@@ -20,20 +20,30 @@ $("#submit").click(function (event) {
 
         let result = "";
 
-        searchResults.forEach(function (result) {
+        response.forEach(function (element) {
           result += '<div class="searchresult">';
           result += '<div class="rating">';
           result += '<div class="heading"><p>RATING</p></div>';
-          result += '<div class="ratingbox"><p>' + result.rating + "</p></div>";
+          result +=
+            '<div class="ratingbox"><p>' +
+            element.average_rating +
+            "</p></div>";
           result +=
             '<div class="text"><p>' +
-            result.ratingsCount +
+            element.rating_count +
             " ratings</p></div>";
           result += "</div>";
           result += '<div class="details">';
-          result += '<div class="dname"><p>' + result.name + "</p></div>";
-          result += '<div class="dcplate"><p>' + result.plate + "</p></div>";
-          result += '<div class="dcomps"><p>' + result.companies + "</p></div>";
+          result +=
+            '<div class="dname"><p>' +
+            element.driver_fname +
+            " " +
+            element.driver_lname +
+            "</p></div>";
+          result +=
+            '<div class="dcplate"><p>' + element.plate_number + "</p></div>";
+          result +=
+            '<div class="dcomps"><p>' + element.company_name + "</p></div>";
           result += "</div>";
           result += "</div>";
         });
