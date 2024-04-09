@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers: Content-Type,Access-Control-Allow-Headers,
 
 include('../functions/functions.php');
 
-$inputData = json_decode(file_get_contents("php://input"));
+$inputData = json_decode(file_get_contents("php://input"), true);
 
 $res;
 
