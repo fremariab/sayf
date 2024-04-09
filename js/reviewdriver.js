@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const stars = document.querySelectorAll(".stars i");
 
   let selectedStar = 0;
+  let selectedCompany = "";
 
   stars.forEach((star, index1) => {
     star.addEventListener("click", () => {
@@ -15,8 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  var selectedCompany = $(this).val();
-
+  $("#rideHailingCompany").change(function () {
+    selectedCompany = $(this).val();
+  });
   $("#submit").click(function (event) {
     event.preventDefault();
     var dfname = $("#firstName").val();
