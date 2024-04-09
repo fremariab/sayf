@@ -38,7 +38,7 @@ function reviewDriver($input_data)
     } else if (empty($rhcomp)) {
         return error422("Ride-Hailing Company Name can't be blank");
     } else if (empty($rating)) {
-        return $rating = 0;
+        $rating = 0;
     } else if (empty($carMake)) {
         return error422("Car Make can't be blank");
     } else if (empty($carModel)) {
