@@ -74,7 +74,7 @@ function searchDrivers($input_data)
             Car.color AS car_color,
             Car.plate_number,
             RideHailingCompany.company_name,
-            ROUND(AVG(DriverReviews.rating), 2) AS average_rating,
+            ROUND(AVG(DriverReviews.rating), 0) AS average_rating,
             COUNT(DriverReviews.rating) AS rating_count
         FROM 
             Driver
