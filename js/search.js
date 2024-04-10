@@ -58,6 +58,12 @@ $("#submit").click(function (event) {
             result +=
               '<div class="dcomps"><p>' + element.company_name + "</p></div>";
             result += "</div>";
+            result += '<div class="link">';
+            result +=
+              "<a href='../view/driverdetails.php?did=" +
+              element.did +
+              "'> View Driver Details </a>";
+            result += "</div>";
             result += "</div>";
 
             if (

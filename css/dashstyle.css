@@ -368,32 +368,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-/* 
-.main_content .info .results {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
 
-.main_content .info .results {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.main_content .info .results .searchresult .rating {
-  margin-left: 50px;
-}
-.main_content .info .results .searchresult .rating .heading {
-  display: flex;
-  width: 80px;
-  justify-content: center;
-  align-items: center;
-} */
 .main_content .info .results {
   display: flex;
   justify-content: center;
@@ -403,14 +378,30 @@ button {
 }
 
 .main_content .info .results .searchresult {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  width: calc(50% - 40px); /* Adjust the width according to your layout */
+  border: #000 1px solid;
+  width: 75%;
+  margin-bottom: 30px;
+  display: flex;
+  padding: 10px;
 }
 
 .main_content .info .results .searchresult .rating {
-  margin-left: 0; /* Adjust as needed */
+  padding: 20px;
+  margin-left: 55px;
+  margin-right: 35px;
+}
+
+.main_content .info .results .searchresult .link {
+  padding: 20px;
+  margin-left: 65px;
+  margin-top: 60px;
+}
+
+.main_content .info .results .searchresult .link a {
+  font-style: italic;
+  color: #54177c;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .main_content .info .results .searchresult .rating .heading {
@@ -419,8 +410,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-/* Rest of your CSS styles for the rating, name, plate, and company */
 
 .main_content .info .results .searchresult .rating .heading p {
   text-align: center;
@@ -456,8 +445,9 @@ button {
 }
 
 .main_content .info .results .searchresult .details {
-  margin-left: 90px;
-  margin-top: 20px;
+  margin-left: 40px;
+  margin-top: 40px;
+  justify-content: right;
 }
 
 .main_content .info .results .searchresult .details .dname {

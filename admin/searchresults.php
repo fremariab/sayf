@@ -23,8 +23,7 @@
                 <li><a href="../admin/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
                 <li><a href="../admin/addrhc.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
                 <li><a href="../admin/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"
-                            style="margin-top: 135px;"></i> Logout</a></li>
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
             </ul>
 
         </div>
@@ -102,64 +101,8 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="results" id="results">
-                    <div class="searchresult" id="searchresult">
-                        <div class="rating" id="rating">
-                            <div class="heading">
-                                <p>RATING</p>
-                            </div>
-                            <div class="ratingbox" id="ratingbox">
-                                <p>
-                                    2.7
-                                </p>
-                            </div>
-                            <div class="text" id="text">
-                                <p>13 ratings</p>
-                            </div>
-                        </div>
-                        <div class="details" id="details">
-                            <div class="dname" id="dname">
-                                <p id="dname">Opoku Ware</p>
-                            </div>
-                            <div class="dcplate" id="dcplate">
-                                <p id="dcplate">GZ 912-302</p>
-                            </div>
-                            <div class="dcomps" id="dcomps">
-                                <p id="dcomps"> Uber, Bolt, Yango
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="searchresultwrapper">
-
-                    </div>
-                    <div class="searchresult" id="searchresult">
-                        <div class="rating" id="rating">
-                            <div class="heading">
-                                <p>RATING</p>
-                            </div>
-                            <div class="ratingbox" id="ratingbox">
-                                <p>
-                                    2.7
-                                </p>
-                            </div>
-                            <div class="text" id="text">
-                                <p>13 ratings</p>
-                            </div>
-                        </div>
-                        <div class="details" id="details">
-                            <div class="dname" id="dname">
-                                <p id="dname">Opoku Ware</p>
-                            </div>
-                            <div class="dcplate" id="dcplate">
-                                <p id="dcplate">GZ 912-302</p>
-                            </div>
-                            <div class="dcomps" id="dcomps">
-                                <p id="dcomps"> Uber, Bolt, Yango
-                                </p>
-                            </div>
+                        <div class="link" id="link">
+                            <a href="" id="link">View Driver Details</a>
                         </div>
                     </div>
                 </div>
