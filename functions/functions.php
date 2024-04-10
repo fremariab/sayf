@@ -16,13 +16,13 @@ function error422($message)
 function getProfile()
 {
     global $conn;
-    $user_id = $_SESSION['user_id'];
+    $userid = $_SESSION['user_id'];
     $sql = "SELECT User.*, DriverReviews.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
     COUNT(Post.posid) AS postcount
     FROM User 
     LEFT JOIN DriverReviews ON User.uid = DriverReviews.uid 
     LEFT JOIN Post ON User.uid = Post.creator 
-    WHERE User.uid = '$user_id'";
+    WHERE User.uid = '$userid'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
