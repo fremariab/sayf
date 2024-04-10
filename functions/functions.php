@@ -26,7 +26,7 @@ function getProfile()
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        if (mysqli_num_rows($result) == 0) {
+        if (mysqli_num_rows($result) == 1) {
             $final_result = mysqli_fetch_assoc($result);
 
             $data = [
