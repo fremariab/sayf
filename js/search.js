@@ -84,60 +84,60 @@ $("#submit").click(function (event) {
     success: (data, status) => {
       console.log(data, status);
       if (data.status == 200) {
-        // var response = data;
-        // var resultContainer = $("#results");
-        // resultContainer.empty();
+        var response = data;
+        var resultContainer = $("#results");
+        resultContainer.empty();
 
-        // var results = response.data;
-        // if (results.length === 0) {
-        //   resultContainer.html("<p>No results found</p>");
-        // } else {
-        //   var resultsPerRow = 2;
-        //   var result = "";
+        var results = response.data;
+        if (results.length === 0) {
+          resultContainer.html("<p>No results found</p>");
+        } else {
+          var resultsPerRow = 2;
+          var result = "";
 
-        //   for (var index = 0; index < results.length; index++) {
-        //     if (index % resultsPerRow === 0) {
-        //       resultContainer.append('<div class="row">');
-        //     }
+          for (var index = 0; index < results.length; index++) {
+            if (index % resultsPerRow === 0) {
+              resultContainer.append('<div class="row">');
+            }
 
-        //     var element = results[index];
-        //     result += '<div class="searchresult">';
-        //     result += '<div class="rating">';
-        //     result += '<div class="heading"><p>RATING</p></div>';
-        //     result +=
-        //       '<div class="ratingbox"><p>' +
-        //       element.average_rating +
-        //       "</p></div>";
-        //     result +=
-        //       '<div class="text"><p>' +
-        //       element.rating_count +
-        //       " ratings</p></div>";
-        //     result += "</div>";
-        //     result += '<div class="details">';
-        //     result +=
-        //       '<div class="dname"><p>' +
-        //       element.driver_fname +
-        //       " " +
-        //       element.driver_lname +
-        //       "</p></div>";
-        //     result +=
-        //       '<div class="dcplate"><p>' + element.plate_number + "</p></div>";
-        //     result +=
-        //       '<div class="dcomps"><p>' + element.company_name + "</p></div>";
-        //     result += "</div>";
-        //     result += "</div>";
+            var element = results[index];
+            result += '<div class="searchresult">';
+            result += '<div class="rating">';
+            result += '<div class="heading"><p>RATING</p></div>';
+            result +=
+              '<div class="ratingbox"><p>' +
+              element.average_rating +
+              "</p></div>";
+            result +=
+              '<div class="text"><p>' +
+              element.rating_count +
+              " ratings</p></div>";
+            result += "</div>";
+            result += '<div class="details">';
+            result +=
+              '<div class="dname"><p>' +
+              element.driver_fname +
+              " " +
+              element.driver_lname +
+              "</p></div>";
+            result +=
+              '<div class="dcplate"><p>' + element.plate_number + "</p></div>";
+            result +=
+              '<div class="dcomps"><p>' + element.company_name + "</p></div>";
+            result += "</div>";
+            result += "</div>";
 
-        //     if (
-        //       (index + 1) % resultsPerRow === 0 ||
-        //       index === results.length - 1
-        //     ) {
-        //       resultContainer.append(result);
-        //       resultContainer.append("</div>");
-        //       result = "";
-        //     }
-        //   }
-        // }
-        console.log("succesful");
+            if (
+              (index + 1) % resultsPerRow === 0 ||
+              index === results.length - 1
+            ) {
+              resultContainer.append(result);
+              resultContainer.append("</div>");
+              result = "";
+            }
+          }
+        }
+        console.log("successful");
       }
     },
     error: (error) => {
