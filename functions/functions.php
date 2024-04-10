@@ -17,10 +17,10 @@ function getProfile()
 {
     global $conn;
     $user_id = $_SESSION['user_id'];
-    $sql = "SELECT User.*, Review.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
+    $sql = "SELECT User.*, DriverReviews.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
     COUNT(Post.posid) AS postcount
     FROM User 
-    LEFT JOIN Review ON User.uid = DriverReviews.uid 
+    LEFT JOIN DriverReviews ON User.uid = DriverReviews.uid 
     LEFT JOIN Post ON User.uid = Post.creator 
     WHERE User.uid = '$user_id'";
     $result = mysqli_query($conn, $sql);
