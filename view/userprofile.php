@@ -24,8 +24,7 @@
 
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"
-                            style="margin-top: 135px;"></i> Logout</a></li>
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
 
             </ul>
 
@@ -37,17 +36,17 @@
             <div class="info">
                 <div class="userprof">
                     <div class="username" id="username">
-                        <h1>@shushubities</h1>
-                        <span>juliefox@gmail.com</span>
+                        <h1 id="usernameh1">@ </h1>
+                        <span id="email"> </span>
                     </div>
                     <div class="profdescription">
                         <p><i>Contact:</i></p>
 
-                        <p>0555300887</p>
+                        <p id="contact"> </p>
                     </div>
                     <ul class="profstats">
-                        <li><span>65</span>Reviews</li>
-                        <li><span>43</span>Posts</li>
+                        <li><span id="numreviews"> </span>Reviews</li>
+                        <li><span id="numposts"> </span>Posts</li>
                     </ul>
                 </div>
 
@@ -56,7 +55,7 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-
+    <script src="profile.js"></script>
 </body>
 
 </html>
