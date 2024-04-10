@@ -10,6 +10,6 @@ header('Access-Control-Allow-Headers: Content-Type,Access-Control-Allow-Headers,
 
 include('../functions/functions.php');
 
-// $getProfile = getProfile();
+$getProfile = getProfile();
 
-// echo $getProfile;
+echo $getProfile;
