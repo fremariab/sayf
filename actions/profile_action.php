@@ -3,6 +3,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 session_start();
+echo "USER ID IS:";
 echo $_SESSION['user_id'];
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
