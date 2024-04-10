@@ -20,7 +20,7 @@ function getProfile()
     $sql = "SELECT User.*, Review.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
     COUNT(Post.posid) AS postcount
     FROM User 
-    LEFT JOIN Review ON User.uid = Review.uid 
+    LEFT JOIN Review ON User.uid = DriverReviews.uid 
     LEFT JOIN Post ON User.uid = Post.creator 
     WHERE User.uid = '$user_id'";
     $result = mysqli_query($conn, $sql);
