@@ -1,5 +1,6 @@
 /**viewrhc.js */
-$("#getcompanies").click(function () {
+document.addEventListener("DOMContentLoaded", function () {
+  // $("#getcompanies").click(function () {
   $.ajax({
     url: "../actions/viewrhc_action.php",
     method: "get",
@@ -20,12 +21,13 @@ $("#getcompanies").click(function () {
           result += "<td class='location'>" + element.location + "</td>";
           result += "</tr>";
         });
+
         document.getElementById("display_rhc_data").innerHTML += result;
       }
     },
     error: (error) => {
       var responseData = JSON.parse(error.responseText);
       document.getElementById("error").innerHTML = responseData.message;
-    }
+    },
   });
 });
