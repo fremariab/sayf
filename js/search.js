@@ -142,7 +142,7 @@ $("#submit").click(function (event) {
     error: (error) => {
       // var responseData = JSON.parse(error.responseText);
       // document.getElementById("error").innerHTML = responseData.message;
-      console.log(error);
+      console.log("this is an erro");
     },
   });
 });
