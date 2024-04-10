@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(data, status);
       if (data.status == 200) {
         response = data;
+        console.log("working");
 
         document.getElementById("usernameh1").innerHTML =
           response.data.username;
