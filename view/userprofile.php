@@ -36,8 +36,7 @@
              <div class="info">
                  <div class="userprof">
                      <div class="username" id="username">
-                         <h1 id="usernameh1">@<?php session_start();
-                                                echo $_SESSION['user_id'] ?> </h1>
+                         <h1 id="usernameh1">@ </h1>
                          <span id="email"> </span>
                      </div>
                      <div class="profdescription">

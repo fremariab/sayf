@@ -173,14 +173,14 @@ function reviewDriver($input_data)
                 $sql = "INSERT INTO Car(make,model,color,plate_number) VALUES('$carMake','$carModel', '$carColor','$plateNumber')";
                 $result2 = mysqli_query($conn, $sql);
                 if ($result2) {
-                    $sql = "SELECT * FROM Car";
+                    $sql = "SELECT * FROM Car ORDER BY carid DESC LIMIT 1";
                     $result3 = mysqli_query($conn, $sql);
                     $car = mysqli_fetch_assoc($result3);
                     $car_id = $car['carid'];
 
 
                     if ($result3) {
-                        $sql1 = "SELECT * FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum'";
+                        $sql1 = "SELECT carid FROM Driver where comid='$rhcomp'and  carid='$car_id' and fname='$dfname' and lname='$dlname' and tel='$contactNum'";
                         $result4 = mysqli_query($conn, $sql1);
 
                         $count_drivers = mysqli_num_rows($result4);
@@ -193,7 +193,7 @@ function reviewDriver($input_data)
 
                             if ($result5) {
 
-                                $sql = "SELECT * FROM Driver";
+                                $sql = "SELECT did FROM Driver ORDER BY did DESC LIMIT 1";
                                 $resultt = mysqli_query($conn, $sql);
                                 $driver = mysqli_fetch_assoc($resultt);
                                 $did = $driver['did'];
