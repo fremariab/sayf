@@ -55,7 +55,7 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-    <script src="profile.js"></script>
+    <script src="../js/profile.js"></script>
 </body>
 
 </html>
