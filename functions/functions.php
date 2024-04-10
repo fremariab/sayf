@@ -32,8 +32,8 @@ function searchDrivers($input_data)
             Car.color AS car_color,
             Car.plate_number,
             RideHailingCompany.company_name,
-            AVG(Driver.rating) AS average_rating,
-            COUNT(Driver.rating) AS rating_count
+            AVG(DriverReviews.rating) AS average_rating,
+            COUNT(DriverReviews.rating) AS rating_count
         FROM 
             Driver
         LEFT JOIN 
