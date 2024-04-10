@@ -375,6 +375,7 @@ button {
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  width: 80%;
 }
 
 .main_content .info .results .searchresult {
