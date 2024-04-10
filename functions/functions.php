@@ -32,7 +32,8 @@ function getProfile()
             $data = [
                 'status' => 200,
                 'message' => 'Profile Details Found',
-                'data' => $final_result
+                'data' => $final_result,
+                'user_id' => $userid
             ];
             header("HTTP/1.0 200 Profile Details Found");
             return json_encode($data);
