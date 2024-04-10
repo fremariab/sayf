@@ -13,6 +13,47 @@ function error422($message)
     return json_encode($data);
 }
 
+function getProfile()
+{
+    global $conn;
+    $user_id = $_SESSION['user_id'];
+    $sql = "SELECT User.*, Review.*, Post.*, COUNT(DriverReviews.revid) AS reviewcount,
+    COUNT(Post.posid) AS postcount
+    FROM User 
+    LEFT JOIN Review ON User.uid = Review.uid 
+    LEFT JOIN Post ON User.uid = Post.creator 
+    WHERE User.uid = '$user_id'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        if (mysqli_num_rows($result) == 0) {
+            $final_result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            $data = [
+                'status' => 200,
+                'message' => 'Profile Details Found',
+                'data' => $final_result
+            ];
+            header("HTTP/1.0 200 Profile Details Found");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 404,
+                'message' => 'No Profile Found',
+            ];
+            header("HTTP/1.0 404 No Profile Found");
+            return json_encode($data);
+        }
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Error',
+        ];
+        header("HTTP/1.0 500 Internal Serval Error");
+        return json_encode($data);
+    }
+}
+
 function searchDrivers($input_data)
 {
     global $conn;
