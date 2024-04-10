@@ -368,7 +368,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-
+/* 
 .main_content .info .results {
   display: flex;
   justify-content: center;
@@ -393,7 +393,34 @@ button {
   width: 80px;
   justify-content: center;
   align-items: center;
+} */
+.main_content .info .results {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
+
+.main_content .info .results .searchresult {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: calc(50% - 40px); /* Adjust the width according to your layout */
+}
+
+.main_content .info .results .searchresult .rating {
+  margin-left: 0; /* Adjust as needed */
+}
+
+.main_content .info .results .searchresult .rating .heading {
+  display: flex;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Rest of your CSS styles for the rating, name, plate, and company */
 
 .main_content .info .results .searchresult .rating .heading p {
   text-align: center;
