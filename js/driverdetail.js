@@ -24,13 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
           response.data.company_name;
         document.getElementById("avgrating").innerHTML =
           response.data.average_rating;
-        document.getElementById("gender").innerHTML = response.data.gender;
         document.getElementById("cardetails").innerHTML =
           response.data.car_color +
           "" +
           response.data.car_make +
           "" +
           response.data.car_model;
+        if (response.data.gender == 1) {
+          document.getElementById("gender").innerHTML = "Male";
+        } else {
+          document.getElementById("gender").innerHTML = "Female";
+        }
       }
     },
     error: (error) => {

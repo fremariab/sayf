@@ -35,16 +35,16 @@
             <div class="info">
                 <div class="userprof">
                     <div class="username" id="username">
-                        <h1 id="drivername">Kofi Larbi </h1>
-                        <span id="contact"> 0554387549 </span>
+                        <h1 id="drivername"> </h1>
+                        <span id="contact"> </span>
                         <span> | </span>
-                        <span id="gender"> Male </span>
+                        <span id="gender"> </span>
                     </div>
 
                     <div class="profdescription">
-                        <p id="cardetails"> Red Kia Picanto</p>
-                        <p id="carplate"> GXPLSKA</p>
-                        <p id="rhcomp"> Uber</p>
+                        <p id="cardetails"> </p>
+                        <p id="carplate"> </p>
+                        <p id="rhcomp"> </p>
 
                     </div>
                     <ul class="profstats">
