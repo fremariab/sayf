@@ -9,11 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   var driverId = getUrlParameter("did");
-  console.log(driverId);
-  $.ajax({
+   $.ajax({
     url: "../actions/driverdetail_action.php",
     method: "get",
-    data: { driverId: driverId },
+    data: JSON.stringify({ driverId: driverId }),
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
