@@ -56,9 +56,7 @@
 
                             </select>
 
-                            <select id="companySelect" name="comid" required>
-                                <option value="">Select Company Name</option>
-                            </select>
+
                             <br>
 
                             <label for="incidentDate">Incident Description:</label>
@@ -81,28 +79,6 @@
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $.ajax({
-                url: '../actions/viewrhc_action.php',
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    response = data;
-
-                    let result = "";
-
-                    response.data.forEach((element) => {
-                        result += "<option value='" + element.comid + "'>";
-                        result += element.company_name + "</option>";
-                    });
-                    document.getElementById("companySelect").innerHTML += result;;
-                },
-                error: function(error) {
-                    console.error('Error fetching ride-hailing companies:', error);
-                }
-            });
-
-        });
         $(document).ready(function() {
             $.ajax({
                 url: '../actions/viewdriver_action.php',

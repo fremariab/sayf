@@ -13,6 +13,44 @@ function error422($message)
     return json_encode($data);
 }
 
+function viewIncidentReport()
+{
+    global $conn;
+
+    $sql = "SELECT * FROM IncidentReport LEFT JOIN Driver ON  IncidentReport.did = Driver.did 
+    LEFT JOIN User ON  IncidentReport.uid = User.uid
+    LEFT JOIN DriverServiceAssignment ON  IncidentReport.did = DriverServiceAssignment.did
+    LEFT JOIN RideHailingCompany ON  DriverServiceAssignment.comid = RideHailingCompany.comid";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        if (mysqli_num_rows($result) > 0) {
+            $final_result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            $data = [
+                'status' => 200,
+                'message' => 'Incident Report List Found',
+                'data' => $final_result
+            ];
+            header("HTTP/1.0 200 Incident Report Found");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 404,
+                'message' => 'No Reports Found',
+            ];
+            header("HTTP/1.0 404 No Reports Found");
+            return json_encode($data);
+        }
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Error',
+        ];
+        header("HTTP/1.0 500 Internal Serval Error");
+        return json_encode($data);
+    }
+}
 function viewDriverList()
 {
     global $conn;
@@ -75,6 +113,44 @@ function pagereviewDriver($input_data)
                 'message' => 'Review Inserted Successfully',
             ];
             header("HTTP/1.0 201 Review Inserted Successfully");
+            echo json_encode($data);
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Errorr',
+            ];
+            header("HTTP/1.0 500 Internal Serval Errorr");
+            return json_encode($data);
+        }
+    }
+}
+function reportIncident($input_data)
+{
+    global $conn;
+
+    $selectedDriver = validate($input_data->selectedDriver);
+    $incidentDate = validate($input_data->incidentDate);
+    $incidentDescription = validate($input_data->incidentDescription);
+
+
+    if (empty($selectedDriver)) {
+        return error422("Selected Driver can't be blank");
+    } else  if (empty($incidentDescription)) {
+        return error422("Incident Description can't be blank");
+    } else  if (empty($incidentDate)) {
+        return error422("Incident Date can't be blank");
+    } else {
+
+        $user_id = $_SESSION['user_id'];
+        $sql = "INSERT INTO IncidentReport(uid,did,report_description,incident_date) VALUES('$user_id','$selectedDriver','$incidentDescription','$incidentDate')";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $data = [
+                'status' => 201,
+                'message' => 'Incident Inserted Successfully',
+            ];
+            header("HTTP/1.0 201 Incident Inserted Successfully");
             echo json_encode($data);
         } else {
             $data = [

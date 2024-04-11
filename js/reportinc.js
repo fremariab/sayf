@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedCompany = "";
   let selectedDriver = "";
 
-  $("#companySelect").change(function () {
-    selectedCompany = $(this).val();
-  });
-
   $("#driverSelect").change(function () {
     selectedDriver = $(this).val();
   });
@@ -21,16 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Selected Driver can't be blank");
       return false;
     }
-    if (selectedCompany == null || selectedCompany.trim() === "") {
-      alert("Selected Company can't be blank");
-      return false;
-    }
+
     if (incidentDate == null || incidentDate.trim() === "") {
-      alert("Car Plate Number can't be blank");
+      alert("IncidentDate can't be blank");
       return false;
     }
     if (incidentDescription == null || incidentDescription.trim() === "") {
-      alert("Review Description can't be blank");
+      alert("Incident Description can't be blank");
       return false;
     }
 
@@ -39,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "post",
       data: JSON.stringify({
         selectedDriver: selectedDriver,
-        selectedCompany: selectedCompany,
         incidentDescription: incidentDescription,
         incidentDate: incidentDate,
       }),
@@ -47,8 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
       success: (data, status) => {
         console.log(data, status);
         if (data.status == 201) {
-          window.location.href = "../view/driverdetails.php";
+          response = data;
+
+          let result = "";
         }
+        window.location.href = "../view/viewreport.php";
+        // }
       },
       error: (error) => {
         console.log(error);

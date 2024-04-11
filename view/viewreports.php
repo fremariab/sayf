@@ -29,19 +29,21 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">All Ride-Hailing Companies</div>
+                <div class="headtext">View Reports</div>
             </div>
             <div class="info">
                 <table>
                     <thead>
                         <tr>
-                            <th>Ride-Hailing Company Name</th>
-                            <th>Location</th>
-                            <th>Contact Number</th>
-                            <th>Email</th>
+                            <!-- <th>User Email</th> -->
+                            <th>Driver</th>
+                            <th>Company</th>
+                            <th>Incident Date</th>
+                            <th>Incident Description</th>
+
                         </tr>
                     </thead>
-                    <tbody id="display_rhc_data">
+                    <tbody id="display_report_data">
 
 
                     </tbody>
@@ -51,9 +53,8 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-    <script src="../js/viewrhc.js">
-        const urlParams = new URLSearchParams(window.location.search);
-        const data = decodeURIComponent(urlParams.get('data'));
+    <script src="../js/viewreport.js">
+
     </script>
 </body>
 
