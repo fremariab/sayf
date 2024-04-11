@@ -50,7 +50,7 @@
                         <p>Your report will help us maintain a safe and
                             welcoming community for everyone.</p>
                         <div class="error" id="error"></div>
-                        <form class="form" id="form">
+                        <form class="form" id="form" method="post">
                             <select id="driverSelect" name="did" required>
                                 <option value="">Select Driver Name</option>
 
