@@ -691,7 +691,8 @@ tbody td {
   padding: 20px;
   width: 80%;
   display: block;
-  min-height: 200px;
+  min-height: 100px;
+  height: max-content;
   border-radius: 10px;
   transition: all 0.2s;
   grid-template-rows: 20px 50px 1fr 50px;

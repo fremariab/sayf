@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (i <= rating) {
         starsHtml += '<i class="fa-solid fa-star" style="color:#ff9c1a"></i>';
       } else {
-        starsHtml += '<i class="fa-regular fa-star"></i>';
+        starsHtml += '<i class="fa-regular fa-star" style="color:#ff9c1a"></i>';
       }
     }
     return starsHtml;
