@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         buttonres +=
           "<a style='display:flex;justify-content:center;' href='../view/pagereviewdriver.php?did=" +
-          response.data.did +
+          driverId +
           "'>";
         buttonres +=
           "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
