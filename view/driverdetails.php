@@ -54,7 +54,7 @@
                     <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
 
                     </div>
-                    <div id="reviews" style="display:block;justify-content:center;">
+                    <div id="reviews">
 
 
                     </div>
