@@ -23,7 +23,11 @@ $("#submit").click(function (event) {
     success: (data, status) => {
       console.log(data, status);
       if (data.status == 200) {
-        window.location.href = "../view/userdash.php";
+        if (response.data.user_role == 1) {
+          window.location.href = "../admin/admindash.php";
+        } else {
+          window.location.href = "../view/userdash.php";
+        }
       }
     },
     error: (error) => {

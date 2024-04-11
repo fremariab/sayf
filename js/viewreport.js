@@ -12,20 +12,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let result = "";
 
-        response.data.forEach((element) => {
-          result += "<tr>";
-          result +=
-            "<td class='rhcname'>" +
-            element.fname +
-            " " +
-            element.lname +
-            "</td>";
-          result += "<td class='contactnum'>" + element.company_name + "</td>";
-          result += "<td class='email'>" + element.incident_date + "</td>";
-          result +=
-            "<td class='location'>" + element.report_description + "</td>";
-          result += "</tr>";
-        });
+        if (response.data.user_role == 1) {
+          response.data.forEach((element) => {
+            result += "<tr>";
+            result += "<td class='rhcname'>" + element.username + "</td>";
+            result +=
+              "<td class='rhcname'>" +
+              element.fname +
+              " " +
+              element.lname +
+              "</td>";
+            result +=
+              "<td class='contactnum'>" + element.company_name + "</td>";
+            result += "<td class='email'>" + element.incident_date + "</td>";
+            result +=
+              "<td class='location'>" + element.report_description + "</td>";
+            result += "</tr>";
+          });
+        } else {
+          response.data.forEach((element) => {
+            result += "<tr>";
+            result +=
+              "<td class='rhcname'>" +
+              element.fname +
+              " " +
+              element.lname +
+              "</td>";
+            result +=
+              "<td class='contactnum'>" + element.company_name + "</td>";
+            result += "<td class='email'>" + element.incident_date + "</td>";
+            result +=
+              "<td class='location'>" + element.report_description + "</td>";
+            result += "</tr>";
+          });
+        }
 
         document.getElementById("display_report_data").innerHTML += result;
       }

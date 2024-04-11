@@ -22,6 +22,7 @@ function viewIncidentReport()
     LEFT JOIN DriverServiceAssignment ON  IncidentReport.did = DriverServiceAssignment.did
     LEFT JOIN RideHailingCompany ON  DriverServiceAssignment.comid = RideHailingCompany.comid";
     $result = mysqli_query($conn, $sql);
+    $user_role = $_SESSION['user_role'];
 
     if ($result) {
         if (mysqli_num_rows($result) > 0) {
@@ -30,7 +31,8 @@ function viewIncidentReport()
             $data = [
                 'status' => 200,
                 'message' => 'Incident Report List Found',
-                'data' => $final_result
+                'data' => $final_result,
+                'user_role' => $user_role
             ];
             header("HTTP/1.0 200 Incident Report Found");
             return json_encode($data);
@@ -709,7 +711,9 @@ function loginUser($user_data)
                     $data = [
                         'status' => 200,
                         'message' => 'User Loggged in Successfully',
-                        'user_id' => $_SESSION['user_id']
+                        'user_id' => $_SESSION['user_id'],
+                        'user_role' => $_SESSION['user_role']
+
                     ];
                     header("HTTP/1.0 200 User Created Successfully");
                     return json_encode($data);
