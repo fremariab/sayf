@@ -17,7 +17,7 @@ function viewDriverList()
 {
     global $conn;
 
-    $sql = "SELECT * FROM Drivers";
+    $sql = "SELECT * FROM Driver";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
