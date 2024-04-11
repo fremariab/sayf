@@ -8,6 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
       ? ""
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
+
+  function createStars(rating) {
+    var starsHtml = "";
+    for (var i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        starsHtml += '<i class="fa-solid fa-star" style="color:ff9c1a"></i>';
+      } else {
+        starsHtml += '<i class="fa-regular fa-star"></i>';
+      }
+    }
+    return starsHtml;
+  }
+
   var driverId = getUrlParameter("did");
 
   $.ajax({
@@ -22,17 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let result = "";
 
-        // response.data.forEach((element) => {
-        //   result += "<tr>";
-        //   result += "<td class='rhcname'>" + element.company_name + "</td>";
-        //   result +=
-        //     "<td class='contactnum'>" + element.contact_number + "</td>";
-        //   result += "<td class='email'>" + element.email + "</td>";
-        //   result += "<td class='location'>" + element.location + "</td>";
-        //   result += "</tr>";
-        // });
+        response.data.forEach((element) => {
+          result += "<div class='card card1'>";
+          result += "<div>";
+          result += "<ul>";
+          result += createStars(element.rating);
+          result += "</ul>";
+          result += "<p class='close'></p>";
+          result += "<p class='desc' id='desc'>" + element.review_text + "</p>";
+          result += "</div>";
+          result += "</div>";
+        });
 
-        // document.getElementById("reviews").innerHTML += result;
+        document.getElementById("reviews").innerHTML += result;
       }
     },
     error: (error) => {

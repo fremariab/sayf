@@ -52,20 +52,8 @@
                         <li><span id="avgrating"> </span>Rating(s)</li>
                     </ul>
                     <div class="reviews" id="reviews">
-                        <div class="card card1">
-                            <div>
-                                <ul>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                    <li><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <p class="close"> </p>
-                            <p class="desc" id="desc">Ut enim ad minim veniam. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
 
-                        </div>
+
                     </div>
                 </div>
 
