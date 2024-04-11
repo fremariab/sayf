@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(data, status);
       if (data.status == 200) {
         response = data;
-        console.log("working");
-
+    
         document.getElementById("drivername").innerHTML =
           response.data.driver_fname + "" + response.data.driver_lname;
         document.getElementById("carplate").innerHTML =
