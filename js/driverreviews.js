@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (data.status == 200) {
         response = data;
         let result = "";
+        var reviewContainer = $("#reviews");
+        reviewContainer.empty();
         let buttonres = "";
 
         buttonres +=
@@ -43,13 +45,22 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonres +=
           "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
         buttonres += "</a>";
-        if (response.data.length === 0) {
-          result = "<div class='card card1'>No reviews found</div>";
-        } else {
-          // Display up to 2 reviews
 
-          response.data.slice(0, 2).forEach((element) => {
-            result += "<div class='card card1'>";
+        if (response.data.length === 0) {
+          reviewContainer.html(<p>No results found</p>);
+          //   result = "<div class='card card1'>No reviews found</div>";
+        } else {
+          var resultsPerRow = 2;
+
+          for (var index = 0; index < response.data.length; index++) {
+            if (index % resultsPerRow === 0) {
+              resultContainer.append('<div class="row">');
+            }
+
+            var element = results[index];
+
+
+             result += "<div class='card card1'>";
             result += "<div class='stars'>";
             result += "<ul>";
             result += createStars(element.rating);
@@ -59,15 +70,20 @@ document.addEventListener("DOMContentLoaded", function () {
             result +=
               "<p class='desc' id='desc'>" + element.review_text + "</p>";
             result += "</div>";
-          });
+ 
+            if (
+                (index + 1) % resultsPerRow === 0 ||
+                index === response.data.length - 1
+              ) {
+                reviewContainer.append(result);
+                reviewContainer.append("</div>");
+                result = "";
+              }
 
-          // If there are more than 2 reviews, add a message to see all reviews
-          if (response.data.length > 2) {
-            result += "<div class='card card1'>More reviews available</div>";
-          }
+        //   
         }
 
-        document.getElementById("reviews").innerHTML += result;
+        // document.getElementById("reviews").innerHTML += result;
         document.getElementById("reviewbutton").innerHTML += buttonres;
       }
     },
