@@ -48,8 +48,8 @@
 
                     </div>
                     <ul class="profstats">
-                        <li><span id="numreviews"> </span>Reviews</li>
-                        <li><span id="avgrating"> </span>Rating</li>
+                        <li><span id="numreviews"> </span>Review(s)</li>
+                        <li><span id="avgrating"> </span>Rating(s)</li>
                     </ul>
                     <div class="reviews" id="reviews">
                         <div class="card card1">

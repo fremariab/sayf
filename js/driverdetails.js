@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         response = data;
 
         document.getElementById("drivername").innerHTML =
-          response.data.driver_fname + "" + response.data.driver_lname;
+          response.data.driver_fname + " " + response.data.driver_lname;
         document.getElementById("carplate").innerHTML =
           response.data.plate_number;
         document.getElementById("contact").innerHTML = response.data.driver_tel;
@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
           response.data.average_rating;
         document.getElementById("cardetails").innerHTML =
           response.data.car_color +
-          "" +
+          " " +
           response.data.car_make +
-          "" +
+          " " +
           response.data.car_model;
         if (response.data.gender == 1) {
           document.getElementById("gender").innerHTML = "Male";

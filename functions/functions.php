@@ -13,6 +13,43 @@ function error422($message)
     return json_encode($data);
 }
 
+
+function getDriverReviews($input_data)
+{
+    global $conn;
+    $driverId =  $input_data->driverId;
+
+    $sql = "SELECT * FROM DriverReviews WHERE did='$driverId'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        if (mysqli_num_rows($result) > 0) {
+            $final_result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            $data = [
+                'status' => 200,
+                'message' => 'Driver Reviews Found',
+                'data' => $final_result
+            ];
+            header("HTTP/1.0 200 Driver Reviews Found");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 404,
+                'message' => 'No Reviews Found',
+            ];
+            header("HTTP/1.0 404 No Reviews Found");
+            return json_encode($data);
+        }
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Error',
+        ];
+        header("HTTP/1.0 500 Internal Serval Error");
+        return json_encode($data);
+    }
+}
 function getDriverDetails($input_data)
 {
     global $conn;
