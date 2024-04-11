@@ -40,7 +40,7 @@ function getDriverDetails($input_data)
         LEFT JOIN 
             DriverReviews ON Driver.did = DriverReviews.did
         WHERE 
-            Driver.did='$driverId";
+            Driver.did='$driverId'";
 
     $result = mysqli_query($conn, $sql);
     if ($result) {
