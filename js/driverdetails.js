@@ -1,6 +1,6 @@
 /**driverdetails.js */
 document.addEventListener("DOMContentLoaded", function () {
-   function getUrlParameter(name) {
+  function getUrlParameter(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
     var results = regex.exec(location.search);
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   var driverId = getUrlParameter("did");
-
+  console.log(driverId);
   $.ajax({
     url: "../actions/driverdetail_action.php",
     method: "get",
