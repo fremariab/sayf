@@ -22,6 +22,7 @@ $("#submit").click(function (event) {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
+      console.log(response.data.user_role);
       if (data.status == 200) {
         if (response.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
