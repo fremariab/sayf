@@ -25,7 +25,7 @@
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 65px;"></i> Logout</a></li>
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 40px;"></i> Logout</a></li>
             </ul>
 
         </div>
