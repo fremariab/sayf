@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   var driverId = getUrlParameter("did");
- 
+
   $.ajax({
     url: "../actions/driverreviews_action.php",
     method: "post",
@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
         //   result += "</tr>";
         // });
 
-        document.getElementById("reviews").innerHTML += result;
+        // document.getElementById("reviews").innerHTML += result;
       }
     },
     error: (error) => {
-      console.log("error");
+      //   console.log("error");
       //   var responseData = JSON.parse(error.responseText);
       //   document.getElementById("error").innerHTML = responseData.message;
     },

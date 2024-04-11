@@ -18,7 +18,7 @@ function getDriverReviews($input_data)
 {
     global $conn;
     $driverId =  $input_data->driverId;
- 
+
     $sql = "SELECT * FROM DriverReviews WHERE did='$driverId'";
     $result = mysqli_query($conn, $sql);
 
