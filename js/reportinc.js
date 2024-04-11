@@ -1,6 +1,5 @@
 /**reportinc.js */
 document.addEventListener("DOMContentLoaded", function () {
-  let selectedCompany = "";
   let selectedDriver = "";
 
   $("#driverSelect").change(function () {
@@ -49,8 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           let result = "";
         }
-        window.location.href = "../view/viewreport.php";
-        // }
+        window.location.href = "../view/viewreports.php";
       },
       error: (error) => {
         console.log(error);
