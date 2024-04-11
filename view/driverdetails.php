@@ -51,9 +51,25 @@
                         <li><span id="numreviews"> </span>Review(s)</li>
                         <li><span id="avgrating"> </span>Rating(s)</li>
                     </ul>
+                    <div class="reviewbutton">
+                        <a href="../view/pagereviewdriver.php"> <button>Review Driver</button>
+                        </a>
+                    </div>
                     <div class="reviews" id="reviews">
+                        <div class="card card1">
+                            <div>
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <p class="close"> </p>
+                            <p class="desc" id="desc"></p>
 
-
+                        </div>
                     </div>
                 </div>
 

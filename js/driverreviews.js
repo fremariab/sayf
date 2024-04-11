@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<ul>";
           result += createStars(element.rating);
           result += "</ul>";
+          result += "</div>";
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.review_text + "</p>";
-          result += "</div>";
           result += "</div>";
         });
 
