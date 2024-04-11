@@ -78,6 +78,7 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
+    <script src="../js/reportinc.js"></script>
     <script>
         $(document).ready(function() {
             $.ajax({
