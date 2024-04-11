@@ -14,12 +14,50 @@ function error422($message)
 }
 
 
+function pagereviewDriver($input_data)
+{
+    global $conn;
+
+    $rating = validate($input_data->rating);
+    $driverID = $input_data->driverId;
+    $reviewDescription = validate($input_data->reviewDescription);
+
+
+    if (empty($reviewDescription)) {
+        return error422("Review Description can't be blank");
+    } else {
+        if (empty($rating)) {
+            $rating = 1;
+        }
+
+        $user_id = $_SESSION['user_id'];
+        $sql = "INSERT INTO DriverReviews(uid,did,rating,review_text) VALUES('$user_id','$driverID','$rating','$reviewDescription')";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $data = [
+                'status' => 201,
+                'message' => 'Review Inserted Successfully',
+            ];
+            header("HTTP/1.0 201 Review Inserted Successfully");
+            echo json_encode($data);
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Errorr',
+            ];
+            header("HTTP/1.0 500 Internal Serval Errorr");
+            return json_encode($data);
+        }
+    }
+}
+
 function getDriverReviews($input_data)
 {
     global $conn;
     $driverId =  $input_data->driverId;
 
-    $sql = "SELECT * FROM DriverReviews WHERE did='$driverId'";
+    $sql = "SELECT * FROM DriverReviews WHERE did='$driverId' ORDER BY did DESC";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
