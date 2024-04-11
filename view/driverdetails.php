@@ -51,9 +51,12 @@
                         <li><span id="numreviews"> </span>Review(s)</li>
                         <li><span id="avgrating"> </span>Rating</li>
                     </ul>
-                    <div class="reviewbutton" id="reviewbutton" style="display:flex;padding:10px;justify-content:center;">
+                    <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
+
                     </div>
-                    <div id="reviews" style="display:block;justify-content:center;">
+                    <div id="reviews" style="display:block;justify-content:center;padding:10px">
+
+
                     </div>
                 </div>
 
