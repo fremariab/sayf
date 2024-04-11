@@ -97,6 +97,17 @@ document.addEventListener("DOMContentLoaded", function () {
           result = "<div class='card card1'>No reviews found</div>";
         } else {
           // Display up to 2 reviews
+          result +=
+            "<div class='reviewbutton' style='display:flex;margin-top:30px;justify-content:center;'>";
+          result +=
+            "<a href='../view/pagereviewdriver.php?did=" +
+            response.data.did +
+            "'>";
+          result +=
+            "<button style='color:#54177c;background-color:white'>Review Driver</button>";
+          result += "</a>";
+          result += "</div>";
+
           response.data.slice(0, 2).forEach((element) => {
             result += "<div class='card card1'>";
             result += "<div>";

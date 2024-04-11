@@ -49,12 +49,12 @@
                     </div>
                     <ul class="profstats">
                         <li><span id="numreviews"> </span>Review(s)</li>
-                        <li><span id="avgrating"> </span>Rating(s)</li>
+                        <li><span id="avgrating"> </span>Rating</li>
                     </ul>
-                    <div class="reviewbutton" style="display:flex;margin-top:30px;justify-content:center;">
+                    <!-- <div class="reviewbutton" style="display:flex;margin-top:30px;justify-content:center;">
                         <a href="../view/pagereviewdriver.php"> <button style="color:#54177c;background-color:white">Review Driver</button>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="reviews" id="reviews">
 
 
