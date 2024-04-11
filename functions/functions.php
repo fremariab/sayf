@@ -13,6 +13,65 @@ function error422($message)
     return json_encode($data);
 }
 
+function getDriverDetails($input_data)
+{
+    global $conn;
+    $driverId =  $input_data->driverId;
+    $sql = "
+    SELECT 
+            Driver.did,
+            Driver.fname AS driver_fname,
+            Driver.lname AS driver_lname,
+            Driver.tel AS driver_tel,
+            Driver.gender as gender,
+            Car.make AS car_make,
+            Car.model AS car_model,
+            Car.color AS car_color,
+            Car.plate_number,
+            RideHailingCompany.company_name,
+            ROUND(AVG(DriverReviews.rating), 0) AS average_rating,
+            COUNT(DriverReviews.rating) AS review_count
+        FROM 
+            Driver
+        LEFT JOIN 
+            Car ON Driver.carid = Car.carid
+        LEFT JOIN 
+            RideHailingCompany ON Driver.comid = RideHailingCompany.comid
+        LEFT JOIN 
+            DriverReviews ON Driver.did = DriverReviews.did
+        WHERE 
+            Driver.did='$driverId";
+
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        if (mysqli_num_rows($result) == 1) {
+            $final_result = mysqli_fetch_assoc($result);
+
+            $data = [
+                'status' => 200,
+                'message' => 'Driver Details Found',
+                'data' => $final_result,
+                'driverId' => $driverId
+            ];
+            header("HTTP/1.0 200 Driver Details Found");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 404,
+                'message' => 'No Driver Found',
+            ];
+            header("HTTP/1.0 404 No Driver Found");
+            return json_encode($data);
+        }
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Error',
+        ];
+        header("HTTP/1.0 500 Internal Serval Error");
+        return json_encode($data);
+    }
+}
 function getProfile()
 {
     global $conn;

@@ -162,7 +162,7 @@ body {
   color: #cfcef2;
   margin-right: 100px;
   margin-top: 60px;
-  height: 350px;
+  height: max-content;
   box-shadow: 0 15px 35px rgba(50, 100, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
 }
@@ -384,6 +384,7 @@ button {
   margin-bottom: 30px;
   display: flex;
   padding: 10px;
+  background-color: white;
 }
 
 .main_content .info .results .searchresult .rating {
@@ -677,4 +678,87 @@ tbody td {
 
 .main_content .info .dashb .notif .notif_item.like_item .close {
   color: #54177c;
+}
+
+.main_content .info .userprof .reviews {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 70px 20px 20px 20px;
+  padding: 20px;
+  width: 80%;
+  display: grid;
+  min-height: 200px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  grid-template-rows: 20px 50px 1fr 50px;
+  box-shadow: 0px 6px 10px rgba(74, 70, 74, 0.414);
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.readMore,
+.close,
+.card div {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card div ul {
+  display: flex;
+  list-style: none;
+}
+
+.card div ul li {
+  margin: 0 0.3rem;
+  font-size: 1.1rem;
+}
+
+.desc {
+  color: white;
+}
+
+.readMore::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  transition: all 0.5s;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.readMore:hover {
+  color: #fff;
+}
+
+.readMore:hover::after {
+  width: 100%;
+}
+
+.close {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.card div {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.read-more {
+  grid-row: 4/5;
+  align-self: center;
+}
+
+.card1 {
+  background: #e41d9e;
 }

@@ -35,29 +35,50 @@
             <div class="info">
                 <div class="userprof">
                     <div class="username" id="username">
-                        <h1>@shushubities</h1>
-                        <span>juliefox@gmail.com</span>
+                        <h1 id="drivername">Kofi Larbi </h1>
+                        <span id="contact"> 0554387549 </span>
+                        <span> | </span>
+                        <span id="gender"> Male </span>
                     </div>
-                    <div class="profdescription">
-                        <p><i>Contact:</i></p>
 
-                        <p>0555300887</p>
+                    <div class="profdescription">
+                        <p id="cardetails"> Red Kia Picanto</p>
+                        <p id="carplate"> GXPLSKA</p>
+                        <p id="rhcomp"> Uber</p>
+
                     </div>
                     <ul class="profstats">
-                        <li><span>65</span>Reviews</li>
-                        <li><span>43</span>Posts</li>
+                        <li><span id="numreviews"> </span>Reviews</li>
+                        <li><span id="avgrating"> </span>Rating</li>
                     </ul>
+                    <div class="reviews" id="reviews">
+                        <div class="card card1">
+                            <div>
+                                <ul>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <p class="close"> </p>
+                            <p class="desc" id="desc">Ut enim ad minim veniam. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </div>
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const data = decodeURIComponent(urlParams.get('data'));
+    <script src="../js/driverdetails.js">
     </script>
+    < script src="../js/driverreviews.js">
+        </script>
 </body>
 
 </html>
