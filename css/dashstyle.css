@@ -682,6 +682,7 @@ tbody td {
 
 .main_content .info .userprof .reviews {
   display: flex;
+  justify-content: center;
 }
 
 .card {
