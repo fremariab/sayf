@@ -114,12 +114,12 @@
 
                     response.data.forEach((element) => {
                         result += "<option value='" + element.did + "'>";
-                        result += element.driver_fname + " " + element.driver_lname + "</option>";
+                        result += element.dfname + " " + element.dlname + "</option>";
                     });
                     document.getElementById("driverSelect").innerHTML += result;;
                 },
                 error: function(error) {
-                    console.error('Error fetching ride-hailing companies:', error);
+                    console.log('Error fetching ride-hailing companies:', error);
                 }
             });
 

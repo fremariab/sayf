@@ -34,9 +34,9 @@ function viewDriverList()
         } else {
             $data = [
                 'status' => 404,
-                'message' => 'No Users Found',
+                'message' => 'No Drivers Found',
             ];
-            header("HTTP/1.0 404 No Users Found");
+            header("HTTP/1.0 404 No Drivers Found");
             return json_encode($data);
         }
     } else {
