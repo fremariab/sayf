@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var element = response.data[index];
 
-            result += "<div class='card card1'>";
+            result += "<div class='card card1' style='margin-top:5px'>";
             result += "<div class='stars'>";
             result += "<ul>";
             result += createStars(element.rating);
