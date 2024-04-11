@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     $.ajax({
-      url: "../actions/reviewdriver_action.php",
+      url: "../actions/pagereviewdriver_action.php",
       method: "post",
       data: JSON.stringify({
         driverId: driverId,
