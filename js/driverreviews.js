@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function () {
         result +=
           "<div class='reviewbutton' style='display:flex;margin-top:30px;justify-content:center;'>";
         result +=
-          "<a href='../view/pagereviewdriver.php?did=" +
+          "<a style='display:flex;justify-content:center;' href='../view/pagereviewdriver.php?did=" +
           response.data.did +
           "'>";
         result +=
-          "<button style='text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
+          "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
         result += "</a>";
         result += "</div>";
         if (response.data.length === 0) {
