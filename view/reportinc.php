@@ -24,8 +24,7 @@
 
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"
-                            style="margin-top: 135px;"></i> Logout</a></li>
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
 
             </ul>
 
@@ -80,6 +79,50 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '../actions/viewrhc_action.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    response = data;
+
+                    let result = "";
+
+                    response.data.forEach((element) => {
+                        result += "<option value='" + element.comid + "'>";
+                        result += element.company_name + "</option>";
+                    });
+                    document.getElementById("companySelect").innerHTML += result;;
+                },
+                error: function(error) {
+                    // Handle error
+                    console.error('Error fetching ride-hailing companies:', error);
+                }
+            });
+            $.ajax({
+                url: '../actions/driverdetail_action.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    response = data;
+
+                    let result = "";
+
+                    response.data.forEach((element) => {
+                        result += "<option value='" + element.did + "'>";
+                        result += element.driver_fname + " " + element.driver_lname + "</option>";
+                    });
+                    document.getElementById("driverSelect").innerHTML += result;;
+                },
+                error: function(error) {
+                    // Handle error
+                    console.error('Error fetching ride-hailing companies:', error);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

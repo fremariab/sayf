@@ -99,8 +99,7 @@
     <script src="../js/rating.js"></script>
     <script>
         $(document).ready(function() {
-            // AJAX request to fetch ride-hailing company names
-            $.ajax({
+             $.ajax({
                 url: '../actions/viewrhc_action.php',
                 type: 'GET',
                 dataType: 'json',
