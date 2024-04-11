@@ -97,7 +97,6 @@
                     document.getElementById("companySelect").innerHTML += result;;
                 },
                 error: function(error) {
-                    // Handle error
                     console.error('Error fetching ride-hailing companies:', error);
                 }
             });
@@ -105,7 +104,7 @@
         });
         $(document).ready(function() {
             $.ajax({
-                url: '../actions/driverdetail_action.php',
+                url: '../actions/viewdriver_action.php',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
@@ -120,7 +119,6 @@
                     document.getElementById("driverSelect").innerHTML += result;;
                 },
                 error: function(error) {
-                    // Handle error
                     console.error('Error fetching ride-hailing companies:', error);
                 }
             });
