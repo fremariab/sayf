@@ -52,11 +52,8 @@
                         <li><span id="avgrating"> </span>Rating</li>
                     </ul>
                     <div class="reviewbutton" id="reviewbutton" style="display:flex;padding:10px;justify-content:center;">
-
                     </div>
                     <div id="reviews" style="display:block;justify-content:center;">
-
-
                     </div>
                 </div>
 
