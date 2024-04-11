@@ -9,8 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $("#submit").click(function (event) {
     event.preventDefault();
-
     var incidentDate = $("#incidentDate").val();
+
+    var selectedDate = new Date(incidentDate);
+    var currentDate = new Date();
+    var minDate = new Date("1999-01-01");
+    if (selectedDate > currentDate || selectedDate < minDate) {
+      alert("Please select a date between 1999-01-01 and today.");
+    }
     var incidentDescription = $("#incidentDescription").val();
 
     if (selectedDriver == null || selectedDriver.trim() === "") {
