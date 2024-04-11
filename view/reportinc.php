@@ -49,6 +49,7 @@
                             a ride hailing service, please don't hesitate to report it. </p>
                         <p>Your report will help us maintain a safe and
                             welcoming community for everyone.</p>
+                        <div class="error" id="error"></div>
                         <form class="form" id="form">
                             <select id="driverSelect" name="did" required>
                                 <option value="">Select Driver Name</option>
@@ -114,7 +115,7 @@
 
                     response.data.forEach((element) => {
                         result += "<option value='" + element.did + "'>";
-                        result += element.dfname + " " + element.dlname + "</option>";
+                        result += element.fname + " " + element.lname + "</option>";
                     });
                     document.getElementById("driverSelect").innerHTML += result;;
                 },
