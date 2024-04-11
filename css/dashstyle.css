@@ -691,7 +691,7 @@ tbody td {
   padding: 20px;
   width: 80%;
   display: block;
-  min-height: 100px;
+  min-height: 70px;
   height: max-content;
   border-radius: 10px;
   transition: all 0.2s;
