@@ -51,8 +51,8 @@
                         <li><span id="numreviews"> </span>Review(s)</li>
                         <li><span id="avgrating"> </span>Rating(s)</li>
                     </ul>
-                    <div class="reviewbutton" style="display:flex;margin-top:30px;justify-content:center;color:#54177c;background-color:white">
-                        <a href="../view/pagereviewdriver.php"> <button>Review Driver</button>
+                    <div class="reviewbutton" style="display:flex;margin-top:30px;justify-content:center;">
+                        <a href="../view/pagereviewdriver.php"> <button style="color:#54177c;background-color:white">Review Driver</button>
                         </a>
                     </div>
                     <div class="reviews" id="reviews">
