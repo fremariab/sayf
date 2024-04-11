@@ -55,7 +55,7 @@
                         <!-- <a href="../view/pagereviewdriver.php"> <button style="color:#54177c;background-color:white">Review Driver</button>
                         </a> -->
                     </div>
-                    <div class="reviews" id="reviews">
+                    <div id="reviews">
 
 
                     </div>
