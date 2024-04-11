@@ -101,6 +101,9 @@
                     console.error('Error fetching ride-hailing companies:', error);
                 }
             });
+
+        });
+        $(document).ready(function() {
             $.ajax({
                 url: '../actions/driverdetail_action.php',
                 type: 'GET',
@@ -121,6 +124,7 @@
                     console.error('Error fetching ride-hailing companies:', error);
                 }
             });
+
         });
     </script>
 </body>
