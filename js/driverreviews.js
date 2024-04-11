@@ -92,16 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (data.status == 200) {
         response = data;
         let result = "";
-        result +=
-          "<div class='reviewbutton' style='display:flex;margin-top:30px;justify-content:center;'>";
-        result +=
+        let buttonres = "";
+
+        buttonres +=
           "<a style='display:flex;justify-content:center;' href='../view/pagereviewdriver.php?did=" +
           response.data.did +
           "'>";
-        result +=
+        buttonres +=
           "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
-        result += "</a>";
-        result += "</div>";
+        buttonres += "</a>";
         if (response.data.length === 0) {
           result = "<div class='card card1'>No reviews found</div>";
         } else {
@@ -127,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.getElementById("reviews").innerHTML += result;
+        document.getElementById("reviewbutton").innerHTML += buttonres;
       }
     },
     error: (error) => {
