@@ -75,10 +75,10 @@
     </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-    <script src="../js/driverdetails.js">
+    <script src="../js/driverdetails.js"> </script>
+    <script src="../js/driverreviews.js">
     </script>
-    < script src="../js/driverreviews.js">
-        </script>
+
 </body>
 
 </html>
