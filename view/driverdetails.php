@@ -52,10 +52,9 @@
                         <li><span id="avgrating"> </span>Rating</li>
                     </ul>
                     <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:30px;justify-content:center;">
-                        <!-- <a href="../view/pagereviewdriver.php"> <button style="color:#54177c;background-color:white">Review Driver</button>
-                        </a> -->
+
                     </div>
-                    <div id="reviews">
+                    <div id="reviews" style="display:block">
 
 
                     </div>
