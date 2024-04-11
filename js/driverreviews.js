@@ -47,20 +47,19 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonres += "</a>";
 
         if (response.data.length === 0) {
-          reviewContainer.html(<p>No results found</p>);
+          reviewContainer.html("<p>No results found</p>");
           //   result = "<div class='card card1'>No reviews found</div>";
         } else {
           var resultsPerRow = 2;
 
           for (var index = 0; index < response.data.length; index++) {
             if (index % resultsPerRow === 0) {
-              resultContainer.append('<div class="row">');
+              reviewContainer.append('<div class="row">');
             }
 
-            var element = results[index];
+            var element = response.data[index];
 
-
-             result += "<div class='card card1'>";
+            result += "<div class='card card1'>";
             result += "<div class='stars'>";
             result += "<ul>";
             result += createStars(element.rating);
@@ -70,17 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
             result +=
               "<p class='desc' id='desc'>" + element.review_text + "</p>";
             result += "</div>";
- 
-            if (
-                (index + 1) % resultsPerRow === 0 ||
-                index === response.data.length - 1
-              ) {
-                reviewContainer.append(result);
-                reviewContainer.append("</div>");
-                result = "";
-              }
 
-        //   
+            if (
+              (index + 1) % resultsPerRow === 0 ||
+              index === response.data.length - 1
+            ) {
+              reviewContainer.append(result);
+              reviewContainer.append("</div>");
+              result = "";
+            }
+          }
+          //
         }
 
         // document.getElementById("reviews").innerHTML += result;
