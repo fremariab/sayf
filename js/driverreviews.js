@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   var driverId = getUrlParameter("did");
-  console.log(driverId);
-
+ 
   $.ajax({
     url: "../actions/driverreviews_action.php",
     method: "post",
