@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
           driverId +
           "'>";
         buttonres +=
-          "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
+          "<button style='justify-content:center;text-align:center;color:#54177c;background-color:white;margin-top:30px;'>Review Driver</button>";
         buttonres += "</a>";
 
         if (response.data.length === 0) {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var element = response.data[index];
 
-            result += "<div class='card card1' style='margin-top:5px'>";
+            result += "<div class='card card1'>";
             result += "<div class='stars'>";
             result += "<ul>";
             result += createStars(element.rating);
