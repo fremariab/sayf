@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
           response.data.did +
           "'>";
         result +=
-          "<button style='color:#54177c;background-color:white'>Review Driver</button>";
+          "<button style='text-align:center;color:#54177c;background-color:white'>Review Driver</button>";
         result += "</a>";
         result += "</div>";
         if (response.data.length === 0) {
