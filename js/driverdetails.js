@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", function () {
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   var driverId = getUrlParameter("did");
-   $.ajax({
+  $.ajax({
     url: "../actions/driverdetail_action.php",
-    method: "get",
+    method: "post",
     data: JSON.stringify({ driverId: driverId }),
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
       if (data.status == 200) {
         response = data;
-    
+
         document.getElementById("drivername").innerHTML =
           response.data.driver_fname + "" + response.data.driver_lname;
         document.getElementById("carplate").innerHTML =
