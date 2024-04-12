@@ -77,9 +77,9 @@ $("#submit").click(function (event) {
             }
           }
         }
-        console.log("successful");
       } else {
-        alert(data.error);
+        var responseData = data.responseJSON.message;
+        alert(responseData);
       }
     },
     error: (error) => {
