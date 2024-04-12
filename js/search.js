@@ -83,7 +83,8 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      alert(error.error);
+      alert(error.message
+      );
     },
   });
 });
