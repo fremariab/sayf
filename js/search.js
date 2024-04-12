@@ -2,10 +2,10 @@
 
 $("#submit").click(function (event) {
   event.preventDefault();
+  $("#error").html("");
   var keyword = $("#input_search").val();
   if (keyword == null || keyword == "") {
-    alert("Please input the name of a driver or a car plate number");
-    // window.location.href = "../view/searchresults.php";
+    $("#error").html("Please input the name of a driver or a car plate number");
   }
 
   $.ajax({

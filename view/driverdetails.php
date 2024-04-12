@@ -67,7 +67,7 @@ $user_id = getUserID();
                     </div>
                     <ul class="profstats">
                         <li><span id="numreviews"> </span>Review(s)</li>
-                        <li><span id="avgrating"> </span>Avg. Rating</li>
+                        <li><span id="avgrating"> </span>Average Rating</li>
                     </ul>
                     <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
                     </div>
