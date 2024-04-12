@@ -33,7 +33,7 @@ $("#submit").click(function (event) {
         $("#success").append(messageElement);
         setTimeout(function () {
           $(".alert").remove();
-        }, 10000);
+        }, 20000);
         if (data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
         } else {

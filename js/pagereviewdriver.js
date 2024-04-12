@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           $("#success").append(messageElement);
           setTimeout(function () {
             $(".alert").remove();
-          }, 10000);
+          }, 20000);
           window.location.href = "../view/driverdetails.php?did=" + driverId;
         }
       },
