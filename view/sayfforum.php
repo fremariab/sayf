@@ -18,7 +18,9 @@ $user_id = getUserID();
 
 <body>
     <div class="wrapper">
-    <div class="sidebar">
+        <?php if ($user_role == 1) { ?>
+
+            <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
                 </div>
@@ -79,32 +81,32 @@ $user_id = getUserID();
         <script src="../js/addpost.js"></script>
 
         <script>
-                    function confirmDelete(posid, did) {
-            if (confirm("Are you sure you want to delete this post?")) {
+            function confirmDelete(posid, did) {
+                if (confirm("Are you sure you want to delete this post?")) {
 
-                $.ajax({
-                    url: "../actions/deletepost_action.php",
-                    method: "post",
-                    data: JSON.stringify({
-                        posid: posid,
-                    }),
-                    dataType: "json",
-                    success: (data, status) => {
-                        console.log(data, status);
-                        console.log(did + " " + revid);
-                        if (data.status == 201) {
-                            response = data;
+                    $.ajax({
+                        url: "../actions/deletepost_action.php",
+                        method: "post",
+                        data: JSON.stringify({
+                            posid: posid,
+                        }),
+                        dataType: "json",
+                        success: (data, status) => {
+                            console.log(data, status);
+                            console.log(did + " " + revid);
+                            if (data.status == 201) {
+                                response = data;
 
-                            alert("Post deleted successfully");
-                            window.location.href = "../view/sayfforum.php";
-                        }
-                    },
-                    error: (error) => {
-                        $("#error").html(error.error);
-                    },
-                });
+                                alert("Post deleted successfully");
+                                window.location.href = "../view/sayfforum.php";
+                            }
+                        },
+                        error: (error) => {
+                            $("#error").html(error.error);
+                        },
+                    });
+                }
             }
-        }
         </script>
 
 </body>

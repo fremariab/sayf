@@ -30,7 +30,7 @@
         <div class="headtext">User Home</div>
       </div>
       <div class="info">
-        <img src="../images/logo.png" alt="">
+        <img src="../images/logo2.png" alt="">
       </div>
     </div>
   </div>
