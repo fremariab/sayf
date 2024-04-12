@@ -97,7 +97,7 @@ $user_id = getUserID();
                 }
                 let revid = getUrlParameter("revid");
                 let did = getUrlParameter("did");
-                 $.ajax({
+                $.ajax({
                     url: "../actions/deletereview_action.php",
                     method: "post",
                     data: JSON.stringify({
@@ -106,6 +106,7 @@ $user_id = getUserID();
                     dataType: "json",
                     success: (data, status) => {
                         console.log(data, status);
+                        console.log(did + " " + revid);
                         if (data.status == 201) {
                             response = data;
 
