@@ -2,6 +2,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   let selectedDriver = "";
 
+  $("#error").html("");
+  $("#success").html("");
+
   $("#driverSelect").change(function () {
     selectedDriver = $(this).val();
   });
@@ -12,23 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var selectedDate = new Date(incidentDate);
     var currentDate = new Date();
-    var minDate = new Date("1999-01-01");
+    var minDate = new Date("2010-01-01");
     if (selectedDate > currentDate || selectedDate < minDate) {
-      alert("Please select a date between 1999-01-01 and today.");
+      $("#error").html("Please select a date between 1999-01-01 and today.");
     }
     var incidentDescription = $("#incidentDescription").val();
 
     if (selectedDriver == null || selectedDriver.trim() === "") {
-      alert("Selected Driver can't be blank");
+      $("#error").html("Selected Driver can't be blank");
       return false;
     }
 
     if (incidentDate == null || incidentDate.trim() === "") {
-      alert("IncidentDate can't be blank");
+      $("#error").html("IncidentDate can't be blank");
       return false;
     }
     if (incidentDescription == null || incidentDescription.trim() === "") {
-      alert("Incident Description can't be blank");
+      $("#error").html("Incident Description can't be blank");
       return false;
     }
 
@@ -46,14 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.status == 201) {
           response = data;
 
-          let result = "";
+          var message = data.message;
+          var messageElement = '<div class="alert">' + message + "</div>";
+          $("#success").append(messageElement);
+          setTimeout(function () {
+            $(".alert").remove();
+          }, 20000);
         }
         window.location.href = "../view/viewreports.php";
       },
       error: (error) => {
-        console.log(error);
-        var responseData = JSON.stringify(error.responseText);
-        document.getElementById("error").innerHTML = responseData.message;
+        $("#error").html(error.error);
       },
     });
   });
