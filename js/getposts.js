@@ -12,18 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var reviewContainer = $("#reviews");
         reviewContainer.empty();
 
-        // Define resultsPerRow or replace it with the appropriate value
         var resultsPerRow = 2;
 
         for (var index = 0; index < response.data.length; index++) {
           var element = response.data[index];
 
           result += "<div class='card card2'>";
-          // Handle close button if needed
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.post_text + "</p>";
-          if (element.uid == response.user_id) {
-            // Use onclick event to call confirmDelete function
+          if (element.creator == response.user_id) {
             result +=
               "<div ><i id='deleteAction' onclick='confirmDelete(" +
               element.posid +
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           result += "</div>";
 
-          // Append the result and close the row when needed
           if (
             (index + 1) % resultsPerRow === 0 ||
             index === response.data.length - 1
