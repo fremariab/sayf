@@ -1,5 +1,5 @@
 <?php
-/*editreview_action.php */
+/*deletereview_action.php */
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 header('Access-Control-Allow-Origin:*');
@@ -18,6 +18,6 @@ if (empty($inputData)) {
     echo json_encode($res);
     exit();
 }
-$editReview = editReview($inputData);
+$deleteReview = deleteReview($inputData);
 
-echo $editReview;
+echo $deleteReview;
