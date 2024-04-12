@@ -382,7 +382,7 @@ function searchDrivers($input_data)
             Car.plate_number,
             RideHailingCompany.company_name,
             ROUND(AVG(DriverReviews.rating), 0) AS average_rating,
-            COUNT(DriverReviews.rating) AS rating_count
+            COUNT(DriverReviews.rating) AS rating_count,
             COUNT(IncidentReport.repid) AS incident_reports
         FROM 
             Driver
