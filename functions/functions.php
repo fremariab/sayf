@@ -456,6 +456,7 @@ function reviewDriver($input_data)
                                     $data = [
                                         'status' => 201,
                                         'message' => 'Driver and Car Data Inserted Successfully',
+                                        'driverId'=>$did
                                     ];
                                     header("HTTP/1.0 201 Driver and Car Data Inserted Successfully");
                                     echo json_encode($data);
