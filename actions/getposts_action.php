@@ -8,15 +8,6 @@ header('Access-Control-Allow-Headers: Content-Type,Access-Control-Allow-Headers,
 
 include('../functions/functions.php');
 
-$inputData = json_decode(file_get_contents("php://input"));
-
-$res;
-
-if (empty($inputData)) {
-    $res["msg"] = "No data received";
-    echo json_encode($res);
-    exit();
-}
 $getPosts = getPosts();
 
 echo $getPosts;
