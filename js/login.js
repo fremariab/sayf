@@ -5,10 +5,10 @@ $("#submit").click(function (event) {
   var password = $("#password").val();
 
   if (name == null || name == "") {
-    alert("Username can't be blank");
+    $("#error").html("Username can't be blank");
     return false;
   } else if (password.length < 8) {
-    alert("Password must be at least 6 characters long.");
+    $("#error").html("Password must be at least 6 characters long.");
     return false;
   }
 
@@ -33,7 +33,7 @@ $("#submit").click(function (event) {
     },
     error: (error) => {
       var responseData = JSON.parse(error.responseText);
-      document.getElementById("error").innerHTML = responseData.message;
+      $("#error").html(responseData.message);
     },
   });
 });
