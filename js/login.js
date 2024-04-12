@@ -31,7 +31,7 @@ $("#submit").click(function (event) {
         $("#success").append(messageElement);
         setTimeout(function () {
           $(".alert").remove();
-        }, 5000);
+        }, 7000);
         if (data.data && data.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
         } else {

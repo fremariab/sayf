@@ -130,7 +130,7 @@ button {
   margin-bottom: 5px;
 }
 
-.alert {
+#success .alert {
   color: rgb(10, 190, 10);
   font-size: 15px;
   margin-bottom: 5px;
