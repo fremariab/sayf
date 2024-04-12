@@ -85,9 +85,6 @@ $("#submit").click(function (event) {
     error: (error) => {
       var responseData = error.responseJSON.message;
       alert(responseData);
-
-      console.log(error);
-      // document.getElementById("error").innerHTML = responseData.message;
     },
   });
 });
