@@ -26,7 +26,7 @@ $("#submit").click(function (event) {
       console.log(data, status);
       if (data.status == 200) {
         var message =
-          data.data && data.data.user_role == 1
+          data.data.user_role == 1
             ? "Logged in successfully as admin."
             : "Logged in successfully as user.";
         var messageElement = '<div class="alert">' + message + "</div>";
