@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return starsHtml;
   }
 
-  
-
   var driverId = getUrlParameter("did");
 
   $.ajax({
@@ -78,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.did +
                 "'><i id='actions'class='fas fa-edit'></i></a><i id='actions' class='fa-solid fa-trash' onclick='confirmDelete(" +
                 element.revid +
+                "," +
+                element.did +
                 "); return false;'></i></div>";
             }
             result += "</div>";
