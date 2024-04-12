@@ -765,3 +765,14 @@ tbody td {
 .card1 {
   background: #e41d9e;
 }
+.error {
+  color: red;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+#success .alert {
+  color: rgb(10, 190, 10);
+  font-size: 15px;
+  margin-bottom: 5px;
+}

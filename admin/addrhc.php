@@ -24,7 +24,6 @@
                 <li><a href="../admin/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
             </ul>
-
         </div>
         <div class="main_content">
             <div class="header">
@@ -43,6 +42,8 @@
                     </div>
                     <div class="right-side">
                         <form class="form" id="form">
+                            <div id="error" class="error"></div>
+                            <div id="success" class="success"></div>
                             <input type="text" id="compname" name="compname" class="input-field" placeholder="Ride-Hailing Company Name" required>
 
                             <input type="text" id="comploc" name="comploc" class="input-field" placeholder="Ride-Hailing Company Location" required>

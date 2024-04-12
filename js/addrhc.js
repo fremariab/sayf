@@ -7,18 +7,21 @@ $("#submit").click(function (event) {
   var compemail = $("#compemail").val();
 
   if (compname == null || compname == "") {
-    alert("Company Name can't be blank");
+    $("#error").html("Company Name can't be blank");
     return false;
   } else if (comploc == null || comploc == "") {
-    alert("Company Location can't be blank");
+    $("#error").html("Company Location can't be blank");
     return false;
   } else if (contactNum == null || contactNum == "") {
-    alert("Company Conatact Number can't be blank");
+    $("#error").html("Company Conatact Number can't be blank");
     return false;
   } else if (compemail == null || compemail == "") {
-    alert("Company Email can't be blank");
+    $("#error").html("Company Email can't be blank");
     return false;
   }
+
+  $("#error").html("");
+  $("#success").html("");
 
   $.ajax({
     url: "../actions/addrhc_action.php",
@@ -33,26 +36,19 @@ $("#submit").click(function (event) {
     success: (data, status) => {
       console.log(data, status);
       if (data.status == 201) {
-        response = data;
-
-        let result = "";
-
-        response.data.forEach((element) => {
-          result += "<tr>";
-          result += "<td class='rhcname'>" + element.company_name + "</td>";
-          result +=
-            "<td class='contactnum'>" + element.contact_number + "</td>";
-          result += "<td class='email'>" + element.email + "</td>";
-          result += "<td class='location'>" + element.location + "</td>";
-          result += "</tr>";
-        });
-        window.location.href =
-          "../admin/rhcdisplay.php?data=" + encodeURIComponent(result);
+        var message = data.message;
+        var messageElement = '<div class="alert">' + message + "</div>";
+        $("#success").append(messageElement);
+        setTimeout(function () {
+          $(".alert").remove();
+        }, 10000);
+        window.location.href = "../admin/rhcdisplay.php";
+      } else {
+        $("#error").html(data.error);
       }
     },
     error: (error) => {
-      var responseData = JSON.parse(error.responseText);
-      document.getElementById("error").innerHTML = responseData.message;
+      $("#error").html(error.error);
     },
   });
 });
