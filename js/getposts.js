@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
-      if (data.status == 200) {
+      if (data.status == 201) {
         response = data;
         let result = "";
         var reviewContainer = $("#reviews");
