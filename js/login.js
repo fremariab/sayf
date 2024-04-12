@@ -33,7 +33,7 @@ $("#submit").click(function (event) {
     },
     error: (error) => {
       // var responseData = JSON.parse(error.responseText);
-      document.getElementById("error").innerHTML = responseData.error;
+      document.getElementById("error").innerHTML = error.error;
     },
   });
 });
