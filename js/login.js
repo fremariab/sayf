@@ -23,19 +23,14 @@ $("#submit").click(function (event) {
     success: (data, status) => {
       console.log(data, status);
       if (data.status == 200) {
-        // if (data.data && data.data.user_role == 1) {
-        //   window.location.href = "../admin/admindash.php";
-        // } else {
-        //   window.location.href = "../view/userdash.php";
-        // }
         var message =
           data.data && data.data.user_role == 1
             ? "Logged in successfully as admin."
             : "Logged in successfully as user.";
         var messageElement = '<div class="alert">' + message + "</div>";
-        $("#success").append(messageElement); // Append the message to the body of the page
+        $("#success").append(messageElement);
         setTimeout(function () {
-          $(".alert").remove(); // Remove the message after a certain duration (e.g., 5 seconds)
+          $(".alert").remove();
         }, 5000);
         if (data.data && data.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
@@ -47,7 +42,6 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      // var responseData = JSON.parse(error.responseText);
       $("#error").html(error.error);
     },
   });
