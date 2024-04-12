@@ -103,10 +103,14 @@ $user_id = getUserID();
     <script>
         function confirmDelete(revid) {
             if (confirm("Are you sure you want to delete this assignment?")) {
-                window.location.href =
-                    "../actions/deletereview_action.php?revid=" + revid + "&did=" + did;
+                // window.location.href =
+                //     "../actions/deletereview_action.php?revid=" + revid + "&did=" + did;
+                return false;
             }
         }
+
+        var revid = getUrlParameter("revid");
+        var did = getUrlParameter("did");
         document.addEventListener("DOMContentLoaded", function() {
             function getUrlParameter(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -116,8 +120,7 @@ $user_id = getUserID();
                     "" :
                     decodeURIComponent(results[1].replace(/\+/g, " "));
             }
-            var revid = getUrlParameter("revid");
-            var did = getUrlParameter("did");
+
 
 
 
