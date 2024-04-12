@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
           response.data.review_count;
         document.getElementById("rhcomp").innerHTML =
           response.data.company_name;
+        if (!response.data.average_rating) {
+          response.data.average_rating = 0;
+        }
         document.getElementById("avgrating").innerHTML =
           response.data.average_rating;
         document.getElementById("cardetails").innerHTML =
