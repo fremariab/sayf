@@ -67,6 +67,9 @@ $user_id = getUserID();
                 </div>
                 <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:90px;">
                     <center>
+                        <div class="error">
+                            
+                        </div>
                         <h1>
                             Invest in <span class="spec" style="color:#E41D9E">
                                 safety

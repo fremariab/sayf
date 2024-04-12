@@ -77,14 +77,11 @@ $("#submit").click(function (event) {
             }
           }
         }
-      } else {
-        var responseData = data.responseJSON.message;
-        alert(responseData);
       }
     },
     error: (error) => {
       var responseData = error.responseJSON.message;
-      alert(1);
+      $("#error").html(responseData);
     },
   });
 });
