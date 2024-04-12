@@ -67,6 +67,8 @@ $user_id = getUserID();
                 </div>
                 <div class="results" id="results">
                 </div>
+                <button id="backToTopBtn">Back to Top</button>
+
             </div>
         </div>
     </div>
@@ -75,6 +77,23 @@ $user_id = getUserID();
     <script src="../js/search.js">
         const urlParams = new URLSearchParams(window.location.search);
         const data = decodeURIComponent(urlParams.get('data'));
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
+                }
+            });
+
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'slow');
+            });
+        });
     </script>
 </body>
 

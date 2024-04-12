@@ -284,7 +284,7 @@ button {
 .main_content .info .searchboxwrapper .searchboxitem {
   position: relative;
   height: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   width: 500px;
   max-width: 100%;
   margin-right: 30px;
