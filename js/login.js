@@ -34,7 +34,8 @@ $("#submit").click(function (event) {
         setTimeout(function () {
           $(".alert").remove();
         }, 10000);
-        if (data.data && data.data.user_role == 1) {
+        if (
+          data.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
         } else {
           window.location.href = "../view/userdash.php";
