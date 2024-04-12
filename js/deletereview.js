@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var revid = getUrlParameter("revid");
   var did = getUrlParameter("did");
 
-  $("#error").html("");
-  $("#success").html("");
+  //   $("#error").html("");
+  //   $("#success").html("");
 
   $("#submit").click(function (event) {
     event.preventDefault();
@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       url: "../actions/deletereview_action.php",
       method: "post",
       data: JSON.stringify({
-        rating: starrating,
-        reviewDescription: reviewDescription,
         revid: revid,
       }),
       dataType: "json",
@@ -31,12 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.status == 201) {
           response = data;
 
-          var message = data.message;
-          var messageElement = '<div class="alert">' + message + "</div>";
-          $("#success").append(messageElement);
-          setTimeout(function () {
-            $(".alert").remove();
-          }, 20000);
+          //   var message = data.message;
+          //   var messageElement = '<div class="alert">' + message + "</div>";
+          //   $("#success").append(messageElement);
+          //   setTimeout(function () {
+          //     $(".alert").remove();
+          //   }, 20000);
+
+          alert("Review deleted successfully");
         }
         window.location.href = "../view/driverdetails.php?did=" + did;
       },

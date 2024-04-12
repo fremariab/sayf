@@ -88,6 +88,31 @@ function viewDriverList()
         return json_encode($data);
     }
 }
+
+function deleteReview($input_data)
+{
+    global $conn;
+    $reviewId = $input_data->revid;
+
+    $sql = "DELETE FROM DriverReviews WHERE revid='$reviewId'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $data = [
+            'status' => 201,
+            'message' => 'Review Deleted Successfully',
+        ];
+        header("HTTP/1.0 201 Review Deleted Successfully");
+        return json_encode($data);
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Errorr',
+        ];
+        header("HTTP/1.0 500 Internal Serval Errorr");
+        return json_encode($data);
+    }
+}
 function editReview($input_data)
 {
     global $conn;
