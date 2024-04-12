@@ -83,8 +83,9 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      alert(error.message
-      );
+      var responseData = JSON.parse(error.responseText);
+      // document.getElementById("error").innerHTML = responseData.message;
+      alert(responseData);
     },
   });
 });
