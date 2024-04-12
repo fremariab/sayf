@@ -41,7 +41,6 @@
                 <h3>New Like!</h3>
                 <p>You received a like on post1.</p>
               </div>
-
             </div>
             <div class="notif_item cmnt_item">
               <div class="icon">
@@ -51,16 +50,13 @@
                 <h3>New Comment!</h3>
                 <p>You received a comment on post1.</p>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

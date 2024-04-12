@@ -1,5 +1,8 @@
 <?php
-session_start();
+include "../settings/core.php";
+ifLoggedIn();
+$user_role = getUserRole();
+$user_id = getUserID();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +13,11 @@ session_start();
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 </head>
 
 <body>
     <div class="wrapper">
-        <?php if ($_SESSION['user_role'] == 1) { ?>
+        <?php if ($user_role == 1) { ?>
             <div class="sidebar">
                 <div class="logo">
                     <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
@@ -28,10 +30,8 @@ session_start();
                     <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
                 </ul>
-
             </div>
         <?php } else { ?>
-
             <div class="sidebar">
                 <div class="logo">
                     <a href="../view/userdash.php"><img src="../images/logo.png"></a>
@@ -47,9 +47,7 @@ session_start();
                     <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
             </div>
-
         <?php } ?>
-
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Driver Detail</div>
@@ -62,27 +60,20 @@ session_start();
                         <span> | </span>
                         <span id="gender"> </span>
                     </div>
-
                     <div class="profdescription">
                         <p id="cardetails"> </p>
                         <p id="carplate"> </p>
                         <p id="rhcomp"> </p>
-
                     </div>
                     <ul class="profstats">
                         <li><span id="numreviews"> </span>Review(s)</li>
                         <li><span id="avgrating"> </span>Avg. Rating</li>
                     </ul>
                     <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
-
                     </div>
                     <div id="reviews">
-
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -91,7 +82,6 @@ session_start();
     <script src="../js/driverdetails.js"> </script>
     <script src="../js/driverreviews.js">
     </script>
-
 </body>
 
 </html>

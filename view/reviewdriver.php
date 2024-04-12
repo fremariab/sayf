@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -26,9 +25,7 @@
                 <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
-
             </ul>
-
         </div>
         <div class="main_content">
             <div class="header">
@@ -50,9 +47,7 @@
                         </p>
                         <form class="form" id="form">
                             <div id="error" class="error"></div>
-
                             <input type="text" id="firstName" name="fname" class="input-field" placeholder="Driver First Name" required>
-
                             <input type="text" id="lastName" name="lname" class="input-field" placeholder="Driver Last Name">
                             <div class="radio">
                                 <input type="radio" name="gender" id="gender-male" checked="checked" value="1" />
@@ -65,11 +60,8 @@
                                 <option value="" selected disabled>Select Ride-Hailing Company</option>
                             </select>
                             <input type="text" id="carMake" name="make" class="input-field" placeholder="Make" required>
-
                             <input type="text" id="carModel" name="model" class="input-field" placeholder="Model">
-
                             <input type="text" id="carColor" name="color" class="input-field" placeholder="Color" required>
-
                             <input type="text" id="plateNumber" name="plate_number" class="input-field" pattern="^[A-Z]{2,3}-\d{1,4}-[A-Z]?$|^[\d]{1,4}-[A-Z]{2,3}-[A-Z]?$|^[A-Z]{1,2}-\d{1,4}$" placeholder="Car Plate Number" required>
                             <div class="ratingsstar">
                                 <div class="rating-box">
@@ -83,18 +75,15 @@
                                     </div>
                                 </div>
                             </div>
-
                             <br>
                             <label for="review">Review Description:</label>
                             <br>
-
                             <textarea id="ReviewDescription" name="review_description" required></textarea>
                             <br>
                             <button type="submit" id="submit">Submit</button>
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -107,9 +96,7 @@
                 dataType: 'json',
                 success: function(data) {
                     response = data;
-
                     let result = "";
-
                     response.data.forEach((element) => {
                         result += "<option value='" + element.comid + "'>";
                         result += element.company_name + "</option>";
@@ -117,7 +104,6 @@
                     document.getElementById("rideHailingCompany").innerHTML += result;;
                 },
                 error: function(error) {
-                    // Handle error
                     console.error('Error fetching ride-hailing companies:', error);
                 }
             });

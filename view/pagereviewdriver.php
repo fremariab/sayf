@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -22,13 +21,10 @@
                 <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
                 <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
                 <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
-
                 <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
                 <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
-
             </ul>
-
         </div>
         <div class="main_content">
             <div class="header">
@@ -50,7 +46,6 @@
                         </p>
                         <form class="form" id="form">
                             <div id="error" class="error"></div>
-
                             <div class="ratingsstar">
                                 <div class="rating-box">
                                     <header>How was your experience?</header>
@@ -66,14 +61,12 @@
                             <br>
                             <label for="review">Review Description:</label>
                             <br>
-
                             <textarea id="ReviewDescription" name="review_description" required></textarea>
                             <br>
                             <button type="submit" id="submit">Submit</button>
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
