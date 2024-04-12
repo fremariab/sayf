@@ -66,7 +66,7 @@ $user_id = getUserID();
                     </div>
 
                 </div>
-                <div class="error" id="error" style="display: flex;  margin-left:70px;  align-items: center;margin-top:90px;"> </div>
+                <div class="error" id="error" style="display: flex;  margin-left:70px; justify-content: center; align-items: center;margin-top:90px;"> </div>
 
                 <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:90px;">
                     <center>
