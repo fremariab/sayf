@@ -77,10 +77,8 @@ $user_id = getUserID();
                         </h1>
                     </center>
                 </div>
-                <div class="backToTopBtn" id="backToTopBtn">
-                    <i class="fas fa-arrow-up" style="color:white;background-color:#54177c;padding:30px;float:right;"></i>
+                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;padding:30px;float:right; width:20px;height:20px"></i>
 
-                </div>
 
             </div>
         </div>
