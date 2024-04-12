@@ -31,7 +31,7 @@
                 <div class="headtext">Admin Home</div>
             </div>
             <div class="info">
-                <img src="../images/logo2.png" alt="">
+                <img src="../images/logo2.png" style="height: 100px;">
 
             </div>
         </div>
