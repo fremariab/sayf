@@ -48,39 +48,40 @@ session_start();
                     <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
-            <?php } ?>
-
             </div>
-            <div class="main_content">
-                <div class="header">
-                    <div class="headtext">Find Driver</div>
-                </div>
-                <div class="info" id="searchinfo">
-                    <div class="searchboxwrapper" id="searchboxwrapper">
-                        <div class="searchboxitem searchboxitem1">
-                            <div class="searchbox">
-                                <input type="text" id="input_search" class="input_search" placeholder="Search Drivers">
-                                <span class="icon">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </span>
-                            </div>
-                            <button id="submit">Search</button>
+
+        <?php } ?>
+
+        <div class="main_content">
+            <div class="header">
+                <div class="headtext">Find Driver</div>
+            </div>
+            <div class="info" id="searchinfo">
+                <div class="searchboxwrapper" id="searchboxwrapper">
+                    <div class="searchboxitem searchboxitem1">
+                        <div class="searchbox">
+                            <input type="text" id="input_search" class="input_search" placeholder="Search Drivers">
+                            <span class="icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
                         </div>
-
+                        <button id="submit">Search</button>
                     </div>
-                    <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:90px;">
-                        <center>
-                            <h1>
-                                Invest in <span class="spec" style="color:#E41D9E">
-                                    safety
-                                </span> today, <br>reap the rewards of tomorrow's peace of mind.
-                            </h1>
-                        </center>
+
+                </div>
+                <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:90px;">
+                    <center>
+                        <h1>
+                            Invest in <span class="spec" style="color:#E41D9E">
+                                safety
+                            </span> today, <br>reap the rewards of tomorrow's peace of mind.
+                        </h1>
+                    </center>
 
 
-                    </div>
                 </div>
             </div>
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/search.js"></script>

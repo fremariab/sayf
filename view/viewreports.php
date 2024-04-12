@@ -46,39 +46,41 @@
                     <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
-            <?php } ?>
-            <div class="main_content">
-                <div class="header">
-                    <div class="headtext">View Reports</div>
-                </div>
-                <div class="info">
-                    <table>
-                        <thead>
-                            <tr>
-                                <?php session_start();
-                                if ($_SESSION['user_role'] == 1) { ?>
-                                    <th>User Email</th>
-                                <?php } ?>
-
-                                <th>Driver</th>
-                                <th>Company</th>
-                                <th>Incident Date</th>
-                                <th>Incident Description</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="display_report_data">
-
-
-                        </tbody>
-                    </table>
-                </div>
             </div>
-            </div>
-            <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-            <script src="../js/viewreport.js">
 
-            </script>
+        <?php } ?>
+        <div class="main_content">
+            <div class="header">
+                <div class="headtext">View Reports</div>
+            </div>
+            <div class="info">
+                <table>
+                    <thead>
+                        <tr>
+                            <?php session_start();
+                            if ($_SESSION['user_role'] == 1) { ?>
+                                <th>User Email</th>
+                            <?php } ?>
+
+                            <th>Driver</th>
+                            <th>Company</th>
+                            <th>Incident Date</th>
+                            <th>Incident Description</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="display_report_data">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
+    <script src="../js/viewreport.js">
+
+    </script>
 </body>
 
 </html>

@@ -43,44 +43,46 @@
                     <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
                     <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
                 </ul>
-            <?php } ?>
+            </div>
 
-            <div class="main_content">
-                <div class="header">
-                    <div class="headtext">Driver Detail</div>
-                </div>
-                <div class="info">
-                    <div class="userprof">
-                        <div class="username" id="username">
-                            <h1 id="drivername"> </h1>
-                            <span id="contact"> </span>
-                            <span> | </span>
-                            <span id="gender"> </span>
-                        </div>
+        <?php } ?>
 
-                        <div class="profdescription">
-                            <p id="cardetails"> </p>
-                            <p id="carplate"> </p>
-                            <p id="rhcomp"> </p>
-
-                        </div>
-                        <ul class="profstats">
-                            <li><span id="numreviews"> </span>Review(s)</li>
-                            <li><span id="avgrating"> </span>Avg. Rating</li>
-                        </ul>
-                        <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
-
-                        </div>
-                        <div id="reviews">
-
-
-                        </div>
+        <div class="main_content">
+            <div class="header">
+                <div class="headtext">Driver Detail</div>
+            </div>
+            <div class="info">
+                <div class="userprof">
+                    <div class="username" id="username">
+                        <h1 id="drivername"> </h1>
+                        <span id="contact"> </span>
+                        <span> | </span>
+                        <span id="gender"> </span>
                     </div>
 
+                    <div class="profdescription">
+                        <p id="cardetails"> </p>
+                        <p id="carplate"> </p>
+                        <p id="rhcomp"> </p>
 
+                    </div>
+                    <ul class="profstats">
+                        <li><span id="numreviews"> </span>Review(s)</li>
+                        <li><span id="avgrating"> </span>Avg. Rating</li>
+                    </ul>
+                    <div class="reviewbutton" id="reviewbutton" style="display:flex;margin-top:10px;justify-content:center;">
+
+                    </div>
+                    <div id="reviews">
+
+
+                    </div>
                 </div>
+
+
             </div>
-            </div>
+        </div>
+    </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/driverdetails.js"> </script>
