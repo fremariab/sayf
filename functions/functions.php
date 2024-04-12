@@ -392,7 +392,7 @@ function searchDrivers($input_data)
             RideHailingCompany ON Driver.comid = RideHailingCompany.comid
         LEFT JOIN 
             DriverReviews ON Driver.did = DriverReviews.did
-            LEFT JOIN 
+        LEFT JOIN 
     IncidentReport ON Driver.did = IncidentReport.did
         WHERE 
             Driver.fname LIKE '%$keyword%' OR
