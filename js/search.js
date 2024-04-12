@@ -4,7 +4,8 @@ $("#submit").click(function (event) {
   event.preventDefault();
   var keyword = $("#input_search").val();
   if (keyword == null || keyword == "") {
-    window.location.href = "../view/searchresults.php";
+    alert("Please input the name of a driver");
+    // window.location.href = "../view/searchresults.php";
   }
 
   $.ajax({
