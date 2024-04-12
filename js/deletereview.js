@@ -1,5 +1,5 @@
 /**reportinc.js */
-document.addEventListener("DOMContentLoaded", function () {
+$("#deleteAction").click(function () {
   function getUrlParameter(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
