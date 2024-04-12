@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let result = "";
 
-        if (response.data.user_role == 1) {
+        if (response.user_role == 1) {
           response.data.forEach((element) => {
             result += "<tr>";
             result += "<td>" + "element.username" + "</td>";
