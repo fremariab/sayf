@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   $("#submit").click(function (event) {
     event.preventDefault();
 
-
     $.ajax({
-      url: "../actions/reportinc_action.php",
+      url: "../actions/deletereview_action.php",
       method: "post",
       data: JSON.stringify({
         rating: starrating,

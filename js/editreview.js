@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     $.ajax({
-      url: "../actions/reportinc_action.php",
+      url: "../actions/editreview_action.php",
       method: "post",
       data: JSON.stringify({
         rating: starrating,
