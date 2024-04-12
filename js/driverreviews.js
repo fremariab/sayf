@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
               "<p class='desc' id='desc'>" + element.review_text + "</p>";
             if (element.uid == response.user_id) {
               result +=
-                "<div class='actions'><a href='../view/editreview.php?revid=" +
+                "<div ><a href='../view/editreview.php?revid=" +
                 element.revid +
                 "&did=" +
                 element.did +
-                "'><i class='fas fa-edit'></i></a><i class='fa-solid fa-trash' onclick='confirmDelete(" +
+                "'><i id='actions'class='fas fa-edit'></i></a><i id='actions' class='fa-solid fa-trash' onclick='confirmDelete(" +
                 element.revid +
                 "); return false;'></i></div>";
             }
