@@ -87,16 +87,7 @@ $user_id = getUserID();
     <script>
         function confirmDelete(revid, did) {
             if (confirm("Are you sure you want to delete this review?")) {
-                function getUrlParameter(name) {
-                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-                    var results = regex.exec(location.search);
-                    return results === null ?
-                        "" :
-                        decodeURIComponent(results[1].replace(/\+/g, " "));
-                }
-                let revid = getUrlParameter("revid");
-                let did = getUrlParameter("did");
+
                 $.ajax({
                     url: "../actions/deletereview_action.php",
                     method: "post",
