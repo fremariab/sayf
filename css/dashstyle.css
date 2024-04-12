@@ -379,7 +379,7 @@ button {
   width: 80%;
 }
 
-.main_content .info .results .searchresult {
+.main_content .info .results .row .searchresult {
   border: #54177c 1px solid;
   width: 90%;
   margin-bottom: 30px;

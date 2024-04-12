@@ -45,7 +45,7 @@ $("#submit").click(function (event) {
             result +=
               '<div class="text"><p>' +
               element.rating_count +
-              " rating(s)</p></div>";
+              " review(s)</p></div>";
             result += "</div>";
             result += '<div class="details">';
             result +=
