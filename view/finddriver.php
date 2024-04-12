@@ -57,7 +57,7 @@ $user_id = getUserID();
                 <div class="searchboxwrapper" id="searchboxwrapper">
                     <div class="searchboxitem searchboxitem1">
                         <div class="searchbox">
-                            <input type="text" id="input_search" class="input_search" placeholder="Search Drivers">
+                            <input type="text" id="input_search" class="input_search" placeholder="Search Drivers or Car Plate Numbers">
                             <span class="icon">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </span>
