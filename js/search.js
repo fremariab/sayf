@@ -16,7 +16,7 @@ $("#submit").click(function (event) {
     }),
     dataType: "json",
     success: (data, status) => {
-      console.log(data, status);
+      // console.log(data, status);
       if (data.status == 200) {
         var response = data;
         var resultContainer = $("#results");
@@ -84,7 +84,7 @@ $("#submit").click(function (event) {
     },
     error: (error) => {
       var responseData = error.responseJSON.message;
-      alert(responseData);
+      alert(1);
     },
   });
 });
