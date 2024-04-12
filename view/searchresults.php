@@ -75,8 +75,6 @@ $user_id = getUserID();
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/search.js">
-        const urlParams = new URLSearchParams(window.location.search);
-        const data = decodeURIComponent(urlParams.get('data'));
     </script>
     <script>
         $(document).ready(function() {

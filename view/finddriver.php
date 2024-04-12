@@ -76,12 +76,30 @@ $user_id = getUserID();
                             </span> today, <br>reap the rewards of tomorrow's peace of mind.
                         </h1>
                     </center>
-                </div>
+                </div> <button id="backToTopBtn">Back to Top</button>
+
             </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/search.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
+                }
+            });
+
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'slow');
+            });
+        });
+    </script>
 </body>
 
 </html>
