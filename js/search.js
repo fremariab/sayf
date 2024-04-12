@@ -83,10 +83,11 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      var responseData = JSON.parse(error.responseJSON.message);
+      var responseData = error.responseJSON.message;
+      alert(responseData);
+
       console.log(error);
       // document.getElementById("error").innerHTML = responseData.message;
-      alert(responseData);
     },
   });
 });
