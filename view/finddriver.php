@@ -68,7 +68,7 @@ $user_id = getUserID();
                 </div>
                 <div class="error" id="error" style="color:#54177c;display: flex; justify-content: center; align-items: center;margin-top:10px;"> </div>
 
-                <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:17px;">
+                <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;">
                     <center>
                         <h1>
                             Invest in <span class="spec" style="color:#E41D9E">
@@ -77,7 +77,7 @@ $user_id = getUserID();
                         </h1>
                     </center>
                 </div>
-                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;padding:20px;width:20px;height:20px;font-size:20px"></i>
+                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right; width:20px;height:20px;font-size:25px"></i>
 
 
             </div>
