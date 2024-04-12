@@ -75,9 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "'><i class='fas fa-edit'></i></a><a href='../actions/deletereview_action.php?revid=" +
                 element.revid +
                 "'><i class='fa-solid fa-trash'></i></a></div>";
-
-              result += "</div>";
             }
+            result += "</div>";
 
             if (
               (index + 1) % resultsPerRow === 0 ||
