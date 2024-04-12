@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.data.user_role == 1) {
           response.data.forEach((element) => {
             result += "<tr>";
-            result += "<td>" + element.username + "</td>";
+            result += "<td>" + "element.username" + "</td>";
             result +=
               "<td class='rhcname'>" +
               element.fname +
