@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     dataType: "json",
     success: (data, status) => {
       console.log(data, status);
+      console.log(response.user_role);
+
       if (data.status == 200) {
         response = data;
 
