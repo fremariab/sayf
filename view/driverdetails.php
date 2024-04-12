@@ -83,6 +83,8 @@ $user_id = getUserID();
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/driverdetails.js"> </script>
     <script src="../js/driverreviews.js"> </script>
+    <script src="../js/deletereview.js"></script>
+
     <script>
         $(document).ready(function() {
             $(window).scroll(function() {
@@ -100,7 +102,6 @@ $user_id = getUserID();
             });
         });
     </script>
-    <script src="../js/deletereview.js"></script>
 </body>
 
 </html>

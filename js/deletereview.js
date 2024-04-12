@@ -1,5 +1,5 @@
 /**reportinc.js */
-document.getElementById("deleteAction").addEventListener("click", function () {
+$("#deleteAction").click(function (event) {
   function getUrlParameter(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
@@ -28,8 +28,8 @@ function confirmDelete(revid, did) {
           response = data;
 
           alert("Review deleted successfully");
+          window.location.href = "../view/driverdetails.php?did=" + did;
         }
-        window.location.href = "../view/driverdetails.php?did=" + did;
       },
       error: (error) => {
         $("#error").html(error.error);
