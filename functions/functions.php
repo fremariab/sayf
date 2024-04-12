@@ -472,7 +472,8 @@ function getPosts()
         $data = [
             'status' => 201,
             'message' => 'Post List Found',
-            'data' => $final_result
+            'data' => $final_result,
+            'user_id' => $_SESSION['user_id']
 
         ];
         header("HTTP/1.0 201 Post List Not Found");

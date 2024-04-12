@@ -73,7 +73,7 @@ $user_id = getUserID();
         <script src="../js/addpost.js"></script>
 
         <script>
-            function confirmDelete(posid, did) {
+            function confirmDelete(posid) {
                 if (confirm("Are you sure you want to delete this post?")) {
 
                     $.ajax({
