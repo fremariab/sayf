@@ -73,6 +73,8 @@ $user_id = getUserID();
                     </div>
                     <div id="reviews">
                     </div>
+                    <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;width:30px;height:30px;font-size:27"></i>
+
                 </div>
             </div>
         </div>
@@ -80,7 +82,23 @@ $user_id = getUserID();
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/driverdetails.js"> </script>
-    <script src="../js/driverreviews.js">
+    <script src="../js/driverreviews.js"> </script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
+                }
+            });
+
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'slow');
+            });
+        });
     </script>
 </body>
 
