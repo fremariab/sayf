@@ -68,7 +68,16 @@ document.addEventListener("DOMContentLoaded", function () {
             result += "<p class='close'></p>";
             result +=
               "<p class='desc' id='desc'>" + element.review_text + "</p>";
-            result += "</div>";
+            if (element.uid == response.user_id) {
+              result +=
+                "<div class='actions'><a href='../actions/editreview_action.php?revid=" +
+                element.revid +
+                "'><i class='fas fa-edit'></i></a><a href='../actions/deletereview_action.php?revid=" +
+                element.revid +
+                "'><i class='fa-solid fa-trash'></i></a></div>";
+
+              result += "</div>";
+            }
 
             if (
               (index + 1) % resultsPerRow === 0 ||

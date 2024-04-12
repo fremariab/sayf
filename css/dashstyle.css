@@ -764,6 +764,10 @@ tbody td {
   grid-row: 4/5;
   align-self: center;
 }
+.card2 {
+  background: #54177c;
+  color: #fff;
+}
 
 .card1 {
   background: #e41d9e;
@@ -778,4 +782,9 @@ tbody td {
   color: rgb(10, 190, 10);
   font-size: 15px;
   margin-bottom: 5px;
+}
+
+.actions {
+  font-size: 25px;
+  color: #54177c;
 }

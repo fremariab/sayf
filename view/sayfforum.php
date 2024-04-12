@@ -34,8 +34,19 @@
                 <div class="headtext">Sayf Space</div>
             </div>
             <div class="info">
+                <div class='card card2'>
+                    <div class='stars'>
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <p class='close'></p>
+                    <p class='desc' id='desc'> </p>
+                </div>
                 <div class="userprof">
+
                     <div id="reviews">
+
                     </div>
                 </div>
             </div>

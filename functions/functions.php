@@ -180,7 +180,8 @@ function getDriverReviews($input_data)
             $data = [
                 'status' => 200,
                 'message' => 'Driver Reviews Found',
-                'data' => $final_result
+                'data' => $final_result,
+                'user_id' => $_SESSION['user_id'],
             ];
             header("HTTP/1.0 200 Driver Reviews Found");
             return json_encode($data);
