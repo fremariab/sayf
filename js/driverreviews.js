@@ -22,15 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return starsHtml;
   }
 
-  function confirmDelete(revid) {
-    if (confirm("Are you sure you want to delete this review?")) {
-      window.location.href =
-        "../actions/deletereview_action.php?revid=" +
-        revid +
-        "&did=" +
-        driverId;
-    }
-  }
+  
 
   var driverId = getUrlParameter("did");
 
