@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>User Dashboard</title>
+  <title>User Home</title>
   <link rel="stylesheet" href="../css/dashstyle.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
@@ -27,32 +27,10 @@
     </div>
     <div class="main_content">
       <div class="header">
-        <div class="headtext">User Dashboard</div>
+        <div class="headtext">User Home</div>
       </div>
       <div class="info">
-        <div class="dashb" id="dashb">
-          <div class="notif" id="notif">
-            <div class="head" id="head" style="font-weight:bold; font-size:30px;color:#54177c; margin-bottom: 30px; ">Notifications</div>
-            <div class="notif_item like_item">
-              <div class="icon">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-              <div class="text">
-                <h3>New Like!</h3>
-                <p>You received a like on post1.</p>
-              </div>
-            </div>
-            <div class="notif_item cmnt_item">
-              <div class="icon">
-                <i class="fa-solid fa-comment-dots"></i>
-              </div>
-              <div class="text">
-                <h3>New Comment!</h3>
-                <p>You received a comment on post1.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="../images/logo.png" alt="">
       </div>
     </div>
   </div>

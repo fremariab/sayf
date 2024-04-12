@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Admin Home</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -28,12 +28,11 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Admin Dashboard</div>
+                <div class="headtext">Admin Home</div>
             </div>
             <div class="info">
-                <div class="dashb" id="dashb">
+                <img src="../images/logo.png" alt="">
 
-                </div>
             </div>
         </div>
     </div>

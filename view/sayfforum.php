@@ -1,3 +1,9 @@
+<?php
+include "../settings/core.php";
+ifLoggedIn();
+$user_role = getUserRole();
+$user_id = getUserID();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,28 +18,45 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar">
-            <div class="logo">
-                <a href="../view/userdash.php"><img src="../images/logo.png"></a>
+    <div class="sidebar">
+                <div class="logo">
+                    <a href="../admin/admindash.php"><img src="../images/logo.png"></a>
+                </div>
+                <ul>
+                    <li><a href="../admin/admindash.php"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/viewreports.php"><i class="fas fa-comments"></i></i>View Reports</a></li>
+                    <li><a href="../admin/addrhc.php"><i class="fas fa-address-card"></i>Add RH Company</a></li>
+                    <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 135px;"></i> Logout</a></li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
-                <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
-                <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
-                <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
-                <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
+        <?php } else { ?>
 
-            </ul>
-
-        </div>
+            <div class="sidebar">
+                <div class="logo">
+                    <a href="../view/userdash.php"><img src="../images/logo.png"></a>
+                </div>
+                <ul>
+                    <li><a href="../view/userdash.php"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="../view/userprofile.php"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="../view/finddriver.php"><i class="fa-solid fa-magnifying-glass"></i> Find Driver</a></li>
+                    <li><a href="../view/reviewdriver.php"><i class="fas fa-comments"></i></i>Review Driver</a></li>
+                    <li><a href="../view/reportinc.php"><i class="fas fa-address-card"></i>Report Incident</a></li>
+                    <li><a href="../view/viewreports.php"><i class="fas fa-eye"></i> View Reports</a></li>
+                    <li><a href="../view/sayfforum.php"><i class="fa-solid fa-users"></i> Forum</a></li>
+                    <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket" style="margin-top: 15px;"></i> Logout</a></li>
+                </ul>
+            </div>
+        <?php } ?>
         <div class="main_content">
             <div class="header">
                 <div class="headtext">Sayf Space</div>
             </div>
             <div class="info">
+                <div>
+                    <button id="#submit">Add Post</button>
+                </div>
                 <div class='card card2'>
                     <div class='stars'>
                         <ul>
@@ -52,6 +75,37 @@
             </div>
         </div>
         <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
+        <script src="../js/getposts.js"></script>
+        <script src="../js/addpost.js"></script>
+
+        <script>
+                    function confirmDelete(posid, did) {
+            if (confirm("Are you sure you want to delete this post?")) {
+
+                $.ajax({
+                    url: "../actions/deletepost_action.php",
+                    method: "post",
+                    data: JSON.stringify({
+                        posid: posid,
+                    }),
+                    dataType: "json",
+                    success: (data, status) => {
+                        console.log(data, status);
+                        console.log(did + " " + revid);
+                        if (data.status == 201) {
+                            response = data;
+
+                            alert("Post deleted successfully");
+                            window.location.href = "../view/sayfforum.php";
+                        }
+                    },
+                    error: (error) => {
+                        $("#error").html(error.error);
+                    },
+                });
+            }
+        }
+        </script>
 
 </body>
 

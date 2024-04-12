@@ -435,6 +435,53 @@ function searchDrivers($input_data)
         }
     }
 }
+
+function deletePost($input_data)
+{
+    global $conn;
+    $posid = $input_data->posid;
+
+    $sql = "DELETE FROM Post WHERE posid='$posid'";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $data = [
+            'status' => 201,
+            'message' => 'Post Deleted Successfully',
+        ];
+        header("HTTP/1.0 201 Post Deleted Successfully");
+        return json_encode($data);
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Errorr',
+        ];
+        header("HTTP/1.0 500 Internal Serval Errorr");
+        return json_encode($data);
+    }
+}
+
+function getPosts()
+{
+    global $conn;
+    $sql = "SELECT * FROM Post ORDER BY posid DESC";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        $data = [
+            'status' => 201,
+            'message' => 'Post List Found',
+        ];
+        header("HTTP/1.0 201 Post List Not Found");
+        return json_encode($data);
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Errorr',
+        ];
+        header("HTTP/1.0 500 Internal Serval Errorr");
+        return json_encode($data);
+    }
+}
 function reviewDriver($input_data)
 {
     global $conn;
@@ -611,6 +658,49 @@ function validate($data)
     $data = mysqli_escape_string($conn, $data);
     return $data;
 }
+
+function addPost()
+{
+    global $conn;
+
+    $posttext = validate($input_data->postText);
+    $creator = $_SESSION['user_id'];
+
+    if (empty($posttext)) {
+        return error422("Enter the post text");
+    } else {
+
+
+
+        $sql = "INSERT INTO Post(creator,post_text,date_posted) VALUES('$creator','$posttext', NOW())";
+        $result2 = mysqli_query($conn, $sql);
+
+        $sql = "SELECT * FROM Post";
+        $result3 = mysqli_query($conn, $sql);
+
+
+        $final_result = mysqli_fetch_all($result3, MYSQLI_ASSOC);
+
+        if ($result2) {
+            $data = [
+                'status' => 201,
+                'message' => 'Post Added Successfully',
+                'data' => $final_result
+            ];
+            header("HTTP/1.0 201 Post Added Created Successfully");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Errorr',
+            ];
+            header("HTTP/1.0 500 Internal Serval Errorr");
+            return json_encode($data);
+        }
+    }
+}
+
+
 function addRideHailingCompany($input_data)
 {
     global $conn;
