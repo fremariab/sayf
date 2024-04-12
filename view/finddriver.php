@@ -76,7 +76,11 @@ $user_id = getUserID();
                             </span> today, <br>reap the rewards of tomorrow's peace of mind.
                         </h1>
                     </center>
-                </div> <button id="backToTopBtn">Back to Top</button>
+                </div>
+                <div class="backToTopBtn" id="backToTopBtn">
+                    <i class="fas fa-arrow-up" style="color:white;background-color:#54177c"></i>
+
+                </div>
 
             </div>
         </div>
