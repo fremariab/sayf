@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let result = "";
         var reviewContainer = $("#reviews");
         reviewContainer.empty();
-        let buttonres = "";
 
         for (var index = 0; index < response.data.length; index++) {
           var element = response.data[index];

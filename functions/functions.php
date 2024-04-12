@@ -466,10 +466,14 @@ function getPosts()
     global $conn;
     $sql = "SELECT * FROM Post ORDER BY posid DESC";
     $result = mysqli_query($conn, $sql);
+    $final_result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
     if ($result) {
         $data = [
             'status' => 201,
             'message' => 'Post List Found',
+            'data' => $final_result
+
         ];
         header("HTTP/1.0 201 Post List Not Found");
         return json_encode($data);
@@ -477,6 +481,7 @@ function getPosts()
         $data = [
             'status' => 500,
             'message' => 'Internal Serval Errorr',
+
         ];
         header("HTTP/1.0 500 Internal Serval Errorr");
         return json_encode($data);
