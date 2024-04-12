@@ -64,6 +64,11 @@ $("#submit").click(function (event) {
               "<a href='../view/driverdetails.php?did=" +
               element.did +
               "'> View Driver Details </a>";
+
+            if (element.incident_reports > 5 || element.average_rating < 2) {
+              result +=
+                "<i class='fa-solid fa-triangle-exclamation' style='color:red'></i><span style='color:red'>";
+            }
             result += "</div>";
             result += "</div>";
 

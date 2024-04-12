@@ -383,6 +383,7 @@ function searchDrivers($input_data)
             RideHailingCompany.company_name,
             ROUND(AVG(DriverReviews.rating), 0) AS average_rating,
             COUNT(DriverReviews.rating) AS rating_count
+            COUNT(IncidentReports.report_id) AS incident_reports
         FROM 
             Driver
         LEFT JOIN 
@@ -391,6 +392,8 @@ function searchDrivers($input_data)
             RideHailingCompany ON Driver.comid = RideHailingCompany.comid
         LEFT JOIN 
             DriverReviews ON Driver.did = DriverReviews.did
+            LEFT JOIN 
+    IncidentReports ON Driver.did = IncidentReports.driver_id
         WHERE 
             Driver.fname LIKE '%$keyword%' OR
             Driver.lname LIKE '%$keyword%' OR
