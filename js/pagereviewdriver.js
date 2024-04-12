@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let selectedStar = 0;
   let selectedCompany = "";
-
+  $("#error").html("");
+  $("#success").html("");
   stars.forEach((star, index1) => {
     star.addEventListener("click", () => {
       selectedStar = index1 + 1;
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var reviewDescription = $("#ReviewDescription").val();
 
     if (reviewDescription == null || reviewDescription.trim() === "") {
-      alert("Review Description can't be blank");
+      $("#error").html("Review Description can't be blank");
       return false;
     }
 
@@ -42,35 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "post",
       data: JSON.stringify({
         driverId: driverId,
-
         rating: starrating,
-
         reviewDescription: reviewDescription,
       }),
       dataType: "json",
       success: (data, status) => {
         console.log(data, status);
         if (data.status == 201) {
-          // response = data;
-
-          // let result = "";
-
-          // response.data.forEach((element) => {
-          //   result += "<tr>";
-          //   result += "<td class='rhcname'>" + element.company_name + "</td>";
-          //   result +=
-          //     "<td class='contactnum'>" + element.contact_number + "</td>";
-          //   result += "<td class='email'>" + element.email + "</td>";
-          //   result += "<td class='location'>" + element.location + "</td>";
-          //   result += "</tr>";
-          // });
+          var message = data.message;
+          var messageElement = '<div class="alert">' + message + "</div>";
+          $("#success").append(messageElement);
+          setTimeout(function () {
+            $(".alert").remove();
+          }, 10000);
           window.location.href = "../view/driverdetails.php?did=" + driverId;
         }
       },
       error: (error) => {
-        console.log(error);
-        var responseData = JSON.stringify(error.responseText);
-        document.getElementById("error").innerHTML = responseData.message;
+        $("#error").html(error.error);
       },
     });
   });

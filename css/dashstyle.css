@@ -380,7 +380,7 @@ button {
 }
 
 .main_content .info .results .searchresult {
-  border: #54177c 1px solid;
+  border: #fff 1px solid;
   width: 90%;
   margin-bottom: 30px;
   display: flex;
