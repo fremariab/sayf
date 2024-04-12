@@ -78,6 +78,8 @@ $("#submit").click(function (event) {
           }
         }
         console.log("successful");
+      } else {
+        alert(data.error);
       }
     },
     error: (error) => {
