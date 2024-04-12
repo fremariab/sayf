@@ -22,8 +22,8 @@
                 <header>Signup</header>
                 <form method="post">
                     <div id="error" class="error"></div>
-                    <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$"
-                        placeholder="Username (Please choose a username that can not identify you)">
+
+                    <input type="text" name="uname" id="uname" pattern="[^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" placeholder="Username (Please choose a username that can not identify you)">
                     <div class="radio-container">
                         <label style="color:gray;" for="gender">Gender </label>
                     </div>
@@ -34,19 +34,13 @@
                         <label for="gender-female">Female</label>
                     </div>
 
-                    <input type="text" name="phone_number" id="phone_number"
-                        pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Phone Number">
+                    <input type="text" name="phone_number" id="phone_number" pattern="^\(?\d{1,3}\)?[- ]?\d{3}[- ]?\d{3}[- ]?\d{4}$" placeholder="Phone Number">
 
-                    <input type="email" name="register_email" id="register_email"
-                        pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
+                    <input type="email" name="register_email" id="register_email" pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
 
-                    <input type="password" name="register_password" id="register_password"
-                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        placeholder="Password">
+                    <input type="password" name="register_password" id="register_password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Password">
 
-                    <input type="password" name="register_password1" id="register_password1"
-                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        placeholder="Confirm Password">
+                    <input type="password" name="register_password1" id="register_password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" placeholder="Confirm Password">
 
                     <button type="submit" class="button" name="submit_button" id="submit">Sign Up</button>
 

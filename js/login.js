@@ -32,7 +32,7 @@ $("#submit").click(function (event) {
         $("body").append(messageElement); // Append the message to the body of the page
         setTimeout(function () {
           $(".alert").remove(); // Remove the message after a certain duration (e.g., 5 seconds)
-        }, 5000);
+        }, 7000);
         if (data.data && data.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
         } else {

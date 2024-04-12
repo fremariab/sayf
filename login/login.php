@@ -23,6 +23,8 @@
                 <header>Login</header>
                 <form method="post">
                     <div id="error" class="error"></div>
+                    <div id="success" class="success"></div>
+
                     <input type="text" placeholder="Enter your username" name="username" id="username">
                     <input type="password" placeholder="Enter your password" name="passwrd" id="password">
                     <button type="submit" class="button" id="submit" name="submit_button">Login</button>
