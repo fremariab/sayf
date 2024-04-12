@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ? ""
       : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-  var revid = getUrlParameter("revid");
-  var did = getUrlParameter("did");
+  let revid = getUrlParameter("revid");
+  let did = getUrlParameter("did");
 
   document
     .getElementById("deleteAction")
