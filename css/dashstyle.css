@@ -784,7 +784,8 @@ tbody td {
   margin-bottom: 5px;
 }
 
-#actions {
+#editAction,
+#deleteAction {
   font-size: 20px;
   color: #54177c;
 }
