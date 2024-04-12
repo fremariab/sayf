@@ -88,7 +88,41 @@ function viewDriverList()
         return json_encode($data);
     }
 }
+function editReview($input_data)
+{
+    global $conn;
 
+    $rating = validate($input_data->rating);
+    $reviewDescription = validate($input_data->reviewDescription);
+    $reviewId = $input_data->reviewId;
+
+    if (empty($reviewDescription)) {
+        return error422("Review Description can't be blank");
+    } else {
+        if (empty($rating)) {
+            $rating = 1;
+        }
+
+        $sql = "UPDATE DriverReviews SET rating='$rating', review_text='$reviewDescription' WHERE revid='$reviewId'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $data = [
+                'status' => 201,
+                'message' => 'Review Updated Successfully',
+            ];
+            header("HTTP/1.0 201 Review Updated Successfully");
+            return json_encode($data);
+        } else {
+            $data = [
+                'status' => 500,
+                'message' => 'Internal Serval Errorr',
+            ];
+            header("HTTP/1.0 500 Internal Serval Errorr");
+            return json_encode($data);
+        }
+    }
+}
 function pagereviewDriver($input_data)
 {
     global $conn;
@@ -456,7 +490,7 @@ function reviewDriver($input_data)
                                     $data = [
                                         'status' => 201,
                                         'message' => 'Driver and Car Data Inserted Successfully',
-                                        'driverId'=>$did
+                                        'driverId' => $did
                                     ];
                                     header("HTTP/1.0 201 Driver and Car Data Inserted Successfully");
                                     echo json_encode($data);

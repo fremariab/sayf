@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return starsHtml;
   }
 
+  function confirmDelete(revid) {
+    if (confirm("Are you sure you want to delete this review?")) {
+      window.location.href =
+        "../actions/deletereview_action.php?revid=" +
+        revid +
+        "&did=" +
+        driverId;
+    }
+  }
+
   var driverId = getUrlParameter("did");
 
   $.ajax({
@@ -70,11 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
               "<p class='desc' id='desc'>" + element.review_text + "</p>";
             if (element.uid == response.user_id) {
               result +=
-                "<div class='actions'><a href='../actions/editreview_action.php?revid=" +
+                "<div class='actions'><a href='../view/editreview.php?revid=" +
                 element.revid +
-                "'><i class='fas fa-edit'></i></a><a href='../actions/deletereview_action.php?revid=" +
+                "&did=" +
+                element.did +
+                "'><i class='fas fa-edit'></i></a><i class='fa-solid fa-trash' onclick='confirmDelete(" +
                 element.revid +
-                "'><i class='fa-solid fa-trash'></i></a></div>";
+                "); return false;'></i></div>";
             }
             result += "</div>";
 
