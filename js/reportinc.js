@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var minDate = new Date("2010-01-01");
     if (selectedDate > currentDate || selectedDate < minDate) {
       $("#error").html("Please select a date between 1999-01-01 and today.");
+      return false;
     }
     var incidentDescription = $("#incidentDescription").val();
 
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (incidentDate == null || incidentDate.trim() === "") {
-      $("#error").html("IncidentDate can't be blank");
+      $("#error").html("Incident Date can't be blank");
       return false;
     }
     if (incidentDescription == null || incidentDescription.trim() === "") {
