@@ -94,7 +94,7 @@ function editReview($input_data)
 
     $rating = validate($input_data->rating);
     $reviewDescription = validate($input_data->reviewDescription);
-    $reviewId = $input_data->reviewId;
+    $reviewId = $input_data->revid;
 
     if (empty($reviewDescription)) {
         return error422("Review Description can't be blank");
