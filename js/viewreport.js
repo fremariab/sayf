@@ -10,14 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (data.status == 200) {
         response = data;
-        console.log(response.user_role);
-
+ 
         let result = "";
 
         if (response.user_role == 1) {
           response.data.forEach((element) => {
             result += "<tr>";
-            result += "<td>" + "element.username" + "</td>";
+            result += "<td>" + element.username + "</td>";
             result +=
               "<td class='rhcname'>" +
               element.fname +
