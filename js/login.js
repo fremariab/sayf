@@ -32,8 +32,8 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      var responseData = JSON.parse(error.responseText);
-      document.getElementById("error").innerHTML = responseData.message;
+      // var responseData = JSON.parse(error.responseText);
+      document.getElementById("error").innerHTML = responseData.error;
     },
   });
 });
