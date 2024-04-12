@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<div class='card card2'>";
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.post_text + "</p>";
+          result += "<div class><i class='fa-solid fa-heart'></i></div>";
           if (element.creator == response.user_id) {
             result +=
               "<div ><i id='deleteAction' onclick='confirmDelete(" +
