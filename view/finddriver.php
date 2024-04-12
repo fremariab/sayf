@@ -64,12 +64,10 @@ $user_id = getUserID();
                         </div>
                         <button id="submit">Search</button>
                     </div>
-                    <center>
-                        <div class="error" id="error"> </div>
-
-                    </center>
 
                 </div>
+                <div class="error" id="error" style="display: flex;  margin-left:70px;  align-items: center;margin-top:90px;"> </div>
+
                 <div class="results" id="results" style="width:80%;display: flex;  margin-left:70px;  align-items: center;margin-top:90px;">
                     <center>
                         <h1>
