@@ -29,7 +29,7 @@ $("#submit").click(function (event) {
         //   window.location.href = "../view/userdash.php";
         // }    var message = (data.data && data.data.user_role == 1) ? "Logged in successfully as admin." : "Logged in successfully as user.";
         var messageElement = '<div class="alert">' + message + "</div>";
-        $("body").append(messageElement); // Append the message to the body of the page
+        $("#success").append(messageElement); // Append the message to the body of the page
         setTimeout(function () {
           $(".alert").remove(); // Remove the message after a certain duration (e.g., 5 seconds)
         }, 7000);
