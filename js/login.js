@@ -11,6 +11,8 @@ $("#submit").click(function (event) {
     $("#error").html("Password must be at least 6 characters long.");
     return false;
   }
+  $("#error").html("");
+  $("#success").html("");
 
   $.ajax({
     url: "../actions/login_action.php",
