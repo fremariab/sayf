@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   var revid = getUrlParameter("revid");
   var did = getUrlParameter("did");
-
+  function confirmDelete(revid) {
+    if (confirm("Are you sure you want to delete this assignment?")) {
+      window.location.href =
+        "../actions/deletereview_action.php?revid=" + revid + "&did=" + did;
+    }
+  }
   //   $("#error").html("");
   //   $("#success").html("");
 

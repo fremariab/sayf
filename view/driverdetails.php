@@ -100,7 +100,7 @@ $user_id = getUserID();
             });
         });
     </script>
-    <script scr="../js/deletereview.js">
+    <script src="../js/deletereview.js">
 
     </script>
 </body>
