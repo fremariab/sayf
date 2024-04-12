@@ -659,7 +659,7 @@ function validate($data)
     return $data;
 }
 
-function addPost(input_data)
+function addPost($input_data)
 {
     global $conn;
 
