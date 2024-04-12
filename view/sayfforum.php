@@ -57,17 +57,9 @@ $user_id = getUserID();
             </div>
             <div class="info">
                 <div>
-                    <button id="#submit">Add Post</button>
+                    <a href="../view/addpost.php"><button>Add Post</button></a>
                 </div>
-                <div class='card card2'>
-                    <div class='stars'>
-                        <ul>
 
-                        </ul>
-                    </div>
-                    <p class='close'></p>
-                    <p class='desc' id='desc'> </p>
-                </div>
                 <div class="userprof">
 
                     <div id="reviews">
