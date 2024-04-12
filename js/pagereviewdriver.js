@@ -1,9 +1,10 @@
-/**reviewdriver.js */
+/**pagereviewdriver.js */
 document.addEventListener("DOMContentLoaded", function () {
   const stars = document.querySelectorAll(".stars i");
 
   let selectedStar = 0;
   let selectedCompany = "";
+
   $("#error").html("");
   $("#success").html("");
   stars.forEach((star, index1) => {
