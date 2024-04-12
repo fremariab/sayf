@@ -24,7 +24,7 @@ $("#submit").click(function (event) {
       console.log(data, status);
       console.log(data.data.user_role);
       if (data.status == 200) {
-        if (data.data.user_role == 1) {
+        if (data.data && data.data.user_role == 1) {
           window.location.href = "../admin/admindash.php";
         } else {
           window.location.href = "../view/userdash.php";
@@ -32,7 +32,6 @@ $("#submit").click(function (event) {
       }
     },
     error: (error) => {
-      // var responseData = JSON.parse(error.responseText);
       document.getElementById("error").innerHTML = error.error;
     },
   });
