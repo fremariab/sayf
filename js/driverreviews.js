@@ -74,7 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.revid +
                 "&did=" +
                 element.did +
-                "'><i id='editAction'class='fas fa-edit'></i></a><i id='deleteAction' class='fa-solid fa-trash'></i></div>";
+                "'><i id='editAction'class='fas fa-edit'></i></a><i id='deleteAction' onclick='confirmDelete(" +
+                element.revid +
+                "," +
+                element.did +
+                ") ; return false;' class='fa-solid fa-trash'></i></div>";
             }
             result += "</div>";
 
