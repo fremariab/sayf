@@ -1,3 +1,9 @@
+<?php
+include "../settings/core.php";
+ifLoggedIn();
+$user_role = getUserRole();
+$user_id = getUserID();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
