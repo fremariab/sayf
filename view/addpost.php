@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit Review</title>
+    <title>Add Post</title>
     <link rel="stylesheet" href="../css/dashstyle.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -28,7 +28,7 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Report Incident</div>
+                <div class="headtext">Add Post</div>
             </div>
             <div class="info">
                 <div class="reptform">
