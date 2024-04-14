@@ -21,7 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.post_text + "</p>";
           result +=
-            "<span class><i class='fa-solid fa-heart' style='font-size: 20px;color:white;'></i></span>";
+            "<span><i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i></span>";
+          result +=
+            "<span><p style='font-size: 20px;color:white;margin-right:20px;'>" +
+            hi +
+            "</p></span>";
           if (element.creator == response.user_id) {
             result +=
               "<span><i id='deleteAction' onclick='confirmDelete(" +
