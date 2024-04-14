@@ -33,15 +33,15 @@ function likePost($input_data)
                     'status' => 500,
                     'message' => 'Failed to like the post',
                 ];
-                header("HTTP/1.0 200 Failed to unlike post ");
+                header("HTTP/1.0 500 Failed to unlike post ");
                 return json_encode($data);
             }
             $data = [
-                'status' => 200,
+                'status' => 201,
                 'message' => 'Post Unliked',
 
             ];
-            header("HTTP/1.0 200 Post Unliked ");
+            header("HTTP/1.0 201 Post Unliked ");
             return json_encode($data);
         } else {
             $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";

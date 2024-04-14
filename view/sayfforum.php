@@ -118,7 +118,7 @@ if ($gender == 1) {
                 dataType: "json",
                 success: (data, status) => {
                     console.log(data, status);
-                    if (data.status == 200) {
+                    if (data.status == 200 || data.status == 201) {
                         $(this).siblings("#engagement_count").html(data.engagement_count);
                     }
                 },
