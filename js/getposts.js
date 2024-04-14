@@ -20,12 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<div class='card card2'>";
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.post_text + "</p>";
-          result += "<div class><i class='fa-solid fa-heart'></i></div>";
+          result +=
+            "<span class><i class='fa-solid fa-heart' style='font-size: 20px;color:white;'></i></span>";
           if (element.creator == response.user_id) {
             result +=
-              "<div ><i id='deleteAction' onclick='confirmDelete(" +
+              "<span><i id='deleteAction' onclick='confirmDelete(" +
               element.posid +
-              "); return false;' class='fa-solid fa-trash' style='color:white;'></i></div>";
+              "); return false;' class='fa-solid fa-trash' style='color:white;font-size: 20px;'></i></span>";
           }
           result += "</div>";
 
