@@ -72,10 +72,38 @@ $user_id = getUserID();
                     </tbody>
                 </table>
             </div>
+            <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color: white;
+  background-color: #54177c;
+  width: 30px;
+  height: 30px;
+  font-size: 27px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;"></i>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
     <script src="../js/viewreport.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
+                }
+            });
+
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'slow');
+            });
+        });
     </script>
 </body>
 
