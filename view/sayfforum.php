@@ -55,68 +55,69 @@ $user_id = getUserID();
             <div class="header">
                 <div class="headtext">Sayf Space</div>
             </div>
-            <div class="info">
+            <div class="info" style="display:flex;justify-contents:center;align-items:center;">
                 <a href="../view/addpost.php"><button>Add Post</button></a>
-                <div id="reviews">
-
-                </div>
-                <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;width:30px;height:30px;font-size:27px"></i>
-
-                <div class="userprof">
-
-
-                </div>
             </div>
+            <div id="reviews">
+
+            </div>
+            <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;width:30px;height:30px;font-size:27px"></i>
+
+            <!-- <div class="userprof">
+
+
+                </div> -->
         </div>
-        <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
-        <script src="../js/getposts.js"></script>
-        <script>
-            $(document).ready(function() {
-                $(window).scroll(function() {
-                    if ($(this).scrollTop() > 100) {
-                        $('#backToTopBtn').fadeIn();
-                    } else {
-                        $('#backToTopBtn').fadeOut();
-                    }
-                });
-
-                $('#backToTopBtn').click(function() {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 'slow');
-                });
-            });
-        </script>
-        <script src="../js/addpost.js"></script>
-
-        <script>
-            function confirmDelete(posid) {
-                if (confirm("Are you sure you want to delete this post?")) {
-
-                    $.ajax({
-                        url: "../actions/deletepost_action.php",
-                        method: "post",
-                        data: JSON.stringify({
-                            posid: posid,
-                        }),
-                        dataType: "json",
-                        success: (data, status) => {
-                            console.log(data, status);
-                            console.log(did + " " + revid);
-                            if (data.status == 201) {
-                                response = data;
-
-                                alert("Post deleted successfully");
-                                window.location.href = "../view/sayfforum.php";
-                            }
-                        },
-                        error: (error) => {
-                            $("#error").html(error.error);
-                        },
-                    });
+    </div>
+    <script src="https://kit.fontawesome.com/88061bebc5.js" crossorigin="anonymous"></script>
+    <script src="../js/getposts.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTopBtn').fadeIn();
+                } else {
+                    $('#backToTopBtn').fadeOut();
                 }
+            });
+
+            $('#backToTopBtn').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'slow');
+            });
+        });
+    </script>
+    <script src="../js/addpost.js"></script>
+
+    <script>
+        function confirmDelete(posid) {
+            if (confirm("Are you sure you want to delete this post?")) {
+
+                $.ajax({
+                    url: "../actions/deletepost_action.php",
+                    method: "post",
+                    data: JSON.stringify({
+                        posid: posid,
+                    }),
+                    dataType: "json",
+                    success: (data, status) => {
+                        console.log(data, status);
+                        console.log(did + " " + revid);
+                        if (data.status == 201) {
+                            response = data;
+
+                            alert("Post deleted successfully");
+                            window.location.href = "../view/sayfforum.php";
+                        }
+                    },
+                    error: (error) => {
+                        $("#error").html(error.error);
+                    },
+                });
             }
-        </script>
+        }
+    </script>
 
 </body>
 
