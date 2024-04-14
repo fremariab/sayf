@@ -3,6 +3,13 @@ include "../settings/core.php";
 ifLoggedIn();
 $user_role = getUserRole();
 $user_id = getUserID();
+$gender = getGender();
+
+if ($gender == 1) {
+    header("Location: ../view/userdash.php");
+    die();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

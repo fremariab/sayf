@@ -9,6 +9,15 @@ function ifLoggedIn()
     }
 }
 
+function getGender()
+{
+    if (!($_SESSION['gender'])) {
+        return false;
+    } else {
+        return $_SESSION['gender'];
+    }
+}
+
 function getUserRole()
 {
     if (!($_SESSION['user_role'])) {

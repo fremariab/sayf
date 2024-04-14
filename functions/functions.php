@@ -870,12 +870,13 @@ function loginUser($user_data)
                     $_SESSION['user_id'] = $row['uid'];
                     $_SESSION['user_role'] = $row['rid'];
                     $_SESSION['username'] = $row['username'];
+                    $_SESSION['gender'] = $row['gender'];
+
                     $data = [
                         'status' => 200,
                         'message' => 'User Loggged in Successfully',
                         'user_id' => $_SESSION['user_id'],
                         'user_role' => $_SESSION['user_role']
-
                     ];
                     header("HTTP/1.0 200 User Created Successfully");
                     return json_encode($data);
