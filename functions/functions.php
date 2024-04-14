@@ -22,6 +22,21 @@ function likePost($input_data)
 
         $uid = $_SESSION['user_id'];
         $createdon = date("Y-m-d H:i:s");
+
+        $sql = "SELECT COUNT(*) AS count FROM UserEngagement WHERE uid = '$uid' AND posid = '$posid'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        if ($row['count'] > 0) {
+            $sql = "DELETE FROM UserEngagement WHERE uid = '$uid' AND posid = '$posid'";
+
+            $data = [
+                'status' => 400,
+                header("HTTP/1.0 400 Unliked Post");
+            ];
+            http_response_code(400);
+            return json_encode($data);
+        }
+
         $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";
         if (!mysqli_query($conn, $sql)) {
             $data = [
