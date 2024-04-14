@@ -61,7 +61,17 @@ $user_id = getUserID();
             <div id="reviews">
 
             </div>
-            <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color:white;background-color:#54177c;float:right;width:30px;height:30px;font-size:27px"></i>
+            <i class="fas fa-arrow-up" class="backToTopBtn" id="backToTopBtn" style="color: white;
+  background-color: #54177c;
+  width: 30px;
+  height: 30px;
+  font-size: 27px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;"></i>
 
             <div class="userprof">
 
