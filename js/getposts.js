@@ -23,16 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
           result +=
             "<span data-posid='" +
             element.posid +
-            "'><i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i></span>";
+            "' style='display: inline-block;'>";
           result +=
-            "<span><p style='font-size: 20px;color:white;margin-right:20px;'>" +
+            "<i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i>";
+          result +=
+            "<p style='font-size: 20px;color:white;margin-right:20px;display: inline-block;'>" +
             1 +
-            "</p></span>";
+            "</p>";
+          result += "</span>";
           if (element.creator == response.user_id) {
+            result += "<span style='display: inline-block;'>";
             result +=
-              "<span><i id='deleteAction' onclick='confirmDelete(" +
+              "<i id='deleteAction' onclick='confirmDelete(" +
               element.posid +
-              "); return false;' class='fa-solid fa-trash' style='color:white;font-size: 20px;'></i></span>";
+              "); return false;' class='fa-solid fa-trash' style='color:white;font-size: 20px;'></i>";
+            result += "</span>";
           }
           result += "</div>";
 
