@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             result += "</tr>";
           });
         } else {
+          if(element.uid == response.user_id){
           response.data.forEach((element) => {
             result += "<tr>";
             result +=
