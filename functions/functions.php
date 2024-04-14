@@ -30,10 +30,11 @@ function likePost($input_data)
             $sql = "DELETE FROM UserEngagement WHERE uid = '$uid' AND posid = '$posid'";
 
             $data = [
-                'status' => 400,
-                header("HTTP/1.0 400 Unliked Post");
+                'status' => 200,
+                'message' => 'Post Unliked',
+
             ];
-            http_response_code(400);
+            header("HTTP/1.0 200 Post Unliked ");
             return json_encode($data);
         }
 
