@@ -29,9 +29,8 @@ function likePost($input_data)
                 'status' => 500,
                 'message' => 'Failed to like the post',
             ];
-            http_response_code(500);
-            echo json_encode($data);
-            return;
+            header("HTTP/1.0 500 Failed to like the post");
+            return json_encode($data);
         }
 
         // Count number of engagements for the post
@@ -45,15 +44,15 @@ function likePost($input_data)
             'message' => 'Post liked successfully',
             'engagement_count' => $engagement_count,
         ];
-        http_response_code(200);
-        echo json_encode($data);
+        header("HTTP/1.0 200 Post liked successfully");
+        return json_encode($data);
     } else {
         $data = [
             'status' => 400,
             'message' => 'Missing post ID',
         ];
-        http_response_code(400);
-        echo json_encode($data);
+        header("HTTP/1.0 400 Missing post ID");
+        return json_encode($data);
     }
 }
 

@@ -9,15 +9,15 @@ header('Access-Control-Allow-Headers: Content-Type,Access-Control-Allow-Headers,
 
 include('../functions/functions.php');
 
-$inputData = json_decode(file_get_contents("php://input"));
+$input_data = json_decode(file_get_contents("php://input"));
 
 $res;
 
-if (empty($inputData)) {
+if (empty($input_data)) {
     $res["msg"] = "No data received";
     echo json_encode($res);
     exit();
 }
-$likePost = likePost($inputData);
+$likePost = likePost($input_data);
 
 echo $likePost;

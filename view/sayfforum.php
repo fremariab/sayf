@@ -107,7 +107,7 @@ if ($gender == 1) {
     </script>
     <script src="../js/addpost.js"></script>
     <script>
-        $("#like-button").click(function() {
+        $(document).on("click", "#like-button", function() {
             var posid = $(this).data("posid");
             $.ajax({
                 url: "../actions/likepost_action.php",
@@ -119,7 +119,7 @@ if ($gender == 1) {
                 success: (data, status) => {
                     console.log(data, status);
                     if (data.status == 200) {
-                        $("#engagement_count").html(data.engagement_count);
+                        $(this).siblings("#engagement_count").html(data.engagement_count);
                     }
                 },
                 error: (error) => {
