@@ -20,8 +20,7 @@ function likePost($input_data)
     if (!empty($input_data->posid)) {
         $posid = $input_data->posid;
 
-        // Insert into UserEngagement table
-        $uid = getUserId(); // Assuming you have a function to get the user ID
+        $uid = $_SESSION['user_id'];
         $createdon = date("Y-m-d H:i:s");
         $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";
         if (!mysqli_query($conn, $sql)) {
