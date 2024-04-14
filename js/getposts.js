@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
           result += "<p class='close'></p>";
           result += "<p class='desc' id='desc'>" + element.post_text + "</p>";
           result +=
-            "<span data-posid='" +
-            element.posid +
-            "' style='display: inline-block;'>";
+            "<div style='display: flex; justify-content: space-between; align-items: center;'>"; // Flex container
+          result += "<span data-posid='" + element.posid + "'>";
           result +=
             "<i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i>";
           result +=
@@ -32,13 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
             "</p>";
           result += "</span>";
           if (element.creator == response.user_id) {
-            result += "<span style='display: inline-block;'>";
+            result += "<span>";
             result +=
               "<i id='deleteAction' onclick='confirmDelete(" +
               element.posid +
               "); return false;' class='fa-solid fa-trash' style='color:white;font-size: 20px;'></i>";
             result += "</span>";
           }
+          result += "</div>";
           result += "</div>";
 
           if (
