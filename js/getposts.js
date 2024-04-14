@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
               element.posid +
               "); return false;' class='fa-solid fa-trash'></i></div>";
           }
+          result += "</div>";
 
           if (
             (index + 1) % resultsPerRow === 0 ||
