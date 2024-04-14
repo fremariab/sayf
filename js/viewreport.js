@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             result += "</tr>";
           });
         } else {
-          if (element.uid == response.user_id) {
-            response.data.forEach((element) => {
+          response.data.forEach((element) => {
+            if (element.uid == response.user_id) {
               result += "<tr>";
               result +=
                 "<td class='rhcname'>" +
@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
               result +=
                 "<td class='location'>" + element.report_description + "</td>";
               result += "</tr>";
-            });
-          }
+            }
+          });
         }
 
         document.getElementById("display_report_data").innerHTML += result;
