@@ -55,7 +55,7 @@ $user_id = getUserID();
             <div class="header">
                 <div class="headtext">Sayf Space</div>
             </div>
-            <div class="info" style="display:flex;justify-content:center;align-items:center;">
+            <div class="info" style="display:flex;justify-content:center;">
                 <a href="../view/addpost.php"><button>Add Post</button></a>
             </div>
             <div id="reviews">
