@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             result +=
               "<div ><i id='deleteAction' onclick='confirmDelete(" +
               element.posid +
-              "); return false;' class='fa-solid fa-trash'></i></div>";
+              "); return false;' class='fa-solid fa-trash' style='color:white;'></i></div>";
           }
           result += "</div>";
 
