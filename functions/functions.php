@@ -13,6 +13,26 @@ function error422($message)
     return json_encode($data);
 }
 
+function likePost($input_data)
+{
+    if (!empty($input_data->posid)) {
+        $posid = $input_data->posid;
+
+        $data = [
+            'status' => 200,
+            'message' => 'Post liked successfully',
+        ];
+        http_response_code(200);
+        echo json_encode($data);
+    } else {
+        $data = [
+            'status' => 500,
+            'message' => 'Internal Serval Error',
+        ];
+        header("HTTP/1.0 500 Internal Serval Error");
+        return json_encode($data);
+    }
+}
 function viewIncidentReport()
 {
     global $conn;

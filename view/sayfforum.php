@@ -106,7 +106,29 @@ if ($gender == 1) {
         });
     </script>
     <script src="../js/addpost.js"></script>
-
+    <script>
+        $(".like-button").click(function() {
+            var posid = $(this).data("posid");
+            $.ajax({
+                url: "../actions/likepost_action.php",
+                method: "post",
+                data: JSON.stringify({
+                    posid: posid,
+                    
+                }),
+                dataType: "json",
+                success: (data, status) => {
+                    console.log(data, status);
+                    if (data.status == 200) {
+                        $(this).toggleClass("liked");
+                    }
+                },
+                error: (error) => {
+                    console.error("Error:", error);
+                },
+            });
+        });
+    </script>
     <script>
         function confirmDelete(posid) {
             if (confirm("Are you sure you want to delete this post?")) {
