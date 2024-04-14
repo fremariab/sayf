@@ -28,7 +28,14 @@ function likePost($input_data)
         $row = mysqli_fetch_assoc($result);
         if ($row['count'] > 0) {
             $sql = "DELETE FROM UserEngagement WHERE uid = '$uid' AND posid = '$posid'";
-
+            if (!mysqli_query($conn, $sql)) {
+                $data = [
+                    'status' => 500,
+                    'message' => 'Failed to like the post',
+                ];
+                header("HTTP/1.0 200 Failed to unlike post ");
+                return json_encode($data);
+            }
             $data = [
                 'status' => 200,
                 'message' => 'Post Unliked',
@@ -36,19 +43,18 @@ function likePost($input_data)
             ];
             header("HTTP/1.0 200 Post Unliked ");
             return json_encode($data);
+        } else {
+            $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";
+            if (!mysqli_query($conn, $sql)) {
+                $data = [
+                    'status' => 500,
+                    'message' => 'Failed to like the post',
+                ];
+                header("HTTP/1.0 500 Failed to like the post");
+                return json_encode($data);
+            }
         }
 
-        $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";
-        if (!mysqli_query($conn, $sql)) {
-            $data = [
-                'status' => 500,
-                'message' => 'Failed to like the post',
-            ];
-            header("HTTP/1.0 500 Failed to like the post");
-            return json_encode($data);
-        }
-
-        // Count number of engagements for the post
         $sql = "SELECT COUNT(*) AS engagement_count FROM UserEngagement WHERE posid = '$posid'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
