@@ -114,13 +114,12 @@ if ($gender == 1) {
                 method: "post",
                 data: JSON.stringify({
                     posid: posid,
-                    
                 }),
                 dataType: "json",
                 success: (data, status) => {
                     console.log(data, status);
                     if (data.status == 200) {
-                        $(this).toggleClass("liked");
+                        $("#engagement_count").html(data.engagement_count);
                     }
                 },
                 error: (error) => {

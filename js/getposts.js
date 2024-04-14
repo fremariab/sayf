@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           result +=
             "<i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i>";
           result +=
-            "<p style='font-size: 20px;color:white;margin-right:20px;display: inline-block;'>" +
-            1 +
-            "</p>";
+            "<p style='font-size: 20px;color:white;margin-right:20px;display: inline-block;' id='engagement_count'></p>";
           result += "</span>";
           if (element.creator == response.user_id) {
             result += "<span>";

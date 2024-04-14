@@ -15,24 +15,48 @@ function error422($message)
 
 function likePost($input_data)
 {
+    global $conn;
+
     if (!empty($input_data->posid)) {
         $posid = $input_data->posid;
+
+        // Insert into UserEngagement table
+        $uid = getUserId(); // Assuming you have a function to get the user ID
+        $createdon = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO UserEngagement (uid, posid, createdon) VALUES ('$uid', '$posid', '$createdon')";
+        if (!mysqli_query($conn, $sql)) {
+            $data = [
+                'status' => 500,
+                'message' => 'Failed to like the post',
+            ];
+            http_response_code(500);
+            echo json_encode($data);
+            return;
+        }
+
+        // Count number of engagements for the post
+        $sql = "SELECT COUNT(*) AS engagement_count FROM UserEngagement WHERE posid = '$posid'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $engagement_count = $row['engagement_count'];
 
         $data = [
             'status' => 200,
             'message' => 'Post liked successfully',
+            'engagement_count' => $engagement_count,
         ];
         http_response_code(200);
         echo json_encode($data);
     } else {
         $data = [
-            'status' => 500,
-            'message' => 'Internal Serval Error',
+            'status' => 400,
+            'message' => 'Missing post ID',
         ];
-        header("HTTP/1.0 500 Internal Serval Error");
-        return json_encode($data);
+        http_response_code(400);
+        echo json_encode($data);
     }
 }
+
 function viewIncidentReport()
 {
     global $conn;
