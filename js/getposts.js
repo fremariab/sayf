@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "<div style='display: flex; justify-content: space-between; align-items: center;'>"; // Flex container
           result += "<span data-posid='" + element.posid + "'>";
           result +=
-            "<i class='fa-solid fa-heart' style='font-size: 20px;color:white;margin-right:20px;'></i>";
+            "<i class='fa-solid fa-heart' id='like-button' style='font-size: 20px;color:white;margin-right:20px;'></i>";
           result +=
             "<p style='font-size: 20px;color:white;margin-right:20px;display: inline-block;' id='engagement_count'></p>";
           result += "</span>";
