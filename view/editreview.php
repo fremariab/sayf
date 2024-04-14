@@ -28,7 +28,7 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <div class="headtext">Report Incident</div>
+                <div class="headtext">Edit Review</div>
             </div>
             <div class="info">
                 <div class="reptform">
