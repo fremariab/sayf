@@ -1,3 +1,13 @@
+<?php
+include "../settings/core.php";
+
+ifLoggedIn();
+$user_role = getUserRole();
+$user_id = getUserID();
+if ($user_role != 1) {
+    header("Location: ../view/userdash.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
