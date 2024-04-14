@@ -90,10 +90,12 @@ $user_id = getUserID();
             <i class="fas fa-address-card"></i>
             <span>Report Incident</span>
           </a>
-          <a href="../view/sayfforum.php" class="quick-action">
-            <i class="fa-solid fa-users"></i>
-            <span>Forum</span>
-          </a>
+          <?php if ($gender == 2 || $user_role == 1) { ?> <a href="../view/sayfforum.php" class="quick-action">
+              <i class="fa-solid fa-users"></i>
+              <span>Forum</span>
+            </a>
+          <?php } ?>
+
           <a href="../view/viewreports.php" class="quick-action">
             <i class="fas fa-eye"></i>
             <span>View Reports</span>
